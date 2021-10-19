@@ -22,6 +22,10 @@ Donc on a fait la liste des compétences qu'ils auront à terme :
 * back : php, symfony, twig, SQL, MySQL, Markdown
 * divers : git, MVC, Merise (MCD), méthode agile, ligne de commande, vscode ...
 
+### Présentation de l'environnement de travail
+
+=> les différents types de sociétés (industrie, service, SSII, freelance ...) et leurs avantages / inconvénients.
+
 ### Exemple de code
 
 On a codé rapidement ensemble une simple page pour faire un airbnb. En 20min avec bootstrap pour voir que c'est assez simple / rapide, si on réfléchit en amont.
