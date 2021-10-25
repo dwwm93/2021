@@ -57,3 +57,11 @@ Par exemple, il peut décider de mettre ses enfants en ligne au lieu de colonne,
 ```
 
 On peut également faire afficher les enfants en colonne (`flex-direction:column;`), ou les positionner les uns par rapport aux autres sur l'axe "perpendiculaire" à la flex-direction.
+
+Pour s'entraîner on a positionné les blocs de notre page "perso", et on a déroulé une partie du site css-tricks.
+
+exercice:
+
+Créer 2 articles, centrer l'intérieur de chaque article horizontalement (donc perpendiculairement à l'axe principal vertical), puis positionner les 2 composants l'un par rapport à l'autre pour que leurs centres soient alignés sur l'axe horizontal.
+
+> TODO dessiner le schéma
