@@ -176,3 +176,62 @@ Ceci est un argument pour utiliser correctement les balises sémantiques vues au
 On se réserve `<table>` et `<form>` pour la prochaine fois.
 
 Pour l'instant il faut bosser sur un site perso, sur un sujet quelconque, à condition de bien respecter la structure sémantique du site.
+## Lundi 2021-10-25
+
+Révision des balises déjà vues.
+
+### Différence GET/POST dans les formulaires
+
+Lorsque l'on valide un formulaire, on envoie une requête contenant les données du formulaire à l'adresse remplie dans l'attribut `action`.
+
+Tout ceci passe par internet pour atteindre sa destination !
+
+![cables sous marins](https://www.eurafibre.fr/wp-content/uploads/2018/12/carte_cables_sous-marins__reseau_internet_monde.jpg)
+
+Pour ce faire, l'information est en fait découpée en 2 : l'adresse et le contenu.
+
+> C'est la même idée que l'adresse sur l'enveloppe et la lettre (=contenu) à l'intérieur.
+
+On identifie donc 2 méthodes "HTTP" pour faire cet envoi d'information :
+
+* GET = on envoie adresse + données dans l'adresse (un peu comme une carte postale)
+* POST = on sépare bien les données et l'adresse (ex: enveloppe standard)
+
+Ainsi on utilise _plutôt_ le GET pour récupérer des informations. (et les précisions dans l'adresse permettent de donner des instructions, ex : sonner chez Mme Bidule) Tandis qu'on utilise _plutôt_ le POST pour envoyer des informations (qui sont cachées aux yeux du "facteur").
+
+### Commentaires
+
+```html
+<!-- Ici ce n'est pas affiché -->
+```
+
+### Attribut : 'style'
+
+On peut modifier le style d'un élément HTML (càd une balise) en utilisant l'attribut `style`.
+
+ex: 
+```html
+<span style="color:blue">bonjour</span>
+```
+
+### Introduction à flexbox
+
+"flexbox" permet de positionner des blocks les uns par rapport aux autres (plutôt que de les laisser juste les uns sous les autres).
+
+[ressource indispensable](https://css-tricks.com/snippets/css/a-guide-to-flexbox/)
+
+Lorsqu'un élément devient "flex" (en utilisant: `display=flex` dans le style), alors **il est en mesure de décider du positionnement de ses enfants, et _uniquement_ de ses enfants**.
+
+Par exemple, il peut décider de mettre ses enfants en ligne au lieu de colonne, et de les séparer par des espaces s'il y a des espaces en trop.
+
+```html
+<nav>
+    <ul style="display:flex;justify-content:space-evenly;">
+        <li>lien 1</li>
+        <li>lien 2</li>
+        <li>lien 3</li>
+    </ul>
+</nav>
+```
+
+On peut également faire afficher les enfants en colonne (`flex-direction:column;`), ou les positionner les uns par rapport aux autres sur l'axe "perpendiculaire" à la flex-direction.

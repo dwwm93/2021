@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lundi 2021-10-25 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="lundi-2021-10-25">
+<h1>Lundi 2021-10-25<a class="headerlink" href="#lundi-2021-10-25" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Révision des balises déjà vues.</p>
+<section id="difference-get-post-dans-les-formulaires">
+<h2>Différence GET/POST dans les formulaires<a class="headerlink" href="#difference-get-post-dans-les-formulaires" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Lorsque l”on valide un formulaire, on envoie une requête contenant les données du formulaire à l”adresse remplie dans l”attribut <code class="docutils literal notranslate"><span class="pre">action</span></code>.</p>
+<p>Tout ceci passe par internet pour atteindre sa destination !</p>
+<p><img alt="cables sous marins" src="https://www.eurafibre.fr/wp-content/uploads/2018/12/carte_cables_sous-marins__reseau_internet_monde.jpg" /></p>
+<p>Pour ce faire, l”information est en fait découpée en 2 : l”adresse et le contenu.</p>
+<blockquote>
+<div><p>C”est la même idée que l”adresse sur l”enveloppe et la lettre (=contenu) à l”intérieur.</p>
+</div></blockquote>
+<p>On identifie donc 2 méthodes « HTTP » pour faire cet envoi d”information :</p>
+<ul class="simple">
+<li><p>GET = on envoie adresse + données dans l”adresse (un peu comme une carte postale)</p></li>
+<li><p>POST = on sépare bien les données et l”adresse (ex: enveloppe standard)</p></li>
+</ul>
+<p>Ainsi on utilise <em>plutôt</em> le GET pour récupérer des informations. (et les précisions dans l”adresse permettent de donner des instructions, ex : sonner chez Mme Bidule) Tandis qu”on utilise <em>plutôt</em> le POST pour envoyer des informations (qui sont cachées aux yeux du « facteur »).</p>
+</section>
+<section id="commentaires">
+<h2>Commentaires<a class="headerlink" href="#commentaires" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="c">&lt;!-- Ici ce n&#39;est pas affiché --&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="attribut-style">
+<h2>Attribut : “style”<a class="headerlink" href="#attribut-style" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On peut modifier le style d”un élément HTML (càd une balise) en utilisant l”attribut <code class="docutils literal notranslate"><span class="pre">style</span></code>.</p>
+<p>ex:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;color:blue&quot;</span><span class="p">&gt;</span>bonjour<span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="introduction-a-flexbox">
+<h2>Introduction à flexbox<a class="headerlink" href="#introduction-a-flexbox" title="Lien permanent vers ce titre">¶</a></h2>
+<p>« flexbox » permet de positionner des blocks les uns par rapport aux autres (plutôt que de les laisser juste les uns sous les autres).</p>
+<p><a class="reference external" href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/">ressource indispensable</a></p>
+<p>Lorsqu”un élément devient « flex » (en utilisant: <code class="docutils literal notranslate"><span class="pre">display=flex</span></code> dans le style), alors <strong>il est en mesure de décider du positionnement de ses enfants, et <em>uniquement</em> de ses enfants</strong>.</p>
+<p>Par exemple, il peut décider de mettre ses enfants en ligne au lieu de colonne, et de les séparer par des espaces s”il y a des espaces en trop.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">nav</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;display:flex;justify-content:space-evenly;&quot;</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>lien 1<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>lien 2<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+        <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;</span>lien 3<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+    <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">nav</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+<p>On peut également faire afficher les enfants en colonne (<code class="docutils literal notranslate"><span class="pre">flex-direction:column;</span></code>), ou les positionner les uns par rapport aux autres sur l”axe « perpendiculaire » à la flex-direction.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2021</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Lundi 2021-10-18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-10-19">Mardi 2021-10-19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-10-25">Lundi 2021-10-25</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/2021-10-25_lundi.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
