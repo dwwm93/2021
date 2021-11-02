@@ -243,3 +243,54 @@ exercice:
 Créer 2 articles, centrer l'intérieur de chaque article horizontalement (donc perpendiculairement à l'axe principal vertical), puis positionner les 2 composants l'un par rapport à l'autre pour que leurs centres soient alignés sur l'axe horizontal.
 
 > TODO dessiner le schéma
+## Mardi 2021-11-02
+
+### Exercice mise en page CV
+
+Refaire son cv avec une barre à gauche qui contient
+la photo, le nom/prénom, les compétences et les langues.
+
+Et à droite les expériences, les formations et le formulaire de contact.
+
+> but : utiliser flexbox + margin / padding, align-items pour centrer sur l'axe perpendiculaire à la flex-direction etc.
+
+#### Point sur les enfants flexbox qui désobéissent
+
+`align-self: end`, sur l'enfant, écrase `align-items: center;` du parent.
+
+### UX / UI
+
+Premier aperçu de la différence entre :
+
+* l'expérience utilisateur : sa facilité de compréhension de l'application, la rapidité avec laquelle il prend en main le site, son ressenti ...
+* et l'interface utilisateur : les éléments de style qui lui plaisent, qui facilitent la lecture éventuelle, qui donnent vie à la page etc.
+
+Petite [vidéo explicative](https://www.youtube.com/watch?v=Ovj4hFxko7c)
+
+### Responsive
+
+Présentation des `@media-queries`.
+
+Référence sur [developper mozilla](https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries).
+
+Exemple 
+
+```css
+.selecteur {
+    propriété: valeur1;
+    autre_prop: autre_valeur;
+}
+
+@media screen and (max-width: 376px) {
+    .selecteur {
+        propriété: valeur2; /** écrase la valeur 1 */
+        /** mais se cumule avec autre_prop de valeur autre_valeur */
+    }
+}
+```
+
+> Exercice: rendre son CV responsive, en l'affichant sur une seule colonne en mode "smartphone".
+>
+> Corrigé en une ligne: passer le parent des 2 blocs situés côte à côte en style : `flex-direction: column;`. *Et voilà !*
+
+On peut aussi afficher son numéro de téléphone en mode smartphone et le cacher en mode tablette ou pc. (=> `display: none;`);

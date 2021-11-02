@@ -256,6 +256,55 @@
 </div></blockquote>
 </section>
 </section>
+<section id="mardi-2021-11-02">
+<h1>Mardi 2021-11-02<a class="headerlink" href="#mardi-2021-11-02" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="exercice-mise-en-page-cv">
+<h2>Exercice mise en page CV<a class="headerlink" href="#exercice-mise-en-page-cv" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Refaire son cv avec une barre à gauche qui contient
+la photo, le nom/prénom, les compétences et les langues.</p>
+<p>Et à droite les expériences, les formations et le formulaire de contact.</p>
+<blockquote>
+<div><p>but : utiliser flexbox + margin / padding, align-items pour centrer sur l”axe perpendiculaire à la flex-direction etc.</p>
+</div></blockquote>
+<section id="point-sur-les-enfants-flexbox-qui-desobeissent">
+<h3>Point sur les enfants flexbox qui désobéissent<a class="headerlink" href="#point-sur-les-enfants-flexbox-qui-desobeissent" title="Lien permanent vers ce titre">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">align-self:</span> <span class="pre">end</span></code>, sur l”enfant, écrase <code class="docutils literal notranslate"><span class="pre">align-items:</span> <span class="pre">center;</span></code> du parent.</p>
+</section>
+</section>
+<section id="ux-ui">
+<h2>UX / UI<a class="headerlink" href="#ux-ui" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Premier aperçu de la différence entre :</p>
+<ul class="simple">
+<li><p>l”expérience utilisateur : sa facilité de compréhension de l”application, la rapidité avec laquelle il prend en main le site, son ressenti …</p></li>
+<li><p>et l”interface utilisateur : les éléments de style qui lui plaisent, qui facilitent la lecture éventuelle, qui donnent vie à la page etc.</p></li>
+</ul>
+<p>Petite <a class="reference external" href="https://www.youtube.com/watch?v=Ovj4hFxko7c">vidéo explicative</a></p>
+</section>
+<section id="responsive">
+<h2>Responsive<a class="headerlink" href="#responsive" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Présentation des <code class="docutils literal notranslate"><span class="pre">&#64;media-queries</span></code>.</p>
+<p>Référence sur <a class="reference external" href="https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries">developper mozilla</a>.</p>
+<p>Exemple</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">selecteur</span> <span class="p">{</span>
+    <span class="n">propriété</span><span class="p">:</span> <span class="n">valeur1</span><span class="p">;</span>
+    <span class="n">autre_prop</span><span class="p">:</span> <span class="n">autre_valeur</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">376px</span><span class="o">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nc">selecteur</span> <span class="p">{</span>
+        <span class="n">propriété</span><span class="p">:</span> <span class="n">valeur2</span><span class="p">;</span> <span class="c">/** écrase la valeur 1 */</span>
+        <span class="c">/** mais se cumule avec autre_prop de valeur autre_valeur */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Exercice: rendre son CV responsive, en l”affichant sur une seule colonne en mode « smartphone ».</p>
+<p>Corrigé en une ligne: passer le parent des 2 blocs situés côte à côte en style : <code class="docutils literal notranslate"><span class="pre">flex-direction:</span> <span class="pre">column;</span></code>. <em>Et voilà !</em></p>
+</div></blockquote>
+<p>On peut aussi afficher son numéro de téléphone en mode smartphone et le cacher en mode tablette ou pc. (=&gt; <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none;</span></code>);</p>
+</section>
+</section>
 
 
           </div>
@@ -298,6 +347,12 @@
 <li class="toctree-l2"><a class="reference internal" href="#commentaires">Commentaires</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#attribut-style">Attribut : “style”</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#introduction-a-flexbox">Introduction à flexbox</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-11-02">Mardi 2021-11-02</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exercice-mise-en-page-cv">Exercice mise en page CV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ux-ui">UX / UI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#responsive">Responsive</a></li>
 </ul>
 </li>
 </ul>

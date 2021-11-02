@@ -1,0 +1,155 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Mardi 2021-11-02 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mardi-2021-11-02">
+<h1>Mardi 2021-11-02<a class="headerlink" href="#mardi-2021-11-02" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="exercice-mise-en-page-cv">
+<h2>Exercice mise en page CV<a class="headerlink" href="#exercice-mise-en-page-cv" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Refaire son cv avec une barre à gauche qui contient
+la photo, le nom/prénom, les compétences et les langues.</p>
+<p>Et à droite les expériences, les formations et le formulaire de contact.</p>
+<blockquote>
+<div><p>but : utiliser flexbox + margin / padding, align-items pour centrer sur l”axe perpendiculaire à la flex-direction etc.</p>
+</div></blockquote>
+<section id="point-sur-les-enfants-flexbox-qui-desobeissent">
+<h3>Point sur les enfants flexbox qui désobéissent<a class="headerlink" href="#point-sur-les-enfants-flexbox-qui-desobeissent" title="Lien permanent vers ce titre">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">align-self:</span> <span class="pre">end</span></code>, sur l”enfant, écrase <code class="docutils literal notranslate"><span class="pre">align-items:</span> <span class="pre">center;</span></code> du parent.</p>
+</section>
+</section>
+<section id="ux-ui">
+<h2>UX / UI<a class="headerlink" href="#ux-ui" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Premier aperçu de la différence entre :</p>
+<ul class="simple">
+<li><p>l”expérience utilisateur : sa facilité de compréhension de l”application, la rapidité avec laquelle il prend en main le site, son ressenti …</p></li>
+<li><p>et l”interface utilisateur : les éléments de style qui lui plaisent, qui facilitent la lecture éventuelle, qui donnent vie à la page etc.</p></li>
+</ul>
+<p>Petite <a class="reference external" href="https://www.youtube.com/watch?v=Ovj4hFxko7c">vidéo explicative</a></p>
+</section>
+<section id="responsive">
+<h2>Responsive<a class="headerlink" href="#responsive" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Présentation des <code class="docutils literal notranslate"><span class="pre">&#64;media-queries</span></code>.</p>
+<p>Référence sur <a class="reference external" href="https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries">developper mozilla</a>.</p>
+<p>Exemple</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">selecteur</span> <span class="p">{</span>
+    <span class="n">propriété</span><span class="p">:</span> <span class="n">valeur1</span><span class="p">;</span>
+    <span class="n">autre_prop</span><span class="p">:</span> <span class="n">autre_valeur</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">376px</span><span class="o">)</span> <span class="p">{</span>
+    <span class="p">.</span><span class="nc">selecteur</span> <span class="p">{</span>
+        <span class="n">propriété</span><span class="p">:</span> <span class="n">valeur2</span><span class="p">;</span> <span class="c">/** écrase la valeur 1 */</span>
+        <span class="c">/** mais se cumule avec autre_prop de valeur autre_valeur */</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>Exercice: rendre son CV responsive, en l”affichant sur une seule colonne en mode « smartphone ».</p>
+<p>Corrigé en une ligne: passer le parent des 2 blocs situés côte à côte en style : <code class="docutils literal notranslate"><span class="pre">flex-direction:</span> <span class="pre">column;</span></code>. <em>Et voilà !</em></p>
+</div></blockquote>
+<p>On peut aussi afficher son numéro de téléphone en mode smartphone et le cacher en mode tablette ou pc. (=&gt; <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none;</span></code>);</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2021</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Lundi 2021-10-18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-10-19">Mardi 2021-10-19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-10-25">Lundi 2021-10-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-02">Mardi 2021-11-02</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.2.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/2021-11-02_mardi.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
