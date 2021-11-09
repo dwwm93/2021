@@ -305,6 +305,65 @@ la photo, le nom/prénom, les compétences et les langues.</p>
 <p>On peut aussi afficher son numéro de téléphone en mode smartphone et le cacher en mode tablette ou pc. (=&gt; <code class="docutils literal notranslate"><span class="pre">display:</span> <span class="pre">none;</span></code>);</p>
 </section>
 </section>
+<section id="mardi-2021-11-09">
+<h1>Mardi 2021-11-09<a class="headerlink" href="#mardi-2021-11-09" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="revision-css">
+<h2>Révision css<a class="headerlink" href="#revision-css" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="decouverte-nouvelles-proprietes-css">
+<h2>Découverte nouvelles propriétés css<a class="headerlink" href="#decouverte-nouvelles-proprietes-css" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="modificateurs-css-nth-child-an-b">
+<h3>Modificateurs css : <code class="docutils literal notranslate"><span class="pre">:nth-child(An+B)</span></code><a class="headerlink" href="#modificateurs-css-nth-child-an-b" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Permet de ne sélectionner un élement que s”il est le « n-ième » enfant de son parent.</p>
+<p>Le test est valide si le numéro « x » de l”élément est bien égal à un moment à la formule « An+B » (avec n qui va de 0 au max des enfants).</p>
+<p>exemple :</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/** Le &lt;li&gt; ne sera rouge que s&#39;il est le 3ème enfant de son parent */</span>
+<span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="c">/** le &lt;li&gt; sera gris uniquement s&#39;il est impair : car si n vaut 0 alors on grise le &lt;li&gt; numéro 2*0+1 (donc 1), quand n vaut 1 alors on grise le &lt;li&gt; numéro 3, puis pour n vaut 2 on grise le 5 etc. */</span> 
+<span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
+    <span class="k">background-color</span><span class="p">:</span> <span class="kc">gray</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Il existe aussi le modificateur qui compte à partir de la fin : <code class="docutils literal notranslate"><span class="pre">:nth-last-child(An+B)</span></code>.</p>
+<p>Ou un autre qui prend le dernier : <code class="docutils literal notranslate"><span class="pre">:last-child</span></code> etc.</p>
+</section>
+<section id="modificateurs-css-after">
+<h3>Modificateurs css : <code class="docutils literal notranslate"><span class="pre">::after</span></code><a class="headerlink" href="#modificateurs-css-after" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Permet d”écrire un contenu après l”élément selectionné par le selecteur css.</p>
+<p>exemple:</p>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/** met une virgule à la fin de tous les &lt;li&gt; */</span>
+<span class="nt">li</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
+    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;, &#39;</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="initiation-a-git">
+<h2>Initiation à git<a class="headerlink" href="#initiation-a-git" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Présentation de git et de son intérêt (pourquoi il existe !).</p>
+<p>Utilisation du site <a class="reference external" href="learngitbranching.js.org">learn git branching</a> pour découvrir les premières commandes et les branches.</p>
+<ul class="simple">
+<li><p>git commit</p></li>
+<li><p>git branch « branch1 »</p></li>
+<li><p>git checkout « branch1 »</p></li>
+<li><p>git merge « branch1 »</p></li>
+</ul>
+</section>
+<section id="initialisation-d-un-repo-git-pour-son-code-greta">
+<h2>Initialisation d”un repo git pour son code greta<a class="headerlink" href="#initialisation-d-un-repo-git-pour-son-code-greta" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>installer git (<a class="reference external" href="https://gitforwindows.com">gitforwindows.com</a>), ou <code class="docutils literal notranslate"><span class="pre">brew</span> <span class="pre">install</span> <span class="pre">git</span></code> ou autre</p></li>
+<li><p>ouvrir son workspace vscode pour être dans le bon répertoire</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">init</span> <span class="pre">.</span></code> dans un terminal vscode</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">add</span> <span class="pre">nom_du_fichier_ou_du_repertoire</span></code> pour indiquer les fichiers que l”on veut « sauvegarder »</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span></code> =&gt; attention il faut rentrer un message sinon il refuse le commit, et c”est casse pied ! donc on préfèrera <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">commit</span> <span class="pre">-m</span></code>.</p></li>
+</ol>
+</section>
+</section>
 
 
           </div>
@@ -353,6 +412,13 @@ la photo, le nom/prénom, les compétences et les langues.</p>
 <li class="toctree-l2"><a class="reference internal" href="#exercice-mise-en-page-cv">Exercice mise en page CV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#ux-ui">UX / UI</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#responsive">Responsive</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-11-09">Mardi 2021-11-09</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#revision-css">Révision css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decouverte-nouvelles-proprietes-css">Découverte nouvelles propriétés css</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initiation-a-git">Initiation à git</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#initialisation-d-un-repo-git-pour-son-code-greta">Initialisation d”un repo git pour son code greta</a></li>
 </ul>
 </li>
 </ul>

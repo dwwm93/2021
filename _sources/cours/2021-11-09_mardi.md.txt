@@ -1,0 +1,60 @@
+## Mardi 2021-11-09
+
+### Révision css
+
+### Découverte nouvelles propriétés css
+
+#### Modificateurs css : `:nth-child(An+B)`
+
+Permet de ne sélectionner un élement que s'il est le "n-ième" enfant de son parent.
+
+Le test est valide si le numéro "x" de l'élément est bien égal à un moment à la formule "An+B" (avec n qui va de 0 au max des enfants).
+
+exemple :
+
+```css
+/** Le <li> ne sera rouge que s'il est le 3ème enfant de son parent */
+li:nth-child(3) {
+    background-color: red;
+}
+/** le <li> sera gris uniquement s'il est impair : car si n vaut 0 alors on grise le <li> numéro 2*0+1 (donc 1), quand n vaut 1 alors on grise le <li> numéro 3, puis pour n vaut 2 on grise le 5 etc. */ 
+li:nth-child(2n+1) {
+    background-color: gray;
+}
+```
+
+Il existe aussi le modificateur qui compte à partir de la fin : `:nth-last-child(An+B)`.
+
+Ou un autre qui prend le dernier : `:last-child` etc.
+
+#### Modificateurs css : `::after`
+
+Permet d'écrire un contenu après l'élément selectionné par le selecteur css.
+
+exemple:
+
+```css
+/** met une virgule à la fin de tous les <li> */
+li::after {
+    content: ', ';
+}
+```
+
+### Initiation à git
+
+Présentation de git et de son intérêt (pourquoi il existe !).
+
+Utilisation du site [learn git branching](learngitbranching.js.org) pour découvrir les premières commandes et les branches.
+
+* git commit
+* git branch "branch1"
+* git checkout "branch1"
+* git merge "branch1"
+
+### Initialisation d'un repo git pour son code greta
+
+1. installer git ([gitforwindows.com](https://gitforwindows.com)), ou `brew install git` ou autre
+2. ouvrir son workspace vscode pour être dans le bon répertoire
+3. `git init .` dans un terminal vscode
+4. `git add nom_du_fichier_ou_du_repertoire` pour indiquer les fichiers que l'on veut "sauvegarder"
+5. `git commit` => attention il faut rentrer un message sinon il refuse le commit, et c'est casse pied ! donc on préfèrera `git commit -m`.
