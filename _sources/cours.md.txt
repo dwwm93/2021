@@ -354,3 +354,43 @@ Utilisation du site [learn git branching](learngitbranching.js.org) pour découv
 3. `git init .` dans un terminal vscode
 4. `git add nom_du_fichier_ou_du_repertoire` pour indiquer les fichiers que l'on veut "sauvegarder"
 5. `git commit` => attention il faut rentrer un message sinon il refuse le commit, et c'est casse pied ! donc on préfèrera `git commit -m`.
+## Mardi 2021-11-16
+
+### Git + Github
+
+* révisions git + commit des codes effectués jusqu'à présent
+* explications github : site qui permet de centraliser les repositories et les branches de git
+* création de compte github
+* paramétrage vscode (attention aux pcs windows pas à jour, il faut utiliser la clé ssh dans ce cas là)
+* push du code vers github dans un repo privé
+
+### Reprise de bootstrap
+
+#### Composants et layouts
+
+* container
+* fonctionnement de la grid
+* progressbar
+## Mercredi 2021-11-17
+
+On commite bien tout le code effectué hier !
+
+Puis on commence à travailler.
+
+### Bootstrap
+
+Poursuite de la découverte de bootstrap :
+
+* carousel
+* card
+* bouton group
+* tooltip
+* **modal** !
+
+### Fontawesome
+
+Utilisation du css / js pour afficher des pictogrammes
+
+### Exercice
+
+Créer une deuxième Modal associée au bouton login qui contient le formulaire de login.
