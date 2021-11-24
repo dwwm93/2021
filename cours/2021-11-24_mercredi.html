@@ -1,0 +1,165 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Mercredi 2021/11/24 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mercredi-2021-11-24">
+<h1>Mercredi 2021/11/24<a class="headerlink" href="#mercredi-2021-11-24" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="boucles-tableaux">
+<h2>Boucles + tableaux<a class="headerlink" href="#boucles-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On continue sur les boucles + découverte des tableaux.</p>
+<p>En particulier on essaie de faire une boucle pour parcourir tous les éléments d”un tableau et les afficher à l”écran.</p>
+<p>Exercice: afficher la liste des élèves, à partir du tableau qui contient les prénoms.</p>
+</section>
+<section id="fonctions">
+<h2>Fonctions<a class="headerlink" href="#fonctions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il s”agit d”un concept.</p>
+<p>Une fonction est un traitement qui prend des « arguments » en entrée, et qui renvoie le résultat du traitement effectué sur les arguments donnés.</p>
+<p>Fonctionnement « boîte noire » : la fonction ne doit pas changer au fil du temps ! (cf : <code class="docutils literal notranslate"><span class="pre">document.querySelector('selecteurCss')</span></code>).</p>
+<p>=&gt; <strong>Même résultat pour même argument en entrée !</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>             .__________.
+entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> -----&gt; sortie
+             <span class="p">|</span>__________<span class="p">|</span>
+</pre></div>
+</div>
+</section>
+<section id="etapes">
+<h2>2 étapes<a class="headerlink" href="#etapes" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="definition-declaration">
+<h3>1. Définition / Déclaration<a class="headerlink" href="#definition-declaration" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Syntaxe en javascript:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">argument1</span><span class="p">,</span> <span class="nx">argument2</span><span class="p">){</span>
+    <span class="cm">/** Ici traitement en javascript ! */</span>
+    <span class="c1">// Par exemple : </span>
+    <span class="kd">let</span> <span class="nx">somme</span> <span class="o">=</span> <span class="nx">argument1</span> <span class="o">+</span> <span class="nx">argument2</span>
+    <span class="k">return</span> <span class="nx">somme</span><span class="p">;</span> <span class="c1">// ce que la fonction &quot;renvoie&quot; en sortie</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>cf en mathématique : <code class="docutils literal notranslate"><span class="pre">f(x)=x+1</span></code>.</p>
+<p>NB: argument1 et argument2 sont des variables, qui seront déclarées au moment de l”exécution de la fonction, et dans lesquelles on mettra les valeurs données en argument.</p>
+</section>
+<section id="execution">
+<h3>2. Execution<a class="headerlink" href="#execution" title="Lien permanent vers ce titre">¶</a></h3>
+<p>ou : comment utiliser la fonction ?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">valeur1</span> <span class="o">=</span> <span class="s2">&quot;valeur1&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">valeur2</span> <span class="o">=</span> <span class="s2">&quot;valeur2&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">valeur1</span><span class="p">,</span> <span class="nx">valeur2</span><span class="p">);</span>
+<span class="c1">// Questions :</span>
+<span class="c1">// resultat contient quoi ?</span>
+<span class="c1">// resultat -&gt; &quot;valeur1&quot; + &quot;valeur2&quot; -&gt; &quot;valeur1valeur2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="exercice">
+<h3>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Faire une fonction qui calcule le carré du chiffre donné par l”utilisateur via un prompt.</p>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2021</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Lundi 2021-10-18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-10-19">Mardi 2021-10-19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-10-25">Lundi 2021-10-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-02">Mardi 2021-11-02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-09">Mardi 2021-11-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-16">Mardi 2021-11-16</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-17">Mercredi 2021-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-23">Mardi 2021/11/23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-24">Mercredi 2021/11/24</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/2021-11-24_mercredi.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

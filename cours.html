@@ -412,6 +412,83 @@ la photo, le nom/prénom, les compétences et les langues.</p>
 <p>Créer une deuxième Modal associée au bouton login qui contient le formulaire de login.</p>
 </section>
 </section>
+<section id="mardi-2021-11-23">
+<h1>Mardi 2021/11/23<a class="headerlink" href="#mardi-2021-11-23" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="revisions-javascript">
+<h2>Révisions javascript<a class="headerlink" href="#revisions-javascript" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>déclaration de variables : <code class="docutils literal notranslate"><span class="pre">var,</span> <span class="pre">let</span> <span class="pre">et</span> <span class="pre">const</span></code>: différences (modifiable, redéclarable)</p></li>
+<li><p>assignation des valeurs</p></li>
+<li><p>prompt / alert / document.querySelector</p></li>
+<li><p>fonctionnement du html dans le navigateur (version en mémoire que l”on peut modifier, sans toucher à index.html)</p></li>
+<li><p>get/set</p></li>
+</ul>
+</section>
+<section id="decouverte-des-boucles">
+<h2>Découverte des boucles<a class="headerlink" href="#decouverte-des-boucles" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Syntaxe js des boucles :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mf">10</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
+    <span class="c1">// traitement</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Exercice : demander un nombre à l”utilisateur et énumerer tous les nombres de 0 au chiffre demandé dans une liste html.</p>
+</section>
+</section>
+<section id="mercredi-2021-11-24">
+<h1>Mercredi 2021/11/24<a class="headerlink" href="#mercredi-2021-11-24" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="boucles-tableaux">
+<h2>Boucles + tableaux<a class="headerlink" href="#boucles-tableaux" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On continue sur les boucles + découverte des tableaux.</p>
+<p>En particulier on essaie de faire une boucle pour parcourir tous les éléments d”un tableau et les afficher à l”écran.</p>
+<p>Exercice: afficher la liste des élèves, à partir du tableau qui contient les prénoms.</p>
+</section>
+<section id="fonctions">
+<h2>Fonctions<a class="headerlink" href="#fonctions" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il s”agit d”un concept.</p>
+<p>Une fonction est un traitement qui prend des « arguments » en entrée, et qui renvoie le résultat du traitement effectué sur les arguments donnés.</p>
+<p>Fonctionnement « boîte noire » : la fonction ne doit pas changer au fil du temps ! (cf : <code class="docutils literal notranslate"><span class="pre">document.querySelector('selecteurCss')</span></code>).</p>
+<p>=&gt; <strong>Même résultat pour même argument en entrée !</strong></p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>             .__________.
+entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> -----&gt; sortie
+             <span class="p">|</span>__________<span class="p">|</span>
+</pre></div>
+</div>
+</section>
+<section id="etapes">
+<h2>2 étapes<a class="headerlink" href="#etapes" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="definition-declaration">
+<h3>1. Définition / Déclaration<a class="headerlink" href="#definition-declaration" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Syntaxe en javascript:</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">argument1</span><span class="p">,</span> <span class="nx">argument2</span><span class="p">){</span>
+    <span class="cm">/** Ici traitement en javascript ! */</span>
+    <span class="c1">// Par exemple : </span>
+    <span class="kd">let</span> <span class="nx">somme</span> <span class="o">=</span> <span class="nx">argument1</span> <span class="o">+</span> <span class="nx">argument2</span>
+    <span class="k">return</span> <span class="nx">somme</span><span class="p">;</span> <span class="c1">// ce que la fonction &quot;renvoie&quot; en sortie</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>cf en mathématique : <code class="docutils literal notranslate"><span class="pre">f(x)=x+1</span></code>.</p>
+<p>NB: argument1 et argument2 sont des variables, qui seront déclarées au moment de l”exécution de la fonction, et dans lesquelles on mettra les valeurs données en argument.</p>
+</section>
+<section id="execution">
+<h3>2. Execution<a class="headerlink" href="#execution" title="Lien permanent vers ce titre">¶</a></h3>
+<p>ou : comment utiliser la fonction ?</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">valeur1</span> <span class="o">=</span> <span class="s2">&quot;valeur1&quot;</span><span class="p">;</span>
+<span class="kd">let</span> <span class="nx">valeur2</span> <span class="o">=</span> <span class="s2">&quot;valeur2&quot;</span><span class="p">;</span>
+<span class="kd">const</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">valeur1</span><span class="p">,</span> <span class="nx">valeur2</span><span class="p">);</span>
+<span class="c1">// Questions :</span>
+<span class="c1">// resultat contient quoi ?</span>
+<span class="c1">// resultat -&gt; &quot;valeur1&quot; + &quot;valeur2&quot; -&gt; &quot;valeur1valeur2&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="id1">
+<h3>Exercice<a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Faire une fonction qui calcule le carré du chiffre donné par l”utilisateur via un prompt.</p>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -478,6 +555,17 @@ la photo, le nom/prénom, les compétences et les langues.</p>
 <li class="toctree-l2"><a class="reference internal" href="#bootstrap">Bootstrap</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fontawesome">Fontawesome</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercice">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-11-23">Mardi 2021/11/23</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#revisions-javascript">Révisions javascript</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#decouverte-des-boucles">Découverte des boucles</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mercredi-2021-11-24">Mercredi 2021/11/24</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#boucles-tableaux">Boucles + tableaux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fonctions">Fonctions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#etapes">2 étapes</a></li>
 </ul>
 </li>
 </ul>
