@@ -13,11 +13,30 @@
 
     <h1>Bonjour</h1>
 
-    <button onclick="showNumbers()">Affiche les numéros</button>
-    <ul id="numeros">
+    <section>
+        <h2>Actions du site</h2>
+        <button onclick="sayHello()">Dis bonjour !</button>
+        <button onclick="showNumbers()">Affiche les numéros</button>
+        <button onclick="showStudents()">Affiche les étudiants</button>
+        <button onclick="execNumberCalc()">Calculer le carré</button>
+    </section>
+    <section>
+        <h2>Résultats</h2>
+        <ul id="numeros">
 
-    </ul>
+        </ul>
 
+        <table id="students">
+            <tr>
+                <th>Numéro</th>
+                <th>Prénom</th>
+            </tr>
+        </table>
+
+        <div id="calcResult">
+
+        </div>
+    </section>
     <script src="./js/script.js"></script>
 </body>
 
