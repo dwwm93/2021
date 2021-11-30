@@ -73,8 +73,12 @@ const storedCredentials = [
  * @returns Array les informations de connexion de l'utilisateur en cours
  */
 function askUser() {
+    /* 
     const inputUser = prompt('Nom d\'utilisateur ?');
-    const inputPwd = prompt('Mot de passe ?');
+    const inputPwd = prompt('Mot de passe ?'); 
+    */
+    const inputUser = document.querySelector('form#login > input[name="user"]').value;
+    const inputPwd = document.querySelector('form#login > input[name="pwd"]').value;
 
     return [inputUser, inputPwd];
 }
@@ -126,7 +130,48 @@ function login_3(credentials) {
         notifyUser("Non connecté !");
     }
 
-    const message = "Ici la fonction prend l'user et le pwd en entrée pour être paramétrable ! youpi !";
+    let message = "Ici la fonction prend l'user et le pwd en entrée pour être paramétrable ! youpi !";
     message += "<video style=\"width: 500px; height: 313.75px; left: 0px; top: 0px;\" alt=\"Happy Big Lebowski GIF\" src=\"https://media2.giphy.com/media/tyxovVLbfZdok/giphy.mp4?cid=ecf05e47ws8uw72w1j28tij0d5urucrn9uawtc2fr43241b1&amp;rid=giphy.mp4&amp;ct=g\" poster=\"https://media2.giphy.com/media/tyxovVLbfZdok/giphy_s.gif?cid=ecf05e47ws8uw72w1j28tij0d5urucrn9uawtc2fr43241b1&amp;rid=giphy_s.gif&amp;ct=g\" autoplay=\"\" loop=\"\" playsinline=\"\"></video>";
-    notifyUser(message, "button#login2 + p.message");
+    notifyUser(message, "button#login3 + p.message");
+}
+
+
+const studentsDWWM = [
+    ["léponge", "bob", "5", "https://i.pravatar.cc/100?u=léponge"],
+    ["létoiledemer", "patrick", "25", "https://i.pravatar.cc/100?u=létoiledemer"],
+    ["z", "dragonball", "105", "https://i.pravatar.cc/100?u=z"],
+    ["han", "sango", "12", "https://i.pravatar.cc/100?u=han"],
+    ["seagall", "steven", "?", "https://www.stevensegallery.com/100/100"],
+    ["émorti", "rik", "99", "https://www.stevensegallery.com/100/100"],
+];
+
+/**
+ * 
+ * @param {Array} students Tableau de tableaux [ [nom, prenom, age, avatar], ]
+ * @returns {string} Le html de toutes les cards de tous les étudiants
+ */
+function genCards(students) {
+    let cards = "";
+    for (let i = 0; i < students.length; i++) {
+        let currentStudent = students[i];
+        const card = genCard(currentStudent);
+        cards += card;
+    }
+    return cards;
+}
+
+/**
+ * 
+ * @param {Array} student [nom, prenom, age, avatar]
+ * @returns {string} La card html pour un étudiant
+ */
+function genCard(student) {}
+
+function getStudentInfos(student) {}
+
+function genHtmlCard(header, content, footer) {}
+document.querySelector("div#students").innerHTML = genCards(studentsDWWM);
+
+for (let i = 0; i < studentsDWWM.length; i++) {
+    document.querySelector("#avatars").innerHTML += "<img src='" + studentsDWWM[i][3] + "'/>";
 }
