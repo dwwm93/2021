@@ -489,6 +489,53 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 </section>
 </section>
 </section>
+<section id="mardi-2021-11-30">
+<h1>Mardi 2021-11-30<a class="headerlink" href="#mardi-2021-11-30" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="id2">
+<h2>Fonctions<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Révisions fonctions:</p>
+<ul class="simple">
+<li><p>ne pas utiliser de variable extérieure à la fonction</p></li>
+<li><p>si besoin de passer des informations, les passer par le biais des paramètres de la fonction.</p></li>
+</ul>
+<p>=&gt; Imaginer le déroulement comme des pièces de puzzle qui s”imbriquent les unes dans les autres, où les sorties de l”une sont les entrées de l”autre.</p>
+<p>On reprend exercice pour appeler des fonctions dans des fonctions.</p>
+<section id="id3">
+<h3>Exercice<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Décomposer un traitement en multiples fonctions.</p>
+<p>A partir d”un tableau qui contient les élèves (sous forme d”un tableau également), écrire les fonctions qui permettent leur affichage sous forme de cards.</p>
+<p>Commencer par écrire sa démarche sur papier, puis déterminer les fonctions (squelette) puis les coder.</p>
+<p>Une fois avancés, un peu d”aide :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">studentsDWWM</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s2">&quot;léponge&quot;</span><span class="p">,</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=léponge&quot;</span><span class="p">],</span>
+    <span class="p">[</span><span class="s2">&quot;émorti&quot;</span><span class="p">,</span> <span class="s2">&quot;rik&quot;</span><span class="p">,</span> <span class="s2">&quot;99&quot;</span><span class="p">,</span> <span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">],</span>
+<span class="p">];</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param {Array} students Tableau de tableaux [ [nom, prenom, age, avatar], ]</span>
+<span class="cm"> * @returns {string} Le html de toutes les cards de tous les étudiants</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">genCards</span><span class="p">(</span><span class="nx">students</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * </span>
+<span class="cm"> * @param {Array} student [nom, prenom, age, avatar]</span>
+<span class="cm"> * @returns {string} La card html pour un étudiant</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">genCard</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kd">function</span> <span class="nx">getStudentInfos</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="kd">function</span> <span class="nx">genHtmlCard</span><span class="p">(</span><span class="nx">header</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">footer</span><span class="p">)</span> <span class="p">{}</span>
+
+<span class="c1">// Appel de la fonction et écriture dans le HTML</span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;div#students&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">genCards</span><span class="p">(</span><span class="nx">studentsDWWM</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -566,6 +613,10 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <li class="toctree-l2"><a class="reference internal" href="#boucles-tableaux">Boucles + tableaux</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#fonctions">Fonctions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#etapes">2 étapes</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-11-30">Mardi 2021-11-30</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">Fonctions</a></li>
 </ul>
 </li>
 </ul>

@@ -1,0 +1,51 @@
+## Mardi 2021-11-30
+
+### Fonctions
+
+Révisions fonctions:
+
+* ne pas utiliser de variable extérieure à la fonction
+* si besoin de passer des informations, les passer par le biais des paramètres de la fonction.
+
+=> Imaginer le déroulement comme des pièces de puzzle qui s'imbriquent les unes dans les autres, où les sorties de l'une sont les entrées de l'autre.
+
+On reprend exercice pour appeler des fonctions dans des fonctions.
+
+#### Exercice
+
+Décomposer un traitement en multiples fonctions.
+
+A partir d'un tableau qui contient les élèves (sous forme d'un tableau également), écrire les fonctions qui permettent leur affichage sous forme de cards.
+
+Commencer par écrire sa démarche sur papier, puis déterminer les fonctions (squelette) puis les coder.
+
+Une fois avancés, un peu d'aide :
+
+```js
+const studentsDWWM = [
+    ["léponge", "bob", "5", "https://i.pravatar.cc/100?u=léponge"],
+    ["émorti", "rik", "99", "https://www.stevensegallery.com/100/100"],
+];
+
+/**
+ * 
+ * @param {Array} students Tableau de tableaux [ [nom, prenom, age, avatar], ]
+ * @returns {string} Le html de toutes les cards de tous les étudiants
+ */
+function genCards(students) {}
+
+/**
+ * 
+ * @param {Array} student [nom, prenom, age, avatar]
+ * @returns {string} La card html pour un étudiant
+ */
+function genCard(student) {}
+
+function getStudentInfos(student) {}
+
+function genHtmlCard(header, content, footer) {}
+
+// Appel de la fonction et écriture dans le HTML
+document.querySelector("div#students").innerHTML = genCards(studentsDWWM);
+
+```
