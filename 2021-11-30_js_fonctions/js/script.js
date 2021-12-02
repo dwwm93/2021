@@ -13,10 +13,12 @@ function login() {
         alert("Non connecté !");
     }
 }
-login();
+login(); // ici on exécute la fonction !!
 
 /**
  * Amélioration n°1
+ * 
+ * Fonction déclarée ici, et exécutée lorsqu'on clique sur le bouton dans le html.
  */
 function login_1() {
     const inputUser = prompt('Nom d\'utilisateur ?');
@@ -35,6 +37,9 @@ function login_1() {
 
 /**
  * Amélioration n°2
+ *
+ * Permet de recevoir de l'info depuis l'extérieur : la fonction est bien "portable", 
+ * on peut la passer à son camarade facilement.
  * 
  * @param {string} user Nom de l'utilisateur à tester
  * @param {string} pwd Bon mot de passe pour l'utilisateur
@@ -59,8 +64,14 @@ function login_2(user = "Marc", pwd = "azerty") {
  * 
  * Amélioration n°3
  * 
+ * Amélioration plus compliquée, qui consiste à séparer la fonction précédente en petits
+ * traitements indépendants, pour faciliter la maintenance et la portabilité.
+ * C'est plus facile de détecter les bugs puisqu'on peut tester les fonctions unes par unes.
+ * De plus on comprend bien ce qui se passe, puisque les appels successifs ont des noms clairs
+ * et rien qu'en les lisant on a "une sorte de phrase en anglais".
  * 
- * 
+ * On y gagne la possibilité d'externaliser les données auxquelles comparer, ce qui sera
+ * important quand on aura un back.
  */
 
 const storedCredentials = [
@@ -118,7 +129,10 @@ function notifyUser(message, selector = ".alert") {
 }
 
 /**
- * 
+ * Fonction à appeler dans le html et qui appelle toutes les autres.
+ * ATTENTION il faut bien lui passer les credentials "back" en paramètre lors de l'appel.
+ * CF dans le html
+ *
  * @param {Array} credentials Tableau des logins/mdp valides
  */
 function login_3(credentials) {
@@ -134,6 +148,13 @@ function login_3(credentials) {
     message += "<video style=\"width: 500px; height: 313.75px; left: 0px; top: 0px;\" alt=\"Happy Big Lebowski GIF\" src=\"https://media2.giphy.com/media/tyxovVLbfZdok/giphy.mp4?cid=ecf05e47ws8uw72w1j28tij0d5urucrn9uawtc2fr43241b1&amp;rid=giphy.mp4&amp;ct=g\" poster=\"https://media2.giphy.com/media/tyxovVLbfZdok/giphy_s.gif?cid=ecf05e47ws8uw72w1j28tij0d5urucrn9uawtc2fr43241b1&amp;rid=giphy_s.gif&amp;ct=g\" autoplay=\"\" loop=\"\" playsinline=\"\"></video>";
     notifyUser(message, "button#login3 + p.message");
 }
+
+
+/**
+ ***********
+ * EXERCICE
+ ***********
+ */
 
 
 const studentsDWWM = [
@@ -172,6 +193,7 @@ function getStudentInfos(student) {}
 function genHtmlCard(header, content, footer) {}
 document.querySelector("div#students").innerHTML = genCards(studentsDWWM);
 
-for (let i = 0; i < studentsDWWM.length; i++) {
-    document.querySelector("#avatars").innerHTML += "<img src='" + studentsDWWM[i][3] + "'/>";
-}
+// Affichage des avatars dans la page 
+// for (let i = 0; i < studentsDWWM.length; i++) {
+//    document.querySelector("#avatars").innerHTML += "<img src='" + studentsDWWM[i][3] + "'/>";
+//}
