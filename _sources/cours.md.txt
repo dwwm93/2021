@@ -527,3 +527,37 @@ function genHtmlCard(header, content, footer) {}
 document.querySelector("div#students").innerHTML = genCards(studentsDWWM);
 
 ```
+## Mercredi 2021-12-08
+
+On reprend l'exercice sur les cards pour les fonctions.
+
+### Révision complète sur les fonctions
+
+Ce n'était pas bien compris. On reprend avec l'exemple des processus/instructions dans l'administration :
+
+Comment se passe, quelles sont les étapes, de la création d'une CNI.
+
+De quoi le fonctionnaire a besoin en entrée de son traitement ? (une photo d'identité, un justificatif de domicile ...)
+
+Est-ce qu'on peut décomposer son traitement en sous-traitement ?
+
+=> cela pourrait donner plusieurs fonctions et sous fonctions.
+
+### Reprise de l'exercice
+
+Bien différencier le "return" d'une fonction, avec son traitement qui peut éventuellement "écrire dans le HTML".
+## Jeudi 2021-12-09
+
+Correction de l'exercice sur les Cards/fonctions.
+
+Beaucoup de difficultés dans le groupe. Se mettent à mélanger les concepts dès qu'il y en a un qu'ils ne comprennent pas.
+
+### Exercice simple fonction
+
+Créer un formulaire de 2 champs : montant et durée.
+
+Ajouter un bouton qui déclenche la multiplication du montant et de la durée, pour connaître son salaire au bout de X mois. Et l'afficher en dessous.
+
+Quand terminé, ajouter un select pour choisir la monnaie, et l'ajouter à l'affichage.
+
+Puis calculer la TVA et l'afficher entre parenthèses à côté.

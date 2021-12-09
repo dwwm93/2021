@@ -1,0 +1,15 @@
+## Jeudi 2021-12-09
+
+Correction de l'exercice sur les Cards/fonctions.
+
+Beaucoup de difficultés dans le groupe. Se mettent à mélanger les concepts dès qu'il y en a un qu'ils ne comprennent pas.
+
+### Exercice simple fonction
+
+Créer un formulaire de 2 champs : montant et durée.
+
+Ajouter un bouton qui déclenche la multiplication du montant et de la durée, pour connaître son salaire au bout de X mois. Et l'afficher en dessous.
+
+Quand terminé, ajouter un select pour choisir la monnaie, et l'ajouter à l'affichage.
+
+Puis calculer la TVA et l'afficher entre parenthèses à côté.
