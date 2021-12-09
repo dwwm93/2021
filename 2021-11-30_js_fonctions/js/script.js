@@ -186,11 +186,51 @@ function genCards(students) {
  * @param {Array} student [nom, prenom, age, avatar]
  * @returns {string} La card html pour un étudiant
  */
-function genCard(student) {}
+function genCard(student) {
+    const infos = getStudentInfos(student);
 
-function getStudentInfos(student) {}
+    return genHtmlCard("Elève", infos.avatar, infos.lastname + " " + infos.firstname, infos.age)
+}
 
-function genHtmlCard(header, content, footer) {}
+/**
+ * Sert d'interface pour renvoyer des données propres.
+ * 
+ * @param {Array} student 
+ * @returns {{firstname: string, lastname: string, avatar: string, age: string}}  Objet Elève
+ */
+function getStudentInfos(student) {
+    return {
+        lastname: student[0],
+        firstname: student[1],
+        age: student[2],
+        avatar: student[3],
+    };
+}
+
+/**
+ * @todo rajouter des tests sur la présence ou non du header / footer ??
+ * 
+ * @param {string} header 
+ * @param {*} image 
+ * @param {*} content 
+ * @param {*} footer 
+ * @returns 
+ */
+function genHtmlCard(header, image, content, footer) {
+    return `
+<div class="card" style="width: 18rem;">
+    <div class="card-header">
+        ${header}
+    </div>
+    <img class="card-img-top" src="${image}" alt="Card image cap"/>
+    <div class="card-body">
+        <p class="card-text">${content}</p>
+    </div>
+    <div class="card-footer text-muted">
+        ${footer}
+    </div>
+</div>`;
+}
 document.querySelector("div#students").innerHTML = genCards(studentsDWWM);
 
 // Affichage des avatars dans la page 
