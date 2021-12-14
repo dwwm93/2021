@@ -564,6 +564,97 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <p>Puis calculer la TVA et l”afficher entre parenthèses à côté.</p>
 </section>
 </section>
+<section id="mardi-2021-12-14">
+<h1>Mardi 2021-12-14<a class="headerlink" href="#mardi-2021-12-14" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="tableaux-associatifs">
+<h2>Tableaux associatifs<a class="headerlink" href="#tableaux-associatifs" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il s”agit d”un tableau donc les index ne sont pas numériques (comme on a eu l”habitude jusqu”à présent) mais « string ».</p>
+<p>Pour récupérer un élément dans un tableau normal, je dois indiquer sa position dans le tableau. (ex: <code class="docutils literal notranslate"><span class="pre">tableau[1]</span></code>).</p>
+<p>Dans un tableau associatif, je le récupère par sa clé (ex: <code class="docutils literal notranslate"><span class="pre">tableau[&quot;nom&quot;]</span></code>).</p>
+<section id="syntaxes-de-declaration-ecriture">
+<h3>2 syntaxes de déclaration / écriture<a class="headerlink" href="#syntaxes-de-declaration-ecriture" title="Lien permanent vers ce titre">¶</a></h3>
+<ol>
+<li><p>Les clés sont des strings, et on l”indique explicitement :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">eleve</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;SON_NOM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;SON_PRENOM&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mf">25</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+<li><p>Les clés sont toujours des strings mais c”est implicite :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">eleves</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">nom</span><span class="o">:</span> <span class="s2">&quot;SON_NOM&quot;</span><span class="p">,</span>
+    <span class="nx">prenom</span><span class="o">:</span> <span class="s2">&quot;SON_PRENOM&quot;</span><span class="p">,</span>
+    <span class="nx">age</span><span class="o">:</span> <span class="mf">25</span><span class="p">,</span>
+<span class="p">};</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="syntaxes-d-utilisation-lecture">
+<h3>2 syntaxes d”utilisation / lecture<a class="headerlink" href="#syntaxes-d-utilisation-lecture" title="Lien permanent vers ce titre">¶</a></h3>
+<ol>
+<li><p>Explicite, sur le même type que pour les tableaux à indices numériques :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">nom</span> <span class="o">=</span> <span class="nx">eleve</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">];</span>
+</pre></div>
+</div>
+</li>
+<li><p>Implicite, l”indice est collé avec « . », sans préciser qu”il s”agit d”une string</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">nom</span> <span class="o">=</span> <span class="nx">eleve</span><span class="p">.</span><span class="nx">nom</span><span class="p">;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="typage-et-commentaires">
+<h3>Typage et commentaires<a class="headerlink" href="#typage-et-commentaires" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
+<span class="cm"> * @param {{nom: string, prenom: string}} eleve - Elève à traiter</span>
+<span class="cm"> */</span>
+<span class="kd">function</span> <span class="nx">traitement</span><span class="p">(</span><span class="nx">eleve</span><span class="p">){}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id4">
+<h2>Exercice<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Afficher la liste des élèves dans une table HTML.</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">studentsDWWM</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;léponge&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=léponge&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;létoiledemer&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;patrick&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;25&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=létoiledemer&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;dragonball&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;105&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=z&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;han&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;sango&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=han&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;seagall&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;steven&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">},</span>
+    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;émorti&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;rik&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;99&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">},</span>
+<span class="p">];</span>
+</pre></div>
+</div>
+<p>=&gt; <a class="reference external" href="https://github.com/dwwm93/2021/tree/main/2021-12-14_tableaux_associatifs">exercice et corrigé</a></p>
+</section>
+<section id="tp-banque">
+<h2>TP Banque<a class="headerlink" href="#tp-banque" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="consignes">
+<h3>Consignes<a class="headerlink" href="#consignes" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>créer les tableaux JS par compte, qui contiennent les tableaux associatifs pour chaque ligne de compte ,</p></li>
+<li><p>afficher en HTML chaque compte dans un tableau html distinct</p></li>
+<li><p>calculer et afficher le solde du compte (le total du montant des opérations)
+exemple de tableau associatif pour une ligne de compte :</p></li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+   <span class="nx">operation</span><span class="o">:</span> <span class="s2">&quot;Kebab Royal&quot;</span><span class="p">,</span>
+   <span class="nx">montant</span><span class="o">:</span> <span class="mf">9.00</span><span class="p">,</span>
+   <span class="nx">date</span><span class="o">:</span> <span class="s2">&quot;2021/12/14&quot;</span><span class="p">,</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>=&gt; <a class="reference external" href="https://github.com/dwwm93/2021/tree/main/2021-12-09%20tp%20banque">exercice et corrigé</a></p>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -654,6 +745,12 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#jeudi-2021-12-09">Jeudi 2021-12-09</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#exercice-simple-fonction">Exercice simple fonction</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2021-12-14">Mardi 2021-12-14</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#tableaux-associatifs">Tableaux associatifs</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#tp-banque">TP Banque</a></li>
 </ul>
 </li>
 </ul>

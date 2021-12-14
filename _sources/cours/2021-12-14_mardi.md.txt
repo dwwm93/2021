@@ -1,0 +1,90 @@
+## Mardi 2021-12-14
+
+### Tableaux associatifs
+
+Il s'agit d'un tableau donc les index ne sont pas numériques (comme on a eu l'habitude jusqu'à présent) mais "string".
+
+Pour récupérer un élément dans un tableau normal, je dois indiquer sa position dans le tableau. (ex: `tableau[1]`).
+
+Dans un tableau associatif, je le récupère par sa clé (ex: `tableau["nom"]`).
+
+#### 2 syntaxes de déclaration / écriture
+
+1. Les clés sont des strings, et on l'indique explicitement :
+
+    ```js
+    const eleve = {
+        "nom": "SON_NOM",
+        "prenom": "SON_PRENOM",
+        "age": 25,
+    };
+    ```
+
+2. Les clés sont toujours des strings mais c'est implicite :
+
+    ```js
+    const eleves = {
+        nom: "SON_NOM",
+        prenom: "SON_PRENOM",
+        age: 25,
+    };
+    ```
+
+#### 2 syntaxes d'utilisation / lecture
+
+1. Explicite, sur le même type que pour les tableaux à indices numériques :
+
+    ```js
+    const nom = eleve["nom"];
+    ```
+
+2. Implicite, l'indice est collé avec ".", sans préciser qu'il s'agit d'une string
+
+    ```js
+    const nom = eleve.nom;
+    ```
+
+#### Typage et commentaires
+
+```js
+/**
+ * @param {{nom: string, prenom: string}} eleve - Elève à traiter
+ */
+function traitement(eleve){}
+```
+
+### Exercice
+
+Afficher la liste des élèves dans une table HTML.
+
+```js
+const studentsDWWM = [
+    {"nom": "léponge","prenom": "bob","age" : "5","avatar": "https://i.pravatar.cc/100?u=léponge"},
+    {"nom": "létoiledemer","prenom": "patrick","age" : "25","avatar": "https://i.pravatar.cc/100?u=létoiledemer"},
+    {"nom": "z","prenom": "dragonball","age" : "105","avatar": "https://i.pravatar.cc/100?u=z"},
+    {"nom": "han","prenom": "sango","age" : "12","avatar": "https://i.pravatar.cc/100?u=han"},
+    {"nom": "seagall","prenom": "steven","age" : "?","avatar": "https://www.stevensegallery.com/100/100"},
+    {"nom": "émorti","prenom": "rik","age" : "99","avatar": "https://www.stevensegallery.com/100/100"},
+];
+```
+
+=> [exercice et corrigé](https://github.com/dwwm93/2021/tree/main/2021-12-14_tableaux_associatifs)
+
+### TP Banque
+
+#### Consignes
+
+1. créer les tableaux JS par compte, qui contiennent les tableaux associatifs pour chaque ligne de compte ,
+2. afficher en HTML chaque compte dans un tableau html distinct
+3. calculer et afficher le solde du compte (le total du montant des opérations)
+exemple de tableau associatif pour une ligne de compte :
+
+```js
+{
+   operation: "Kebab Royal",
+   montant: 9.00,
+   date: "2021/12/14",
+}
+```
+
+=> [exercice et corrigé](https://github.com/dwwm93/2021/tree/main/2021-12-09%20tp%20banque)
