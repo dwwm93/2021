@@ -1,0 +1,9 @@
+nav>ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-evenly;
+}
+
+h2::after {
+    content: " €";
+}
