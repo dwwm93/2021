@@ -651,3 +651,17 @@ exemple de tableau associatif pour une ligne de compte :
 ```
 
 => [exercice et corrigé](https://github.com/dwwm93/2021/tree/main/2021-12-09%20tp%20banque)
+## Lundi 2021/12/20
+
+1. Exercice site de vente en ligne "Esat", à continuer
+2. Correction site TP Banque "Marc"
+
+Beaucoup de points revus ou à revoir sur ces exercices "généralistes".
+
+### Précisions sur les @typedef
+
+```js
+/**
+ * @typedef {xxx} NomType - description
+ */
+```
