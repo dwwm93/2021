@@ -42,7 +42,9 @@ function afficheCadeaux(tableau) {
   // 4. je dois récupérer la valeur de l'input et l'ajouter dans le tableau !
   const nouveauCadeau = getInputValue('form>input[name="nouveauCadeau"]');
   // 5. je dois récupérer le destinataire du cadeau !
-  const destinataire = getInputValue('form>input[name="destinataire"]');
+  const destinataire = getInputValue(
+    'form>input[name="destinataire"]'
+  ).toLowerCase();
 
   // const nouveauCadeau = document.forms["formAjoutCadeau"]["nouveauCadeau"].value
   if (nouveauCadeau) {
