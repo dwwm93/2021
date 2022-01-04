@@ -27,26 +27,57 @@ et afficher autant de listes différentes qu'il y a de personnes qui veulent des
     const cadeaux = { 'esat' : ['tesla'], 'marc': ... } 
 */
 
-const cadeaux = ["livre", "stylo", "sérieux", "rigueur", "persévérance"];
+/** @var {Object<string, Array<string>>} cadeaux */
+const cadeaux = {
+  ismail: ["livre", "stylo", "sérieux", "rigueur", "persévérance"],
+};
 
 /**
  * Affiche la liste des cadeaux souhaités pour Noël.
  *
- * @param {Array<string>} tableau - Tableau des cadeaux
+ * @param {Object<string, Array<string>>} tableau - Tableau associatif des cadeaux
  * @returns {void} Le html est inséré dans index.html
  */
 function afficheCadeaux(tableau) {
-  //4. je dois récupérer la valeur de l'input et l'ajouter dans le tableau !
+  // 4. je dois récupérer la valeur de l'input et l'ajouter dans le tableau !
   const nouveauCadeau = getInputValue('form>input[name="nouveauCadeau"]');
+  // 5. je dois récupérer le destinataire du cadeau !
+  const destinataire = getInputValue('form>input[name="destinataire"]');
+
   // const nouveauCadeau = document.forms["formAjoutCadeau"]["nouveauCadeau"].value
   if (nouveauCadeau) {
-    tableau.push(nouveauCadeau);
+    if (tableau[destinataire] === undefined) {
+      tableau[destinataire] = [];
+    }
+    tableau[destinataire].push(nouveauCadeau);
   }
 
-  const html = genListeHTML(tableau);
+  const html = genListeCadeauxHTML(tableau);
   // 3. elle doit insérer le HTML dans le index.html
-  document.querySelector("article>ul#listeCadeaux").innerHTML = html;
+  document.querySelector("article>section#listeCadeaux").innerHTML = html;
   // Attention : fonction sans "return" !! RARE !!
+}
+
+/**
+ * Génère plusieurs listes au format HTML à partir d'un tableau associatif JS.
+ *
+ * @param {Object<string, Array<string>>} tableau - Tableau associatif à afficher
+ * @returns {string} HTML généré
+ */
+function genListeCadeauxHTML(tableau) {
+  let html = "";
+  for (let destinataire in tableau) {
+    const cadeaux = tableau[destinataire];
+    const li = genListeHTML(cadeaux);
+    html += `
+      <section>
+        <h2>${destinataire}</h2>
+        <ul>
+            ${li}
+        </ul>
+      </section>`;
+  }
+  return html;
 }
 
 /**
