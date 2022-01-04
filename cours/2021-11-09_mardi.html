@@ -44,14 +44,14 @@
 <p>Permet de ne sélectionner un élement que s”il est le « n-ième » enfant de son parent.</p>
 <p>Le test est valide si le numéro « x » de l”élément est bien égal à un moment à la formule « An+B » (avec n qui va de 0 au max des enfants).</p>
 <p>exemple :</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/** Le &lt;li&gt; ne sera rouge que s&#39;il est le 3ème enfant de son parent */</span>
-<span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">red</span><span class="p">;</span>
-<span class="p">}</span>
-<span class="c">/** le &lt;li&gt; sera gris uniquement s&#39;il est impair : car si n vaut 0 alors on grise le &lt;li&gt; numéro 2*0+1 (donc 1), quand n vaut 1 alors on grise le &lt;li&gt; numéro 3, puis pour n vaut 2 on grise le 5 etc. */</span> 
-<span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span> <span class="p">{</span>
-    <span class="k">background-color</span><span class="p">:</span> <span class="kc">gray</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/** Le &lt;li&gt; ne sera rouge que s&#39;il est le 3ème enfant de son parent */</span><span class="w"></span>
+<span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">3</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">red</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="c">/** le &lt;li&gt; sera gris uniquement s&#39;il est impair : car si n vaut 0 alors on grise le &lt;li&gt; numéro 2*0+1 (donc 1), quand n vaut 1 alors on grise le &lt;li&gt; numéro 3, puis pour n vaut 2 on grise le 5 etc. */</span><span class="w"> </span>
+<span class="nt">li</span><span class="p">:</span><span class="nd">nth-child</span><span class="o">(</span><span class="nt">2n</span><span class="o">+</span><span class="nt">1</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">gray</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Il existe aussi le modificateur qui compte à partir de la fin : <code class="docutils literal notranslate"><span class="pre">:nth-last-child(An+B)</span></code>.</p>
@@ -61,10 +61,10 @@
 <h3>Modificateurs css : <code class="docutils literal notranslate"><span class="pre">::after</span></code><a class="headerlink" href="#modificateurs-css-after" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Permet d”écrire un contenu après l”élément selectionné par le selecteur css.</p>
 <p>exemple:</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/** met une virgule à la fin de tous les &lt;li&gt; */</span>
-<span class="nt">li</span><span class="p">::</span><span class="nd">after</span> <span class="p">{</span>
-    <span class="k">content</span><span class="p">:</span> <span class="s1">&#39;, &#39;</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="c">/** met une virgule à la fin de tous les &lt;li&gt; */</span><span class="w"></span>
+<span class="nt">li</span><span class="p">::</span><span class="nd">after</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="k">content</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;, &#39;</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>

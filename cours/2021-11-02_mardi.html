@@ -61,17 +61,17 @@ la photo, le nom/prénom, les compétences et les langues.</p>
 <p>Présentation des <code class="docutils literal notranslate"><span class="pre">&#64;media-queries</span></code>.</p>
 <p>Référence sur <a class="reference external" href="https://developer.mozilla.org/fr/docs/Web/CSS/Media_Queries/Using_media_queries">developper mozilla</a>.</p>
 <p>Exemple</p>
-<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">selecteur</span> <span class="p">{</span>
-    <span class="n">propriété</span><span class="p">:</span> <span class="n">valeur1</span><span class="p">;</span>
-    <span class="n">autre_prop</span><span class="p">:</span> <span class="n">autre_valeur</span><span class="p">;</span>
-<span class="p">}</span>
+<div class="highlight-css notranslate"><div class="highlight"><pre><span></span><span class="p">.</span><span class="nc">selecteur</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="n">propriété</span><span class="p">:</span><span class="w"> </span><span class="n">valeur1</span><span class="p">;</span><span class="w"></span>
+<span class="w">    </span><span class="n">autre_prop</span><span class="p">:</span><span class="w"> </span><span class="n">autre_valeur</span><span class="p">;</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 
-<span class="p">@</span><span class="k">media</span> <span class="nt">screen</span> <span class="nt">and</span> <span class="o">(</span><span class="nt">max-width</span><span class="o">:</span> <span class="nt">376px</span><span class="o">)</span> <span class="p">{</span>
-    <span class="p">.</span><span class="nc">selecteur</span> <span class="p">{</span>
-        <span class="n">propriété</span><span class="p">:</span> <span class="n">valeur2</span><span class="p">;</span> <span class="c">/** écrase la valeur 1 */</span>
-        <span class="c">/** mais se cumule avec autre_prop de valeur autre_valeur */</span>
-    <span class="p">}</span>
-<span class="p">}</span>
+<span class="p">@</span><span class="k">media</span><span class="w"> </span><span class="nt">screen</span><span class="w"> </span><span class="nt">and</span><span class="w"> </span><span class="o">(</span><span class="nt">max-width</span><span class="o">:</span><span class="w"> </span><span class="nt">376px</span><span class="o">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="p">.</span><span class="nc">selecteur</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="n">propriété</span><span class="p">:</span><span class="w"> </span><span class="n">valeur2</span><span class="p">;</span><span class="w"> </span><span class="c">/** écrase la valeur 1 */</span><span class="w"></span>
+<span class="w">        </span><span class="c">/** mais se cumule avec autre_prop de valeur autre_valeur */</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <blockquote>
