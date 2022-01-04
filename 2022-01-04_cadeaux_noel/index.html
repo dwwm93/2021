@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste de cadeaux de Noël</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+
+  <body>
+    <article>
+      <h1>Ajout d'un cadeau</h1>
+      <form action="" name="formAjoutCadeau">
+        <input
+          type="text"
+          name="nouveauCadeau"
+          id="nouveauCadeau"
+          placeholder="Cadeau souhaité ..."
+        />
+        <button type="button" onclick="afficheCadeaux(cadeaux)">
+          J'ai été sage !
+        </button>
+      </form>
+    </article>
+    <article>
+      <h1>Liste des cadeaux</h1>
+      <!-- Insérer la liste HTML des cadeaux -->
+      <ul id="listeCadeaux"></ul>
+    </article>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
