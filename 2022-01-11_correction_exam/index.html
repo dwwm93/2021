@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Trombinoscope DWWM 93 - 2021/2022</title>
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+      integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA=="
+      crossorigin="anonymous"
+    />
+    <script src="./js/script.js" defer></script>
+  </head>
+  <body>
+    <nav id="menu">
+      <img
+        src="https://lyceejeanpierretimbaud.fr/wp-content/uploads/2019/06/unnamed-2.png"
+        alt="logo greta"
+      />
+      <ul></ul>
+    </nav>
+
+    <main>
+      <article>
+        <h1>Liste élèves</h1>
+        <section id="listeEleves">
+          <!-- 
+            insérer un ul avec les eleves en js
+        --></section>
+      </article>
+    </main>
+
+    <section id="modal">
+      <header>
+        Détail élève
+        <button
+          onclick="document.querySelector('#modal').style['display'] = 'none';"
+        >
+          <i class="fas fa-close"></i>x
+        </button>
+      </header>
+      <section id="content"></section>
+    </section>
+
+    <footer>DWWM 93 - 2021/2022 - El Profesor</footer>
+  </body>
+</html>

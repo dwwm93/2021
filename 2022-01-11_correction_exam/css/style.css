@@ -1,0 +1,45 @@
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav > ul {
+  display: flex;
+  list-style-type: none;
+  text-transform: capitalize;
+}
+nav > ul > li {
+  padding: 0px 10px;
+}
+
+article > #listeEleves {
+  max-width: 800px;
+}
+
+article > #listeEleves > ul > li {
+  display: flex;
+  list-style-type: none;
+  text-transform: capitalize;
+  align-items: center;
+}
+article > #listeEleves > ul > li > button {
+  margin-left: auto;
+}
+
+#modal {
+  display: none;
+  background-color: white;
+  box-shadow: black 1px 2px 5px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  max-width: 50rem;
+  flex-direction: column;
+}
+
+footer {
+  text-align: center;
+}
