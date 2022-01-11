@@ -665,3 +665,218 @@ Beaucoup de points revus ou à revoir sur ces exercices "généralistes".
  * @typedef {xxx} NomType - description
  */
 ```
+## Lundi 2022/01/03
+
+Reprise à distance après les vacances.
+
+On reprend du temps pour faire les exercices sur les cadeaux de noel.
+
+[voir code associé](https://www.github.com/dwwm93/2021/tree/main/2022-01-04_cadeaux_noel)
+
+### Nouveautés
+
+* push dans un tableau
+* (revision) écrire dans un tableau associatif (`tableau["clé"] = "test"`)
+* markdown dans discord
+* parcourir les clés d'un tableau associatif avec `for (clé in tableau) { ... }`
+* `if ( undefined )` est comme `if (false)`
+* sensibilité à la "casse" [wikipedia](https://fr.wikipedia.org/wiki/Sensibilit%C3%A9_%C3%A0_la_casse)
+## Mardi 2022/01/04
+
+Correction de l'exercice 2 des cadeaux de Noël en live coding.
+
+\+ réponse aux questions soulevées
+## Lundi 2022/01/10
+
+Débrief examen de vendredi d'avant par Esat.
+
+### Approfondissement jquery
+
+=> `$` est le nom de la fonction `jQuery` (oui c'est bizarre !).
+
+#### Fonctionnement
+
+Quand je fais en jquery : 
+
+```js
+$('thead').addClass('hello');
+```
+
+je fais 2 actions successives :
+
+1. je récupère l'élement HTML associé au selector
+2. je déclenche la fonction "addClass" de jquery qui ajoute la classe dans le html sur l'élement récupéré en 1 !!!!!
+
+#### Reprise sur les getter/setter
+
+```js
+/** getter = pour recuperer la valeur d'un champs du formulaire (input,select,textarea...)
+ * utiliser :
+ */
+const res = $(selecteur).val() 
+/**
+ *  setter =pour modifier la valeur d'un champs du formulaire (input,select,textarea...)
+ * utiliser : 
+ */
+$(selecteur).val("la nouvelle valeur") 
+
+/** getter = pour recuperer le text d'une balise (div,p,span...)
+ *  on utilise :
+ */
+const res2 = $(selecteur).text() 
+/**
+ *  setter = pour modifier le text d'une balise (div,p,span...)
+ *  on utilise :
+ */
+$(selecteur).text("le nouveau text") 
+
+/** getter = pour recuperer le html d'une balise (div,p,span...)
+ *  on utilise :
+ */
+const res3 = $(selecteur).html() 
+/**
+ *  setter = pour modifier le html d'une balise (div,p,span...)
+ *  on utilise :
+ */
+$(selecteur).html("<p>le nouveau html</p>") 
+
+/** getter = pour recuperer l'attribut d'une balise quelconque (ex: href pour a ..)
+ *  on utilise :
+ */
+const res4 = $(selecteur).attr('href') 
+/**
+ *  setter = pour modifier un attribut d'une balise (div,p,span...)
+ *  on utilise :
+ */
+$(selecteur).attr('href', 'https://impots.gouv.fr') 
+```
+
+#### Exercices jQuery W3schools
+
+[w3schools](https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1)
+
+On les fait presque tous  (selectors , get, set, add, remove, hide and show, etc.) sauf events surtout
+
+#### Découverte des "Events"
+
+en français les "événements"
+
+=> on est capables de déclencher des fonctions javascript , lorsque certains "events" ont lieu
+
+2 parties prenantes dans ce sujet :
+
+1. l'événement en tant que tel associé à l'élément HTML qui l'a déclenché
+2. la fonction qui "écoute" les événements, pour se déclencher quand elle en voit un passer qui correspond à ce qu'elle attend
+
+```js
+$("button").click(function(){
+  $(this).hide();
+});
+```
+
+⚠️  attention, ça ne veut pas dire que le js déclenche le click, mais qu'il réagit s'il y a un clic !
+
+ici le this correspond à l'élément qui a déclenché l'événement, donc c'est "button" et $(this) ça nous renvoie le bouton en version "jquery".
+
+##### Syntaxe bis
+
+```js
+$(selector).on("event", function(){ .....;});
+```
+
+avec "event" : "click", "dblclik" etc.
+
+#### Nouveautés
+
+* méthodes :
+  * une fonction : `xxxx(yyy)` : la fonction est générique
+  * une méthode : `machin.xxxx(yyy)` : la fonction s'applique sur machin
+* callback
+* this
+
+### Exercice
+
+> Faire un formulaire
+
+1. validation des champs email quand j'écris dans chaque intput (keypress) et souligner en rouge tant que c'est faux
+2. changer la couleur du bouton en "gris" et non cliquable (désactivé), quand on clique sur "envoyer"
+3. Afficher l'aide au survol des inputs (et ça change le texte en orange)
+
+#### Correction 1
+
+```js
+$('input').on("keypress", function (){
+  const input = $(this);
+  const inputVal = input.val();
+  if (!/^[\w]+@[\w]+\.[\w]{1,3}$/.test(inputVal)) {
+    input.addClass("error");
+  } else {
+    input.removeClass("error");
+  }
+})
+```
+## Mardi 2022/01/11
+
+Révisions event jQuery :
+
+```js
+function isEmail(){
+  // contenu
+}
+$('input').on("keypress", isEmail)
+```
+
+Ici on a une fonction nommée, alors qu'hier on a vu des fonctions "anonymes".
+
+> le principe de passer une fonction déclarée, non exécutée, à exécuter plus tard (quand l'événement "keypress" survient), s'appelle passer une fonction callback.
+
+### Exercice d'hier
+
+On continue + correction
+
+Si vous avez trop de temps : on fait un bouton qui affiche la modal qui contient le formulaire des questions 1., 2 et 3
+
+contrainte : au moins une fois, utiliser une fonction "non anonyme", donc déclarée avant
+
+#### Désactiver le bouton du formulaire quand on clique dessus
+
+```js
+function disableButton(button) {
+    $(button).attr('disabled', true)
+}
+$('form#exercice>button').on('click', function(){
+    disableButton(this);
+})
+```
+
+#### Afficher une aide au survol de l'input et passer le texte en orange
+
+```js
+function afficheAide(){
+  $(this).addClass('text-orange');
+  $('#helperText').show();
+}
+$('form#exercice>input.helper').on('mouseenter', afficheAide);
+```
+
+#### Afficher / cacher la modal avec le formulaire
+
+```js
+$('button#showModal').on('click', function() {
+  $('#modal').toggle();
+})
+```
+
+### Révision callback avec le visiteur du futur
+
+[visiteur ep1](https://www.youtube.com/watch?v=1wtGLc_Fvf0)
+
+un callback c'est "voilà ce qui va se passer" !
+
+Tu sais que Paris va exploser, mais tant que t'as pas jeté la canette ça se passera pas.
+
+Nous c'est pareil, tu fais une fonction que tu n'exécutes pas, tu sais ce qu'il va se passer, mais l'exécution est retardée au clic de l'utilisateur par ex.
+
+### Correction exam en live coding
+
+[voir code associé](https://www.github.com/dwwm93/2021/tree/main/2022-01-10_correction_exam)

@@ -1,0 +1,65 @@
+## Mardi 2022/01/11
+
+Révisions event jQuery :
+
+```js
+function isEmail(){
+  // contenu
+}
+$('input').on("keypress", isEmail)
+```
+
+Ici on a une fonction nommée, alors qu'hier on a vu des fonctions "anonymes".
+
+> le principe de passer une fonction déclarée, non exécutée, à exécuter plus tard (quand l'événement "keypress" survient), s'appelle passer une fonction callback.
+
+### Exercice d'hier
+
+On continue + correction
+
+Si vous avez trop de temps : on fait un bouton qui affiche la modal qui contient le formulaire des questions 1., 2 et 3
+
+contrainte : au moins une fois, utiliser une fonction "non anonyme", donc déclarée avant
+
+#### Désactiver le bouton du formulaire quand on clique dessus
+
+```js
+function disableButton(button) {
+    $(button).attr('disabled', true)
+}
+$('form#exercice>button').on('click', function(){
+    disableButton(this);
+})
+```
+
+#### Afficher une aide au survol de l'input et passer le texte en orange
+
+```js
+function afficheAide(){
+  $(this).addClass('text-orange');
+  $('#helperText').show();
+}
+$('form#exercice>input.helper').on('mouseenter', afficheAide);
+```
+
+#### Afficher / cacher la modal avec le formulaire
+
+```js
+$('button#showModal').on('click', function() {
+  $('#modal').toggle();
+})
+```
+
+### Révision callback avec le visiteur du futur
+
+[visiteur ep1](https://www.youtube.com/watch?v=1wtGLc_Fvf0)
+
+un callback c'est "voilà ce qui va se passer" !
+
+Tu sais que Paris va exploser, mais tant que t'as pas jeté la canette ça se passera pas.
+
+Nous c'est pareil, tu fais une fonction que tu n'exécutes pas, tu sais ce qu'il va se passer, mais l'exécution est retardée au clic de l'utilisateur par ex.
+
+### Correction exam en live coding
+
+[voir code associé](https://www.github.com/dwwm93/2021/tree/main/2022-01-10_correction_exam)

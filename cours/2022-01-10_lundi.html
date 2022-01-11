@@ -1,0 +1,251 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Lundi 2022/01/10 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="lundi-2022-01-10">
+<h1>Lundi 2022/01/10<a class="headerlink" href="#lundi-2022-01-10" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Débrief examen de vendredi d”avant par Esat.</p>
+<section id="approfondissement-jquery">
+<h2>Approfondissement jquery<a class="headerlink" href="#approfondissement-jquery" title="Lien permanent vers ce titre">¶</a></h2>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">$</span></code> est le nom de la fonction <code class="docutils literal notranslate"><span class="pre">jQuery</span></code> (oui c”est bizarre !).</p>
+<section id="fonctionnement">
+<h3>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Quand je fais en jquery :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>je fais 2 actions successives :</p>
+<ol class="simple">
+<li><p>je récupère l”élement HTML associé au selector</p></li>
+<li><p>je déclenche la fonction « addClass » de jquery qui ajoute la classe dans le html sur l”élement récupéré en 1 !!!!!</p></li>
+</ol>
+</section>
+<section id="reprise-sur-les-getter-setter">
+<h3>Reprise sur les getter/setter<a class="headerlink" href="#reprise-sur-les-getter-setter" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/** getter = pour recuperer la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
+<span class="cm"> * utiliser :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter =pour modifier la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
+<span class="cm"> * utiliser : </span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;la nouvelle valeur&quot;</span><span class="p">)</span> 
+
+<span class="cm">/** getter = pour recuperer le text d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res2</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter = pour modifier le text d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;le nouveau text&quot;</span><span class="p">)</span> 
+
+<span class="cm">/** getter = pour recuperer le html d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res3</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter = pour modifier le html d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;le nouveau html&lt;/p&gt;&quot;</span><span class="p">)</span> 
+
+<span class="cm">/** getter = pour recuperer l&#39;attribut d&#39;une balise quelconque (ex: href pour a ..)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res4</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter = pour modifier un attribut d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="s1">&#39;https://impots.gouv.fr&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</section>
+<section id="exercices-jquery-w3schools">
+<h3>Exercices jQuery W3schools<a class="headerlink" href="#exercices-jquery-w3schools" title="Lien permanent vers ce titre">¶</a></h3>
+<p><a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
+<p>On les fait presque tous  (selectors , get, set, add, remove, hide and show, etc.) sauf events surtout</p>
+</section>
+<section id="decouverte-des-events">
+<h3>Découverte des « Events »<a class="headerlink" href="#decouverte-des-events" title="Lien permanent vers ce titre">¶</a></h3>
+<p>en français les « événements »</p>
+<p>=&gt; on est capables de déclencher des fonctions javascript , lorsque certains « events » ont lieu</p>
+<p>2 parties prenantes dans ce sujet :</p>
+<ol class="simple">
+<li><p>l”événement en tant que tel associé à l”élément HTML qui l”a déclenché</p></li>
+<li><p>la fonction qui « écoute » les événements, pour se déclencher quand elle en voit un passer qui correspond à ce qu”elle attend</p></li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>⚠️  attention, ça ne veut pas dire que le js déclenche le click, mais qu”il réagit s”il y a un clic !</p>
+<p>ici le this correspond à l”élément qui a déclenché l”événement, donc c”est « button » et $(this) ça nous renvoie le bouton en version « jquery ».</p>
+<section id="syntaxe-bis">
+<h4>Syntaxe bis<a class="headerlink" href="#syntaxe-bis" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">.....;});</span>
+</pre></div>
+</div>
+<p>avec « event » : « click », « dblclik » etc.</p>
+</section>
+</section>
+<section id="nouveautes">
+<h3>Nouveautés<a class="headerlink" href="#nouveautes" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>méthodes :</p>
+<ul>
+<li><p>une fonction : <code class="docutils literal notranslate"><span class="pre">xxxx(yyy)</span></code> : la fonction est générique</p></li>
+<li><p>une méthode : <code class="docutils literal notranslate"><span class="pre">machin.xxxx(yyy)</span></code> : la fonction s”applique sur machin</p></li>
+</ul>
+</li>
+<li><p>callback</p></li>
+<li><p>this</p></li>
+</ul>
+</section>
+</section>
+<section id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>Faire un formulaire</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>validation des champs email quand j”écris dans chaque intput (keypress) et souligner en rouge tant que c”est faux</p></li>
+<li><p>changer la couleur du bouton en « gris » et non cliquable (désactivé), quand on clique sur « envoyer »</p></li>
+<li><p>Afficher l”aide au survol des inputs (et ça change le texte en orange)</p></li>
+</ol>
+<section id="correction-1">
+<h3>Correction 1<a class="headerlink" href="#correction-1" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(){</span>
+  <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">inputVal</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="sr">/^[\w]+@[\w]+\.[\w]{1,3}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">inputVal</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">input</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">input</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2021</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Lundi 2021-10-18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-10-19">Mardi 2021-10-19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-10-25">Lundi 2021-10-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-02">Mardi 2021-11-02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-09">Mardi 2021-11-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-16">Mardi 2021-11-16</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-17">Mercredi 2021-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-23">Mardi 2021/11/23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-24">Mercredi 2021/11/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-30">Mardi 2021-11-30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-12-08">Mercredi 2021-12-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#jeudi-2021-12-09">Jeudi 2021-12-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-12-14">Mardi 2021-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-12-20">Lundi 2021/12/20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-03">Lundi 2022/01/03</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-04">Mardi 2022/01/04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-10">Lundi 2022/01/10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-11">Mardi 2022/01/11</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.3.2</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/2022-01-10_lundi.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

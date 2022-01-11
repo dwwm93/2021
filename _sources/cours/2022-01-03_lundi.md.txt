@@ -1,0 +1,16 @@
+## Lundi 2022/01/03
+
+Reprise à distance après les vacances.
+
+On reprend du temps pour faire les exercices sur les cadeaux de noel.
+
+[voir code associé](https://www.github.com/dwwm93/2021/tree/main/2022-01-04_cadeaux_noel)
+
+### Nouveautés
+
+* push dans un tableau
+* (revision) écrire dans un tableau associatif (`tableau["clé"] = "test"`)
+* markdown dans discord
+* parcourir les clés d'un tableau associatif avec `for (clé in tableau) { ... }`
+* `if ( undefined )` est comme `if (false)`
+* sensibilité à la "casse" [wikipedia](https://fr.wikipedia.org/wiki/Sensibilit%C3%A9_%C3%A0_la_casse)

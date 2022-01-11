@@ -671,6 +671,219 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 </div>
 </section>
 </section>
+<section id="lundi-2022-01-03">
+<h1>Lundi 2022/01/03<a class="headerlink" href="#lundi-2022-01-03" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Reprise à distance après les vacances.</p>
+<p>On reprend du temps pour faire les exercices sur les cadeaux de noel.</p>
+<p><a class="reference external" href="https://www.github.com/dwwm93/2021/tree/main/2022-01-04_cadeaux_noel">voir code associé</a></p>
+<section id="nouveautes">
+<h2>Nouveautés<a class="headerlink" href="#nouveautes" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>push dans un tableau</p></li>
+<li><p>(revision) écrire dans un tableau associatif (<code class="docutils literal notranslate"><span class="pre">tableau[&quot;clé&quot;]</span> <span class="pre">=</span> <span class="pre">&quot;test&quot;</span></code>)</p></li>
+<li><p>markdown dans discord</p></li>
+<li><p>parcourir les clés d”un tableau associatif avec <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">(clé</span> <span class="pre">in</span> <span class="pre">tableau)</span> <span class="pre">{</span> <span class="pre">...</span> <span class="pre">}</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(</span> <span class="pre">undefined</span> <span class="pre">)</span></code> est comme <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">(false)</span></code></p></li>
+<li><p>sensibilité à la « casse » <a class="reference external" href="https://fr.wikipedia.org/wiki/Sensibilit%C3%A9_%C3%A0_la_casse">wikipedia</a></p></li>
+</ul>
+</section>
+</section>
+<section id="mardi-2022-01-04">
+<h1>Mardi 2022/01/04<a class="headerlink" href="#mardi-2022-01-04" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Correction de l”exercice 2 des cadeaux de Noël en live coding.</p>
+<p>+ réponse aux questions soulevées</p>
+</section>
+<section id="lundi-2022-01-10">
+<h1>Lundi 2022/01/10<a class="headerlink" href="#lundi-2022-01-10" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Débrief examen de vendredi d”avant par Esat.</p>
+<section id="approfondissement-jquery">
+<h2>Approfondissement jquery<a class="headerlink" href="#approfondissement-jquery" title="Lien permanent vers ce titre">¶</a></h2>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">$</span></code> est le nom de la fonction <code class="docutils literal notranslate"><span class="pre">jQuery</span></code> (oui c”est bizarre !).</p>
+<section id="fonctionnement">
+<h3>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Quand je fais en jquery :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>je fais 2 actions successives :</p>
+<ol class="simple">
+<li><p>je récupère l”élement HTML associé au selector</p></li>
+<li><p>je déclenche la fonction « addClass » de jquery qui ajoute la classe dans le html sur l”élement récupéré en 1 !!!!!</p></li>
+</ol>
+</section>
+<section id="reprise-sur-les-getter-setter">
+<h3>Reprise sur les getter/setter<a class="headerlink" href="#reprise-sur-les-getter-setter" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/** getter = pour recuperer la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
+<span class="cm"> * utiliser :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter =pour modifier la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
+<span class="cm"> * utiliser : </span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;la nouvelle valeur&quot;</span><span class="p">)</span> 
+
+<span class="cm">/** getter = pour recuperer le text d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res2</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter = pour modifier le text d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;le nouveau text&quot;</span><span class="p">)</span> 
+
+<span class="cm">/** getter = pour recuperer le html d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res3</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter = pour modifier le html d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;le nouveau html&lt;/p&gt;&quot;</span><span class="p">)</span> 
+
+<span class="cm">/** getter = pour recuperer l&#39;attribut d&#39;une balise quelconque (ex: href pour a ..)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="kd">const</span> <span class="nx">res4</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> 
+<span class="cm">/**</span>
+<span class="cm"> *  setter = pour modifier un attribut d&#39;une balise (div,p,span...)</span>
+<span class="cm"> *  on utilise :</span>
+<span class="cm"> */</span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="s1">&#39;https://impots.gouv.fr&#39;</span><span class="p">)</span> 
+</pre></div>
+</div>
+</section>
+<section id="exercices-jquery-w3schools">
+<h3>Exercices jQuery W3schools<a class="headerlink" href="#exercices-jquery-w3schools" title="Lien permanent vers ce titre">¶</a></h3>
+<p><a class="reference external" href="https://www.w3schools.com/jquery/exercise_jq.asp?filename=exercise_jq_selectors1">w3schools</a></p>
+<p>On les fait presque tous  (selectors , get, set, add, remove, hide and show, etc.) sauf events surtout</p>
+</section>
+<section id="decouverte-des-events">
+<h3>Découverte des « Events »<a class="headerlink" href="#decouverte-des-events" title="Lien permanent vers ce titre">¶</a></h3>
+<p>en français les « événements »</p>
+<p>=&gt; on est capables de déclencher des fonctions javascript , lorsque certains « events » ont lieu</p>
+<p>2 parties prenantes dans ce sujet :</p>
+<ol class="simple">
+<li><p>l”événement en tant que tel associé à l”élément HTML qui l”a déclenché</p></li>
+<li><p>la fonction qui « écoute » les événements, pour se déclencher quand elle en voit un passer qui correspond à ce qu”elle attend</p></li>
+</ol>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
+<span class="p">});</span>
+</pre></div>
+</div>
+<p>⚠️  attention, ça ne veut pas dire que le js déclenche le click, mais qu”il réagit s”il y a un clic !</p>
+<p>ici le this correspond à l”élément qui a déclenché l”événement, donc c”est « button » et $(this) ça nous renvoie le bouton en version « jquery ».</p>
+<section id="syntaxe-bis">
+<h4>Syntaxe bis<a class="headerlink" href="#syntaxe-bis" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">.....;});</span>
+</pre></div>
+</div>
+<p>avec « event » : « click », « dblclik » etc.</p>
+</section>
+</section>
+<section id="id5">
+<h3>Nouveautés<a class="headerlink" href="#id5" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>méthodes :</p>
+<ul>
+<li><p>une fonction : <code class="docutils literal notranslate"><span class="pre">xxxx(yyy)</span></code> : la fonction est générique</p></li>
+<li><p>une méthode : <code class="docutils literal notranslate"><span class="pre">machin.xxxx(yyy)</span></code> : la fonction s”applique sur machin</p></li>
+</ul>
+</li>
+<li><p>callback</p></li>
+<li><p>this</p></li>
+</ul>
+</section>
+</section>
+<section id="id6">
+<h2>Exercice<a class="headerlink" href="#id6" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>Faire un formulaire</p>
+</div></blockquote>
+<ol class="simple">
+<li><p>validation des champs email quand j”écris dans chaque intput (keypress) et souligner en rouge tant que c”est faux</p></li>
+<li><p>changer la couleur du bouton en « gris » et non cliquable (désactivé), quand on clique sur « envoyer »</p></li>
+<li><p>Afficher l”aide au survol des inputs (et ça change le texte en orange)</p></li>
+</ol>
+<section id="correction-1">
+<h3>Correction 1<a class="headerlink" href="#correction-1" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(){</span>
+  <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+  <span class="kd">const</span> <span class="nx">inputVal</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="sr">/^[\w]+@[\w]+\.[\w]{1,3}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">inputVal</span><span class="p">))</span> <span class="p">{</span>
+    <span class="nx">input</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
+  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="nx">input</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="mardi-2022-01-11">
+<h1>Mardi 2022/01/11<a class="headerlink" href="#mardi-2022-01-11" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Révisions event jQuery :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isEmail</span><span class="p">(){</span>
+  <span class="c1">// contenu</span>
+<span class="p">}</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="nx">isEmail</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ici on a une fonction nommée, alors qu”hier on a vu des fonctions « anonymes ».</p>
+<blockquote>
+<div><p>le principe de passer une fonction déclarée, non exécutée, à exécuter plus tard (quand l”événement « keypress » survient), s”appelle passer une fonction callback.</p>
+</div></blockquote>
+<section id="exercice-d-hier">
+<h2>Exercice d”hier<a class="headerlink" href="#exercice-d-hier" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On continue + correction</p>
+<p>Si vous avez trop de temps : on fait un bouton qui affiche la modal qui contient le formulaire des questions 1., 2 et 3</p>
+<p>contrainte : au moins une fois, utiliser une fonction « non anonyme », donc déclarée avant</p>
+<section id="desactiver-le-bouton-du-formulaire-quand-on-clique-dessus">
+<h3>Désactiver le bouton du formulaire quand on clique dessus<a class="headerlink" href="#desactiver-le-bouton-du-formulaire-quand-on-clique-dessus" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">disableButton</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">disableButton</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="afficher-une-aide-au-survol-de-l-input-et-passer-le-texte-en-orange">
+<h3>Afficher une aide au survol de l”input et passer le texte en orange<a class="headerlink" href="#afficher-une-aide-au-survol-de-l-input-et-passer-le-texte-en-orange" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">afficheAide</span><span class="p">(){</span>
+  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;text-orange&#39;</span><span class="p">);</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#helperText&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
+<span class="p">}</span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;input.helper&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mouseenter&#39;</span><span class="p">,</span> <span class="nx">afficheAide</span><span class="p">);</span>
+</pre></div>
+</div>
+</section>
+<section id="afficher-cacher-la-modal-avec-le-formulaire">
+<h3>Afficher / cacher la modal avec le formulaire<a class="headerlink" href="#afficher-cacher-la-modal-avec-le-formulaire" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#showModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#modal&#39;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span>
+<span class="p">})</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="revision-callback-avec-le-visiteur-du-futur">
+<h2>Révision callback avec le visiteur du futur<a class="headerlink" href="#revision-callback-avec-le-visiteur-du-futur" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://www.youtube.com/watch?v=1wtGLc_Fvf0">visiteur ep1</a></p>
+<p>un callback c”est « voilà ce qui va se passer » !</p>
+<p>Tu sais que Paris va exploser, mais tant que t”as pas jeté la canette ça se passera pas.</p>
+<p>Nous c”est pareil, tu fais une fonction que tu n”exécutes pas, tu sais ce qu”il va se passer, mais l”exécution est retardée au clic de l”utilisateur par ex.</p>
+</section>
+<section id="correction-exam-en-live-coding">
+<h2>Correction exam en live coding<a class="headerlink" href="#correction-exam-en-live-coding" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://www.github.com/dwwm93/2021/tree/main/2022-01-10_correction_exam">voir code associé</a></p>
+</section>
+</section>
 
 
           </div>
@@ -771,6 +984,22 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#lundi-2021-12-20">Lundi 2021/12/20</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#precisions-sur-les-typedef">Précisions sur les &#64;typedef</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#lundi-2022-01-03">Lundi 2022/01/03</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#nouveautes">Nouveautés</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2022-01-04">Mardi 2022/01/04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="#lundi-2022-01-10">Lundi 2022/01/10</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#approfondissement-jquery">Approfondissement jquery</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2022-01-11">Mardi 2022/01/11</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#exercice-d-hier">Exercice d”hier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#revision-callback-avec-le-visiteur-du-futur">Révision callback avec le visiteur du futur</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#correction-exam-en-live-coding">Correction exam en live coding</a></li>
 </ul>
 </li>
 </ul>
