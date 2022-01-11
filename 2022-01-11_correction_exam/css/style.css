@@ -1,3 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+
+* {
+  margin: 0px;
+  padding: 0px;
+  color: #333;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Roboto, helvetica, arial, sans-serif;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -10,7 +23,11 @@ nav > ul {
   text-transform: capitalize;
 }
 nav > ul > li {
-  padding: 0px 10px;
+  padding: 0.5rem 1.5rem;
+}
+
+main {
+  max-width: 60rem;
 }
 
 article > #listeEleves {
