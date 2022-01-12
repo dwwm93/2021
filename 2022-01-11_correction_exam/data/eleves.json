@@ -1,0 +1,128 @@
+[
+  {
+    "nom": "amadou",
+    "prenom": "diallo",
+    "tel": "0606060606",
+    "email": "diallo@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "latroch",
+    "prenom": "mustapha",
+    "tel": "0606060606",
+    "email": "mustapha@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "wemmert",
+    "prenom": "xavier",
+    "tel": "0606060606",
+    "email": "xavier@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "braganza",
+    "prenom": "brandon",
+    "tel": "0606060606",
+    "email": "brandon@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "galland",
+    "prenom": "théo",
+    "tel": "0606060606",
+    "email": "théo@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "mejbeur",
+    "prenom": "naceur",
+    "tel": "0606060606",
+    "email": "naceur@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "dissi",
+    "prenom": "alexandre",
+    "tel": "0606060606",
+    "email": "alexandre@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "diop",
+    "prenom": "omar",
+    "tel": "0606060606",
+    "email": "omar@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "bekhti",
+    "prenom": "salim",
+    "tel": "0606060606",
+    "email": "salim@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "dam",
+    "prenom": "fanny",
+    "tel": "0606060606",
+    "email": "fanny@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "ndiawara",
+    "prenom": "fatimé",
+    "tel": "0606060606",
+    "email": "fatimé@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "boujenfa",
+    "prenom": "habib",
+    "tel": "0606060606",
+    "email": "habib@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "bouharira",
+    "prenom": "djamel",
+    "tel": "0606060606",
+    "email": "djamel@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  },
+  {
+    "nom": "boujenfa",
+    "prenom": "ismail",
+    "tel": "0606060606",
+    "email": "ismail@greta.com",
+    "description": "Description de cet élève de qualité.",
+    "competences": { "html": 3, "js": 2, "css": 4 },
+    "cv": "https://google.fr"
+  }
+]
