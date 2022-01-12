@@ -815,34 +815,6 @@ $('input').on("keypress", function (){
   }
 })
 ```
-## Mercredi 2022/01/12
-
-Poursuite de la correction de l'examen.
-
-Questions / réponses.
-
-### Révisions
-
-- tableau
-- tableau associatif
-- fonctions
-- appeler une fonction js depuis un bouton HTML lui même généré par le js
-- ... (voir la correction)
-
-### Nouveautés
-
-- html input required
-- html input pattern
-- css `:has`
-- css `:valid`et `:invalid`
-- faire sa propre modal
-
-### Première présentation API + AJAX
-
-- API : site wikipedia
-- AJAX : site mozilla
-
-Exemple avec la récupération des données depuis la pokeapi.
 ## Mardi 2022/01/11
 
 Révisions event jQuery :
@@ -908,3 +880,31 @@ Nous c'est pareil, tu fais une fonction que tu n'exécutes pas, tu sais ce qu'il
 ### Correction exam en live coding
 
 [voir code associé](https://www.github.com/dwwm93/2021/tree/main/2022-01-10_correction_exam)
+## Mercredi 2022/01/12
+
+Poursuite de la correction de l'examen.
+
+Questions / réponses.
+
+### Révisions
+
+- tableau
+- tableau associatif
+- fonctions
+- appeler une fonction js depuis un bouton HTML lui même généré par le js
+- ... (voir la correction)
+
+### Nouveautés
+
+- html input required
+- html input pattern
+- css `:has`
+- css `:valid`et `:invalid`
+- faire sa propre modal
+
+### Première présentation API + AJAX
+
+- API : site wikipedia
+- AJAX : site mozilla
+
+Exemple avec la récupération des données depuis la pokeapi.
