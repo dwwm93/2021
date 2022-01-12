@@ -27,36 +27,13 @@
       </button>
     </nav>
 
-    <main>
-      <article>
-        <h1>Liste élèves</h1>
-        <section id="listeEleves">
-          <!-- 
-            insérer un ul avec les eleves en js
-        --></section>
-      </article>
-    </main>
-
-    <section id="modal">
-      <header>
-        Détail élève
-        <button
-          onclick="document.querySelector('#modal').style['display'] = 'none';document.querySelector('#shadow').style.display = 'none';"
-        >
-          <i class="fas fa-times-circle"></i>
-        </button>
-      </header>
-      <section id="content"></section>
-    </section>
-    <div id="shadow"></div>
-
-    <img src="" alt="" sizes="" srcset="" />
+    <main id="formContact"></main>
 
     <footer>DWWM 93 - 2021/2022 - El Profesor</footer>
 
     <script>
       window.onload = function () {
-        afficheEleves(eleves);
+        document.querySelector("main").innerHTML = genForm();
       };
     </script>
   </body>

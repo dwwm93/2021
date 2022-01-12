@@ -220,15 +220,15 @@ function afficheMenu(menu) {
   const ul = document.querySelector("nav#menu>ul");
   let html = "";
   menu.forEach(function (item) {
-    url = item.url ? item.url : item.title + ".html";
+    const url = item.url ? item.url : item.title + ".html";
     // if (undefined) {} else { on est ici }
     // if ('test') { on est là } else {}
 
     /* if (item.url) {
-        url = item.url;
-    } else {
-        url = item.title + '.html';
-    } */
+            url = item.url;
+        } else {
+            url = item.title + '.html';
+        } */
     html += `<li><a href="${url}">${item.title}</a></li>`;
   });
   ul.innerHTML = html;
@@ -261,6 +261,7 @@ function afficheEleves(eleves) {
     const eleve = eleves[index];
     html += genComposantEleve(eleve);
   }
+  // eleves.forEach( function (eleve){  })
 
   html += "</ul>";
   section.innerHTML = html;
@@ -284,8 +285,6 @@ function genComposantEleve(eleve) {
   return html;
 }
 
-afficheEleves(eleves);
-
 /**
  *
  * @param {Object<string, number} competences
@@ -300,6 +299,9 @@ function genCompetences(competences) {
     for (let i = 1; i <= niveau; i++) {
       html += '<i class="fas fa-star"></i>';
     }
+    for (let i = 0; i < 5 - niveau; i++) {
+      html += '<i class="far fa-star"></i>';
+    }
   }
 
   html += "</ul>";
@@ -312,20 +314,19 @@ function genCompetences(competences) {
  * @param {Array<Eleve>} eleves
  */
 function afficheEleveParPrenom(prenom, eleves) {
-  /**
-   * let eleveSelectionne = undefined;
-   * for (let i = 0; i < eleves.length; i++){
-   *    const eleve = eleves[i];
-   *    if (eleve.prenom === prenom) {
-   *        eleveSelectionne = eleve;
-   *    }
-   * }
-   * */
-  const eleve = eleves.reduce(function (acc, eleve) {
-    return eleve.prenom === prenom ? eleve : acc;
-  }, undefined);
+  let eleveSelectionne = {};
+  for (let i = 0; i < eleves.length; i++) {
+    const eleve = eleves[i];
+    if (eleve.prenom === prenom) {
+      eleveSelectionne = eleve;
+    }
+  }
 
-  afficheEleve(eleve);
+  /* const eleveSelectionne = eleves.reduce(function (acc, eleve) {
+    return eleve.prenom === prenom ? eleve : acc;
+  }, undefined); */
+
+  afficheEleve(eleveSelectionne);
 }
 
 /**
@@ -336,7 +337,7 @@ function afficheEleveParPrenom(prenom, eleves) {
 function afficheEleve(eleve) {
   // Créer le html pour un élève
   const html = `
-    <section>
+    <section class="bandeau">
         <img src="${getAvatar(eleve, 200)}"/>
         <span>${eleve.nom} ${eleve.prenom}</span>
         <a href="${eleve.cv}">CV</a>
@@ -350,10 +351,95 @@ function afficheEleve(eleve) {
             </li>
         </ul>
     </section>
+    <section>
+        ${genForm()}
+    </section>
     `;
   const content = document.querySelector("#modal>#content");
   content.innerHTML = html;
   // Afficher la modal
   const modal = document.querySelector("#modal");
   modal.style["display"] = "flex";
+  // modal.style.display = "flex";
+  document.querySelector("#shadow").style.display = "block";
+}
+
+function genForm() {
+  return `
+  <form action="">
+  <div>
+    <input
+      type="text"
+      name="nom"
+      id="nom"
+      required
+      placeholder="Dupont"
+    /><label for="nom">Nom</label>
+  </div>
+  <div>
+    <input
+      type="text"
+      name="prenom"
+      id="prenom"
+      placeholder="Elon"
+    />
+    <label for="prenom">Prénom</label>
+  </div>
+  <div>
+    <input
+      type="tel"
+      name="tel"
+      id="tel"
+      required
+      pattern="0[0-9]{9}"
+      placeholder="0987654321"
+    /><label for="tel"><i class="fas fa-phone"></i></label>
+  </div>
+  <div>
+    <input
+      type="email"
+      name="email"
+      id="email"
+      required
+      pattern=".+@greta\.com"
+      placeholder="bonjour@greta.com"
+    /><label for="email"><i class="fas fa-envelope"></i></label>
+  </div>
+  <div>
+    <input
+      type="text"
+      name="sujet"
+      id="sujet"
+      required
+      placeholder="Sujet de mon message"
+    /><label for="sujet">Sujet</label>
+  </div>
+  <div>
+    <textarea
+      name="message"
+      id="message"
+      cols="20"
+      rows="5"
+      required
+      placeholder="Entrez votre message."
+    ></textarea
+    ><label for="message">Message</label>
+  </div>
+  <button type="submit" >Envoi<i class="fas fa-paper-plane"></i></button>
+</form>
+  `;
+}
+
+/**
+ * Affiche ou cache le mini menu
+ * en fonction de l'état précédent.
+ */
+function toggleMiniMenu() {
+  const ul = document.querySelector("nav>ul");
+  //ul.classList.toggle("miniMenu");
+  if (ul.classList.contains("miniMenu")) {
+    ul.classList.remove("miniMenu");
+  } else {
+    ul.classList.add("miniMenu");
+  }
 }
