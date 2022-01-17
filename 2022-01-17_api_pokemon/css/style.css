@@ -1,0 +1,14 @@
+.clicked {
+  background-color: green;
+}
+
+main#pokemons {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+main#pokemons > article {
+  width: 10rem;
+  border: solid 2px teal;
+}
