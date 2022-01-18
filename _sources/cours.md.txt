@@ -929,3 +929,15 @@ Distinction entre PHP langage et PHP logiciel.
 Exécution du php dans le terminal pour générer des "fichiers texte".
 
 Utilisation de wamp pour voir le fichier texte généré dans un navigateur.
+## Mardi 2022/01/18
+
+Poursuite PHP + exercices de la veille
+
+### Notions abordées
+
+- fonctions
+- tableaux
+- tableaux associatifs
+- boucles for
+- boucles foreach
+- écrire du HTML et du PHP
