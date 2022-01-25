@@ -941,3 +941,21 @@ Poursuite PHP + exercices de la veille
 - boucles for
 - boucles foreach
 - écrire du HTML et du PHP
+## Mardi 2022/01/25
+
+### Router
+
+- à quoi ça sert
+- comment l'implémenter
+
+### Architecture du code
+
+On commence à prendre qques bonnes pratiques dans les répertoires (pages, templates ...)
+
+### Form
+
+Récupération des infos dans la super globale `$_POST`, appel du formulaire sur lui même (`action='index.php?page=form` , donc en utilisant bien le router !), décomposition des variables et test de leur validité en back.
+
+Exercice pour associer test en front et test en back.
+
+Voir le code associé.
