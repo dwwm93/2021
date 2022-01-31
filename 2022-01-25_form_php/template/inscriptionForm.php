@@ -1,5 +1,9 @@
 <form action="" method="post" onsubmit="return valid()">
-    <?php echo ($errorMessage) ?>
-    <input style="color: <?php echo ($color) ?>;" type="email" name="email" id="email" pattern="[a-zA-Z0-9]+" placeholder="Votre email" value="<?php echo ($email) ?>">
-    <button type="submit">Clic</button>
+    <section class="error">
+        <?php echo ($errorMessage) ?>
+    </section>
+    <input style="color: <?php echo ($color) ?>;" type="email" name="email" id="email" pattern=".*" placeholder="Votre email" value="<?php echo ($email) ?>" />
+    <input type="password" name="password" id="password" placeholder="Votre mot de passe" value="<?php echo ($password) ?>" />
+
+    <button type="submit">S'inscrire</button>
 </form>
