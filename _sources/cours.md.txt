@@ -959,3 +959,27 @@ Récupération des infos dans la super globale `$_POST`, appel du formulaire sur
 Exercice pour associer test en front et test en back.
 
 Voir le code associé.
+## Vendredi 2022/01/28
+
+### Base de données
+
+(Re)Définition et (re)présentation de :
+
+- SQL
+- mysql
+- phpmyadmin
+
+### LDD / LMD
+
+Explications à nouveau sur LDD et LMD, et comment on les utilise / différencie.
+
+### SGBDR
+
+Gros point sur les SGBDR, ce que ça signifie et la différence avec "sans relation".
+
+> l'important c'est la CONTRAINTE
+
+### Exercice
+
+1. Création d'un fichier de migration pour créer la nouvelle table `user` pour le formulaire.
+2. Insertion d'un utilisateur si le formulaire est bien rempli
