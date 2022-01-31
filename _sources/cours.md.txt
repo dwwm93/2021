@@ -983,3 +983,17 @@ Gros point sur les SGBDR, ce que ça signifie et la différence avec "sans relat
 
 1. Création d'un fichier de migration pour créer la nouvelle table `user` pour le formulaire.
 2. Insertion d'un utilisateur si le formulaire est bien rempli
+## Lundi 2022/01/31
+
+Poursuite de l'exercice sur l'inscription d'un utilisateur (avec test et insert en base)
+
+### Cours : HTTP
+
+Point cours sur le **PROTOCOL** HTTP, et son analogie avec le courrier papier.
+
+Explications sur GET / POST et le lien avec `$_GET` et `$_POST`.
+
+- `$_GET` : tableau associatif des données disponibles dans l'url
+- `$_POST` : tableau associatif des données disponibles dans le corps du message (à l'intérieur de l'enveloppe)
+
+NB: un navigateur envoie un form GET ou POST en fonction de l'attribut `method` dans le html.
