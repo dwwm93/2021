@@ -1015,6 +1015,36 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <p>NB: un navigateur envoie un form GET ou POST en fonction de l”attribut <code class="docutils literal notranslate"><span class="pre">method</span></code> dans le html.</p>
 </section>
 </section>
+<section id="mardi-2022-02-01">
+<h1>Mardi 2022/02/01<a class="headerlink" href="#mardi-2022-02-01" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="revisions-pdo-sql">
+<h2>Révisions PDO + SQL<a class="headerlink" href="#revisions-pdo-sql" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>syntaxes pour les requêtes (<code class="docutils literal notranslate"><span class="pre">exec</span></code> vs <code class="docutils literal notranslate"><span class="pre">prepare</span> <span class="pre">+</span> <span class="pre">execute</span></code>)</p></li>
+<li><p>syntaxes pour les variables (<code class="docutils literal notranslate"><span class="pre">bindParam</span></code>, named ou avec les <code class="docutils literal notranslate"><span class="pre">?</span></code>)</p></li>
+</ul>
+</section>
+<section id="revisions-formulaire">
+<h2>Révisions formulaire<a class="headerlink" href="#revisions-formulaire" title="Lien permanent vers ce titre">¶</a></h2>
+</section>
+<section id="id9">
+<h2>Exercice<a class="headerlink" href="#id9" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Faire un formulaire de connexion (qui affiche juste « ok » si réussi) et ajouter une page pour lister les utilisateurs.</p>
+</section>
+<section id="cours-presentation-des-session-php">
+<h2>Cours : présentation des SESSION PHP<a class="headerlink" href="#cours-presentation-des-session-php" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x"># Dans index.php</span>
+<span class="x">session_start()</span>
+
+<span class="x"># Ailleurs :</span>
+<span class="x">$_SESSION[&quot;key&quot;] = &quot;value&quot;;</span>
+<span class="x"># ex : if (@$_SESSION[&quot;connected&quot;]) { ... }</span>
+</pre></div>
+</div>
+<p>Et leur utilité pour « connecter » un utilisateur.</p>
+<p>La session est récupérée de la mémoire PHP grâce à un ID unique qui est partagé avec le navigateur dans un Cookie.</p>
+</section>
+</section>
 
 
           </div>
@@ -1163,6 +1193,13 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="#lundi-2022-01-31">Lundi 2022/01/31</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#cours-http">Cours : HTTP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2022-02-01">Mardi 2022/02/01</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#revisions-pdo-sql">Révisions PDO + SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#revisions-formulaire">Révisions formulaire</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id9">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cours-presentation-des-session-php">Cours : présentation des SESSION PHP</a></li>
 </ul>
 </li>
 </ul>

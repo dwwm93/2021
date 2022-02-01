@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Mardi 2021-11-16 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <title>Mardi 2022/02/01 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
@@ -32,28 +32,34 @@
 
           <div class="body" role="main">
             
-  <section id="mardi-2021-11-16">
-<h1>Mardi 2021-11-16<a class="headerlink" href="#mardi-2021-11-16" title="Lien permanent vers ce titre">¶</a></h1>
-<section id="git-github">
-<h2>Git + Github<a class="headerlink" href="#git-github" title="Lien permanent vers ce titre">¶</a></h2>
+  <section id="mardi-2022-02-01">
+<h1>Mardi 2022/02/01<a class="headerlink" href="#mardi-2022-02-01" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="revisions-pdo-sql">
+<h2>Révisions PDO + SQL<a class="headerlink" href="#revisions-pdo-sql" title="Lien permanent vers ce titre">¶</a></h2>
 <ul class="simple">
-<li><p>révisions git + commit des codes effectués jusqu”à présent</p></li>
-<li><p>explications github : site qui permet de centraliser les repositories et les branches de git</p></li>
-<li><p>création de compte github</p></li>
-<li><p>paramétrage vscode (attention aux pcs windows pas à jour, il faut utiliser la clé ssh dans ce cas là)</p></li>
-<li><p>push du code vers github dans un repo privé</p></li>
+<li><p>syntaxes pour les requêtes (<code class="docutils literal notranslate"><span class="pre">exec</span></code> vs <code class="docutils literal notranslate"><span class="pre">prepare</span> <span class="pre">+</span> <span class="pre">execute</span></code>)</p></li>
+<li><p>syntaxes pour les variables (<code class="docutils literal notranslate"><span class="pre">bindParam</span></code>, named ou avec les <code class="docutils literal notranslate"><span class="pre">?</span></code>)</p></li>
 </ul>
 </section>
-<section id="reprise-de-bootstrap">
-<h2>Reprise de bootstrap<a class="headerlink" href="#reprise-de-bootstrap" title="Lien permanent vers ce titre">¶</a></h2>
-<section id="composants-et-layouts">
-<h3>Composants et layouts<a class="headerlink" href="#composants-et-layouts" title="Lien permanent vers ce titre">¶</a></h3>
-<ul class="simple">
-<li><p>container</p></li>
-<li><p>fonctionnement de la grid</p></li>
-<li><p>progressbar</p></li>
-</ul>
+<section id="revisions-formulaire">
+<h2>Révisions formulaire<a class="headerlink" href="#revisions-formulaire" title="Lien permanent vers ce titre">¶</a></h2>
 </section>
+<section id="exercice">
+<h2>Exercice<a class="headerlink" href="#exercice" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Faire un formulaire de connexion (qui affiche juste « ok » si réussi) et ajouter une page pour lister les utilisateurs.</p>
+</section>
+<section id="cours-presentation-des-session-php">
+<h2>Cours : présentation des SESSION PHP<a class="headerlink" href="#cours-presentation-des-session-php" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x"># Dans index.php</span>
+<span class="x">session_start()</span>
+
+<span class="x"># Ailleurs :</span>
+<span class="x">$_SESSION[&quot;key&quot;] = &quot;value&quot;;</span>
+<span class="x"># ex : if (@$_SESSION[&quot;connected&quot;]) { ... }</span>
+</pre></div>
+</div>
+<p>Et leur utilité pour « connecter » un utilisateur.</p>
+<p>La session est récupérée de la mémoire PHP grâce à un ID unique qui est partagé avec le navigateur dans un Cookie.</p>
 </section>
 </section>
 
@@ -140,7 +146,7 @@
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
-      <a href="../_sources/cours/2021-11-16_mardi.md.txt"
+      <a href="../_sources/cours/2022-02-01_mardi.md.txt"
           rel="nofollow">Page source</a>
     </div>
 
