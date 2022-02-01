@@ -2,6 +2,8 @@
 
 $email = @$_POST['email'];
 $password = @$_POST['password'];
+$lastname = @$_POST['lastname'];
+$firstname = @$_POST['firstname'];
 $errorMessage = '<ul>';
 
 if ($email && !isValid('email', $email)) {
@@ -14,6 +16,12 @@ if ($email && !isValid('email', $email)) {
 if ($password && !isValid('password', $password)) {
     $errorMessage .= '<li>Mot de passe pas assez sécurisé.</li>';
 }
+if ($firstname && !isValid('prenom', $firstname)) {
+    $errorMessage .= '<li>Prénom erroné</li>';
+}
+if ($lastname && !isValid('prenom', $lastname)) {
+    $errorMessage .= '<li>Nom erroné</li>';
+}
 
 
 try {
@@ -21,8 +29,12 @@ try {
     if (
         $email
         && $password
+        && $lastname
+        && $firstname
         && isValid('email', $email)
         && isValid('password', $password)
+        && isValid('nom', $lastname)
+        && isValid('prenom', $firstname)
     ) {
 
         /** @todo à commenter */
@@ -33,15 +45,15 @@ try {
         $exists->execute();
         $res = $exists->fetchAll(PDO::FETCH_ASSOC);
         if (count($res) > 0) {
-            $errorMessage .= "user existe";
+            $errorMessage .= "<li><strong>ERROR</strong> Inscription impossible, l'utilisateur existe déjà !</li>";
         } else {
-            $query = $bdd->prepare("INSERT INTO user (email, password, lastname)
-    VALUE (?, ?, ?)");
-            $inserted = $query->execute([$email, $password, 'TOTO']);
+            $query = $bdd->prepare("INSERT INTO user (email, password, lastname, firstname)
+    VALUE (?, ?, ?, ?)");
+            $inserted = $query->execute([$email, $password, $lastname, $firstname]);
             if ($inserted) {
-                $errorMessage .= "User bien inséré.";
+                $errorMessage .= "<li class='success'>User bien inséré.</li>";
             } else {
-                $errorMessage .= "Erreur durant l'insertion.";
+                $errorMessage .= "<li class='error'>Erreur durant l'insertion.</li>";
             }
         }
     }
