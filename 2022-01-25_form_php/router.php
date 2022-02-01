@@ -15,6 +15,9 @@ $page = @$_GET['page'];
 if (array_key_exists($page, $menu)) {
     $fichier = $menu[$page]["fichier"];
     require_once($fichier);
+} elseif ($page === "logout") {
+    session_destroy();
+    require_once('page/accueil.php');
 } else {
     require_once('page/accueil.php');
 }

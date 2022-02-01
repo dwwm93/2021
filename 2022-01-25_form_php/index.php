@@ -5,6 +5,9 @@ declare(strict_types=1);
 ini_set('display_errors', '1');
 ini_set('display_startup_errors', '1');
 error_reporting(E_ALL);
+
+session_start();
+
 require_once('utils/validationForm.php');
 
 $menu = [
@@ -17,7 +20,17 @@ $menu = [
         "nom" => "Inscription",
         "url" => "inscription",
         "fichier" => "page/inscription.php"
-    ]
+    ],
+    "connexion" => [
+        "nom" => "Connexion",
+        "url" => "connexion",
+        "fichier" => "page/connexion.php",
+    ],
+    "users" => [
+        "nom" => "Liste des utilisateurs",
+        "url" => "users",
+        "fichier" => "page/users.php",
+    ],
 ];
 
 require_once('template/header.php');

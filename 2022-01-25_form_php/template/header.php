@@ -21,3 +21,11 @@
         </ul>
     </nav>
     <div id="errors"></div>
+    <div><?php
+            $connected = @$_SESSION["connected"];
+            if ($connected) {
+                echo ("VOUS ETES CONNECTES");
+                echo ("<a href='index.php?page=logout'>Deconnexion</a>");
+            }
+            ?> </div>
+    <main>
