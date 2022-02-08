@@ -1,0 +1,178 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Mardi 2022/02/08 &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="mardi-2022-02-08">
+<h1>Mardi 2022/02/08<a class="headerlink" href="#mardi-2022-02-08" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="sql">
+<h2>SQL<a class="headerlink" href="#sql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On apprend le JOIN !</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"></span>
+<span class="k">ON</span><span class="w"> </span><span class="n">table1</span><span class="p">.</span><span class="n">table2_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table2</span><span class="p">.</span><span class="n">table2_id</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Plein de petits exercices associés, dont des pages spécifiques
+dans le site de news pour récupérer les catégories des articles,
+l”auteur des articles etc.</p>
+<ol class="simple">
+<li><p>afficher dans la liste des articles en php, la catégorie devant le titre (par ex on affiche :  <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">[Economie]</span> <span class="pre">Le</span> <span class="pre">bitcoin</span> <span class="pre">se</span> <span class="pre">casse</span> <span class="pre">la</span> <span class="pre">figure</span> <span class="pre">pour</span> <span class="pre">la</span> <span class="pre">28eme</span> <span class="pre">fois</span> <span class="pre">aujourd'hui</span></code>)</p></li>
+<li><p>dans article ajouter utilisateur qui à écrit l”article si clique sur utilisateur =&gt; vers page de l”utilisateur</p></li>
+</ol>
+</section>
+<section id="exercice-sql">
+<h2>Exercice SQL<a class="headerlink" href="#exercice-sql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>3 requetes sur phpmyadmin à écrire :</p>
+<ol class="simple">
+<li><p>la liste de tous les articles écrits par esat</p></li>
+<li><p>La liste de tous les rôles de l”utilisateur Esat</p></li>
+<li><p>et si vous avez fini, la liste de tous les articles écrits par un utilisateur qui a le rôle « admin »</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- 1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">titre_article</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">id_user</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">prenom_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DJAMEL&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 2</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">nom_user</span><span class="p">,</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">prenom_user</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">role</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">posseder</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="n">id_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_role</span><span class="w"></span>
+<span class="k">JOIN</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_user</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">prenom_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DJAMEL&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 3</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">titre_article</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">posseder</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="n">id_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_role</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="n">nom_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utilisateur&#39;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2021</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Lundi 2021-10-18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-10-19">Mardi 2021-10-19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-10-25">Lundi 2021-10-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-02">Mardi 2021-11-02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-09">Mardi 2021-11-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-16">Mardi 2021-11-16</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-17">Mercredi 2021-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-23">Mardi 2021/11/23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-24">Mercredi 2021/11/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-30">Mardi 2021-11-30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-12-08">Mercredi 2021-12-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#jeudi-2021-12-09">Jeudi 2021-12-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-12-14">Mardi 2021-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-12-20">Lundi 2021/12/20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-03">Lundi 2022/01/03</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-04">Mardi 2022/01/04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-10">Lundi 2022/01/10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-11">Mardi 2022/01/11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2022-01-12">Mercredi 2022/01/12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-17">Lundi 2022/01/17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-18">Mardi 2022/01/18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-25">Mardi 2022/01/25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#vendredi-2022-01-28">Vendredi 2022/01/28</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-31">Lundi 2022/01/31</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-02-01">Mardi 2022/02/01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-02-07">Lundi 2022/02/07</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-02-08">Mardi 2022/02/08</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/2022-02-08_mardi.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

@@ -1045,6 +1045,81 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <p>La session est récupérée de la mémoire PHP grâce à un ID unique qui est partagé avec le navigateur dans un Cookie.</p>
 </section>
 </section>
+<section id="lundi-2022-02-07">
+<h1>Lundi 2022/02/07<a class="headerlink" href="#lundi-2022-02-07" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="sql">
+<h2>SQL<a class="headerlink" href="#sql" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>ORDER BY</p></li>
+<li><p>GROUP BY</p></li>
+</ul>
+</section>
+<section id="php">
+<h2>PHP<a class="headerlink" href="#php" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>fixtures pour remplir des données</p></li>
+<li><p>faire un site de news à partir de MCD fait avec Esat</p></li>
+</ul>
+</section>
+<section id="exo-faire-le-php-du-site-de-news">
+<h2>exo: faire le php du site de news<a class="headerlink" href="#exo-faire-le-php-du-site-de-news" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>afficher la liste des articles (titre et id) dans la page articles
+rappel on passe par le routeur, donc l”url c”est <code class="docutils literal notranslate"><span class="pre">index.php?page=articles</span></code></p></li>
+<li><p>remplacer la liste des titres par une liste d”urls qui pointent vers <code class="docutils literal notranslate"><span class="pre">index.php?page=articles&amp;id=xxxx</span></code></p></li>
+<li><p>créer les pages associées au lien <code class="docutils literal notranslate"><span class="pre">index.php?page=articles&amp;id=xxx</span></code> qui affichent le contenu de l”article d”id « xxx »</p></li>
+</ol>
+</section>
+</section>
+<section id="mardi-2022-02-08">
+<h1>Mardi 2022/02/08<a class="headerlink" href="#mardi-2022-02-08" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="id10">
+<h2>SQL<a class="headerlink" href="#id10" title="Lien permanent vers ce titre">¶</a></h2>
+<p>On apprend le JOIN !</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">table1</span><span class="w"></span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">table2</span><span class="w"></span>
+<span class="k">ON</span><span class="w"> </span><span class="n">table1</span><span class="p">.</span><span class="n">table2_id</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">table2</span><span class="p">.</span><span class="n">table2_id</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Plein de petits exercices associés, dont des pages spécifiques
+dans le site de news pour récupérer les catégories des articles,
+l”auteur des articles etc.</p>
+<ol class="simple">
+<li><p>afficher dans la liste des articles en php, la catégorie devant le titre (par ex on affiche :  <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">[Economie]</span> <span class="pre">Le</span> <span class="pre">bitcoin</span> <span class="pre">se</span> <span class="pre">casse</span> <span class="pre">la</span> <span class="pre">figure</span> <span class="pre">pour</span> <span class="pre">la</span> <span class="pre">28eme</span> <span class="pre">fois</span> <span class="pre">aujourd'hui</span></code>)</p></li>
+<li><p>dans article ajouter utilisateur qui à écrit l”article si clique sur utilisateur =&gt; vers page de l”utilisateur</p></li>
+</ol>
+</section>
+<section id="exercice-sql">
+<h2>Exercice SQL<a class="headerlink" href="#exercice-sql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>3 requetes sur phpmyadmin à écrire :</p>
+<ol class="simple">
+<li><p>la liste de tous les articles écrits par esat</p></li>
+<li><p>La liste de tous les rôles de l”utilisateur Esat</p></li>
+<li><p>et si vous avez fini, la liste de tous les articles écrits par un utilisateur qui a le rôle « admin »</p></li>
+</ol>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="c1">-- 1</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">titre_article</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span><span class="k">JOIN</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">id_user</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">prenom_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DJAMEL&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 2</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="o">*</span><span class="p">,</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">nom_user</span><span class="p">,</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">prenom_user</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">role</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">posseder</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="n">id_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_role</span><span class="w"></span>
+<span class="k">JOIN</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_user</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">prenom_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;DJAMEL&#39;</span><span class="p">;</span><span class="w"></span>
+
+<span class="c1">-- 3</span>
+<span class="k">SELECT</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">titre_article</span><span class="w"> </span>
+<span class="k">FROM</span><span class="w"> </span><span class="n">article</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">article</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="n">posseder</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="k">user</span><span class="p">.</span><span class="n">id_user</span><span class="w"> </span>
+<span class="k">JOIN</span><span class="w"> </span><span class="k">role</span><span class="w"> </span><span class="k">ON</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="n">id_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">posseder</span><span class="p">.</span><span class="n">id_role</span><span class="w"> </span>
+<span class="k">WHERE</span><span class="w"> </span><span class="k">role</span><span class="p">.</span><span class="n">nom_role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;utilisateur&#39;</span><span class="p">;</span><span class="w"></span>
+</pre></div>
+</div>
+</section>
+</section>
 
 
           </div>
@@ -1200,6 +1275,17 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <li class="toctree-l2"><a class="reference internal" href="#revisions-formulaire">Révisions formulaire</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id9">Exercice</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#cours-presentation-des-session-php">Cours : présentation des SESSION PHP</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#lundi-2022-02-07">Lundi 2022/02/07</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#sql">SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#php">PHP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exo-faire-le-php-du-site-de-news">exo: faire le php du site de news</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2022-02-08">Mardi 2022/02/08</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id10">SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exercice-sql">Exercice SQL</a></li>
 </ul>
 </li>
 </ul>

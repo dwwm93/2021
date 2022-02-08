@@ -1,0 +1,18 @@
+## Lundi 2022/02/07
+
+### SQL
+
+* ORDER BY
+* GROUP BY
+
+### PHP
+
+* fixtures pour remplir des données
+* faire un site de news à partir de MCD fait avec Esat
+
+### exo: faire le php du site de news
+
+1. afficher la liste des articles (titre et id) dans la page articles
+rappel on passe par le routeur, donc l'url c'est `index.php?page=articles`
+2. remplacer la liste des titres par une liste d'urls qui pointent vers `index.php?page=articles&id=xxxx`
+3. créer les pages associées au lien `index.php?page=articles&id=xxx` qui affichent le contenu de l'article d'id "xxx"

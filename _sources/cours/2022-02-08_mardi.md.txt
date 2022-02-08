@@ -1,0 +1,48 @@
+## Mardi 2022/02/08
+
+### SQL
+
+On apprend le JOIN !
+
+```sql
+SELECT *
+FROM table1
+JOIN table2
+ON table1.table2_id = table2.table2_id
+```
+
+Plein de petits exercices associés, dont des pages spécifiques
+dans le site de news pour récupérer les catégories des articles,
+l'auteur des articles etc.
+
+1. afficher dans la liste des articles en php, la catégorie devant le titre (par ex on affiche :  `1 [Economie] Le bitcoin se casse la figure pour la 28eme fois aujourd'hui`)
+1. dans article ajouter utilisateur qui à écrit l'article si clique sur utilisateur => vers page de l'utilisateur
+
+### Exercice SQL
+
+3 requetes sur phpmyadmin à écrire :
+
+1. la liste de tous les articles écrits par esat
+2. La liste de tous les rôles de l'utilisateur Esat
+3. et si vous avez fini, la liste de tous les articles écrits par un utilisateur qui a le rôle "admin"
+
+```sql
+-- 1
+SELECT article.titre_article FROM article JOIN user ON user.id_user = article.id_user
+WHERE user.prenom_user = 'DJAMEL';
+
+-- 2
+SELECT role.*, user.nom_user, user.prenom_user 
+FROM role 
+JOIN posseder ON role.id_role = posseder.id_role
+JOIN user ON user.id_user = posseder.id_user
+WHERE prenom_user = 'DJAMEL';
+
+-- 3
+SELECT article.titre_article 
+FROM article 
+JOIN user ON user.id_user = article.id_user 
+JOIN posseder ON posseder.id_user = user.id_user 
+JOIN role ON role.id_role = posseder.id_role 
+WHERE role.nom_role = 'utilisateur';
+```
