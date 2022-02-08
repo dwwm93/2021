@@ -11,6 +11,12 @@ switch ($page) {
         }
         break;
 
+    case 'users':
+        if (@$_GET['id']) {
+            require_once('page/user.php');
+            break;
+        }
+
     default:
         break;
 }
