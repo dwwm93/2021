@@ -13,6 +13,7 @@
     <ul>
         <li><a href="/2022-01-17_php/">2022-01-17_php</a></li>
         <li><a href="/2022-01-25_form_php/">2022-01-25_form_php</a></li>
+        <li><a href="/2022-02-07_news/">2022-02-07_news</a></li>
     </ul>
 </body>
 
