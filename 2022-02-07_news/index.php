@@ -11,6 +11,7 @@ require_once('template/header.php');
 /** @todo transformer en fonction */
 require_once('./bdd.php');
 require_once('./model/article.php');
+require_once('./model/user.php');
 
 require_once('router.php');
 

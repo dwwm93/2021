@@ -1,4 +1,9 @@
-<h2>Utilisateur</h2>
+<h2>Utilisateur
+    <?php
+    /** @var User $user */
+    echo ($user->getNom())
+    ?>
+</h2>
 <pre>
-    <?= print_r($user); ?>    
+    <?= var_dump($user); ?>    
 </pre>
