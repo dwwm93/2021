@@ -1,11 +1,16 @@
-<h2><?php echo ($article['titre_article']); ?></h2>
+<h2><?php
+    /** @var Article $article */
+    echo ($article->getTitre());
+    ?>
+</h2>
 <summary>par
-    <a href="index.php?page=users&id=<?= $article['id_user'] ?>">
-        <?= "{$article['nom_user']} {$article['prenom_user']}" ?>
+    <a href="index.php?page=users&id=<?= $article->getIdUser() ?>">
+        <!-- ?= "{$article['nom_user']} {$article['prenom_user']}" ? -->
+        <?= "{$article->getIdUser()}" ?>
     </a>
 </summary>
 
-<img src="<?= $article['img_article'] ?>" alt="" srcset="">
+<img src="<?= $article->getImg() ?>" alt="" srcset="">
 <p>
-    <?= $article['contenu_article'] ?>
+    <?= $article->getContenu() ?>
 </p>
