@@ -12,7 +12,7 @@ class BDD
     //maria db
     $bdd = new PDO("mysql:host=localhost;dbname=test", "root",  "");
     */
-            echo ("connexion bdd ok");
+            //echo ("connexion bdd ok");
         } catch (Exception $e) {
             die("erreur de connexion à la bdd <br /> $e");
         }

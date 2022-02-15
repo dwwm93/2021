@@ -13,7 +13,7 @@ class Article
     private $id_categorie;
     private $id_user;
 
-    function __construct($id)
+    function __construct($id = null)
     {
         $this->bdd = BDD::connexion();
         $this->id = $id;
@@ -55,6 +55,53 @@ class Article
         return $article;
     }
 
+    public function getUser(): User
+    {
+        return User::getUser($this->getIdUser());
+    }
+
+    public function getCategorie(): Categorie
+    {
+        return Categorie::getCategorie($this->getIdCategorie());
+    }
+
+    public function verify(): bool
+    {
+        if ($this->getContenu() && $this->getDate()) {
+            return true;
+        }
+        return false;
+    }
+
+    public function save(): void
+    {
+        if (!$this->verify()) {
+            echo "<h1 class='error'>Article invalide !</h1>";
+            return;
+        }
+        $query = BDD::connexion()->prepare("INSERT INTO article
+        ( 
+            titre_article, 
+            contenu_article, 
+            date_article, 
+            img_article, 
+            id_categorie, 
+            id_user 
+        )
+        VALUES (
+            ?, ?, ?, ?, ?, ?
+        )");
+        $query->execute([
+            $this->titre,
+            $this->contenu,
+            $this->date,
+            $this->img,
+            $this->id_categorie,
+            $this->id_user,
+        ]);
+        $this->id = BDD::connexion()->lastInsertId();
+    }
+
     public function getId()
     {
         return $this->id;
@@ -68,6 +115,7 @@ class Article
     public function setTitre($titre)
     {
         $this->titre = $titre;
+        return $this;
     }
 
     public function getContenu()
@@ -78,6 +126,7 @@ class Article
     public function setContenu($contenu)
     {
         $this->contenu = $contenu;
+        return $this;
     }
 
     public function getImg()
@@ -88,6 +137,7 @@ class Article
     public function setImg($img)
     {
         $this->img = $img;
+        return $this;
     }
 
     public function getDate()
@@ -98,6 +148,7 @@ class Article
     public function setDate($date)
     {
         $this->date = $date;
+        return $this;
     }
     public function getIdCategorie()
     {
@@ -107,6 +158,7 @@ class Article
     public function setIdCategorie($id_categorie)
     {
         $this->id_categorie = $id_categorie;
+        return $this;
     }
 
     public function getIdUser()
@@ -117,5 +169,6 @@ class Article
     public function setIdUser($id_user)
     {
         $this->id_user = $id_user;
+        return $this;
     }
 }

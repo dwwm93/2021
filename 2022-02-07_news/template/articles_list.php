@@ -3,7 +3,7 @@
 <ol>
     <?php
     foreach ($articles as $key => $colonnes) {
-        echo ("<li><a href='index.php?page=articles&id={$colonnes['id_article']}'>
+        echo ("<li><a href='index.php?page=article_show&id={$colonnes['id_article']}'>
                 [{$colonnes['nom_categorie']}] - 
                 {$colonnes['titre_article']}</a>
             </li>");
