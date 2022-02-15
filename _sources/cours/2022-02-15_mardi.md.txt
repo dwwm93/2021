@@ -1,0 +1,25 @@
+## Mardi 2022/02/15
+
+### Exercice
+
+Réécrire le Routeur du site de news en mode objet.
+
+### Cours
+
+MCD : ne pas oublier routeur et bdd
+
+### Installation symfony + première page
+
+```sh
+composer create-project symfony/skeleton:"^5.4.99" REMPLACER
+cd REPLACER
+composer require webapp
+```
+
+Télécharger la cli symfony et utiliser `server:start`.
+
+### Premier controller
+
+héritage + namespace.
+
+Afficher la premiere vue grâceà $this->render !

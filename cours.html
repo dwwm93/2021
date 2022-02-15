@@ -1120,6 +1120,57 @@ l”auteur des articles etc.</p>
 </div>
 </section>
 </section>
+<section id="lundi-2022-02-14">
+<h1>Lundi 2022/02/14<a class="headerlink" href="#lundi-2022-02-14" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="poo">
+<h2>POO<a class="headerlink" href="#poo" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Révision Programmation Orientée Objet :</p>
+<ul class="simple">
+<li><p>classes = moule / structure</p></li>
+<li><p>objet = version « physique » de la structure (ie avec des vraies données)</p></li>
+<li><p>l”action de générer un objet depuis la classe s”appelle l”instanciation</p></li>
+<li><p>Première approche de l”héritage</p></li>
+</ul>
+</section>
+<section id="id11">
+<h2>Exercice<a class="headerlink" href="#id11" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Refonte site news en POO :</p>
+<ul class="simple">
+<li><p>faire une classe article</p></li>
+<li><p>faire une classe user</p></li>
+<li><p>afficher les articles et les users (en utilisant les méthodes getter)</p></li>
+<li><p>utiliser une méthode statique pour récupérer la liste des articles</p></li>
+<li><p>idem pour users</p></li>
+<li><p>récupérer un article (resp. un user) depuis la base article (resp. user) avec une fonction statique</p></li>
+<li><p>ajouter un getter getUser dans Article pour obtenir l”objet User associé à Article (donc en utilisant <code class="docutils literal notranslate"><span class="pre">User::getUser($article-&gt;getUser())</span></code>)</p></li>
+</ul>
+</section>
+</section>
+<section id="mardi-2022-02-15">
+<h1>Mardi 2022/02/15<a class="headerlink" href="#mardi-2022-02-15" title="Lien permanent vers ce titre">¶</a></h1>
+<section id="id12">
+<h2>Exercice<a class="headerlink" href="#id12" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Réécrire le Routeur du site de news en mode objet.</p>
+</section>
+<section id="cours">
+<h2>Cours<a class="headerlink" href="#cours" title="Lien permanent vers ce titre">¶</a></h2>
+<p>MCD : ne pas oublier routeur et bdd</p>
+</section>
+<section id="installation-symfony-premiere-page">
+<h2>Installation symfony + première page<a class="headerlink" href="#installation-symfony-premiere-page" title="Lien permanent vers ce titre">¶</a></h2>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>composer create-project symfony/skeleton:<span class="s2">&quot;^5.4.99&quot;</span> REMPLACER
+<span class="nb">cd</span> REPLACER
+composer require webapp
+</pre></div>
+</div>
+<p>Télécharger la cli symfony et utiliser <code class="docutils literal notranslate"><span class="pre">server:start</span></code>.</p>
+</section>
+<section id="premier-controller">
+<h2>Premier controller<a class="headerlink" href="#premier-controller" title="Lien permanent vers ce titre">¶</a></h2>
+<p>héritage + namespace.</p>
+<p>Afficher la premiere vue grâceà $this-&gt;render !</p>
+</section>
+</section>
 
 
           </div>
@@ -1286,6 +1337,18 @@ l”auteur des articles etc.</p>
 <li class="toctree-l1"><a class="reference internal" href="#mardi-2022-02-08">Mardi 2022/02/08</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#id10">SQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#exercice-sql">Exercice SQL</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#lundi-2022-02-14">Lundi 2022/02/14</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#poo">POO</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id11">Exercice</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="#mardi-2022-02-15">Mardi 2022/02/15</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id12">Exercice</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cours">Cours</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#installation-symfony-premiere-page">Installation symfony + première page</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#premier-controller">Premier controller</a></li>
 </ul>
 </li>
 </ul>

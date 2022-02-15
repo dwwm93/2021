@@ -1,0 +1,22 @@
+## Lundi 2022/02/14
+
+### POO
+
+Révision Programmation Orientée Objet :
+
+- classes = moule / structure
+- objet = version "physique" de la structure (ie avec des vraies données)
+- l'action de générer un objet depuis la classe s'appelle l'instanciation
+- Première approche de l'héritage
+
+### Exercice
+
+Refonte site news en POO :
+
+- faire une classe article
+- faire une classe user
+- afficher les articles et les users (en utilisant les méthodes getter)
+- utiliser une méthode statique pour récupérer la liste des articles
+- idem pour users
+- récupérer un article (resp. un user) depuis la base article (resp. user) avec une fonction statique
+- ajouter un getter getUser dans Article pour obtenir l'objet User associé à Article (donc en utilisant `User::getUser($article->getUser())`)
