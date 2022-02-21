@@ -1,0 +1,588 @@
+
+<!DOCTYPE html>
+
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Librairie vs Framework &#8212; Documentation Cours Greta DWWM93 2021 1.0</title>
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/alabaster.css" />
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/translations.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Recherche" href="../search.html" />
+   
+  <link rel="stylesheet" href="../_static/custom.css" type="text/css" />
+  
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <hr class="docutils" />
+<p>title: Symfony
+subtitle: Introduction à l”utilisation
+author: Marc CHENEBAUX
+date: 2022/02/18
+transition: fade
+theme: serif
+overview: true
+revealjs-url: https://unpkg.com/reveal.js&#64;3.9.2
+…</p>
+<section id="librairie-vs-framework">
+<h1>Librairie vs Framework<a class="headerlink" href="#librairie-vs-framework" title="Lien permanent vers ce titre">¶</a></h1>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>librairie : des blocs de codes à intégrer dans votre structure</p></li>
+<li><p>framework : une structure dans laquelle vous intégrez des bouts de votre code !</p></li>
+</ul>
+<hr class="docutils" />
+<section id="dans-le-cas-de-symfony">
+<h2>Dans le cas de symfony<a class="headerlink" href="#dans-le-cas-de-symfony" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>soit on prend les petits bouts qu”on met dans son code (donc librairie), par ex: utiliser symfony mailer pour envoyer des mails, ou twig pour le templating (mise en forme)</p></li>
+<li><p>soit on utilise le squelette qu”on nous propose : ie quasiment tous les modules de symfony, et on doit adapter notre code en conséquence.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="cas-framework">
+<h2>Cas framework<a class="headerlink" href="#cas-framework" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="installation">
+<h3>Installation<a class="headerlink" href="#installation" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>composer create-project symfony/skeleton:<span class="s2">&quot;^5.4&quot;</span> nom_de_rep_au_choix
+<span class="c1"># ou &quot;^5.4.99&quot; si ça plante</span>
+<span class="c1"># on n&#39;utilise pas la version 6 car elle nécessite PHP8 qui n&#39;est pas sur les ordis du GRETA</span>
+<span class="c1"># cd = change directory : on se déplace en ligne de commande</span>
+<span class="nb">cd</span> nom_de_rep_au_choix
+composer require webapp
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="explications">
+<h3>Explications<a class="headerlink" href="#explications" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Il faut se conformer à la structure :</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>.
+├── <span class="nv">assets</span>             <span class="o">=</span>&gt; fichiers js, css ...
+├── bin
+│   └── <span class="nv">console</span>        <span class="o">=</span>&gt; bin/console !! *<span class="se">\o</span>/*
+├── composer.json      <span class="o">=</span>&gt; sauvegarde les dépendances
+├── composer.lock      <span class="o">=</span>&gt; indique les dépendances installées
+├── config
+├── migrations
+├── public
+│   └── index.php
+├── src
+│   ├── Controller
+│   ├── Entity
+│   └── Repository
+├── templates
+├── vendor
+</pre></div>
+</div>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">config/</span></code> : répertoire des configurations (fichiers <code class="docutils literal notranslate"><span class="pre">yaml</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/</span></code> : répertoire qui contient les sources de notre code</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/Controller/</span></code> : code qui concerne les … controllers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/Entity/</span></code> : TBD</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">src/Repository/</span></code> : TBD</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">templates/</span></code> : répertoire des templates <code class="docutils literal notranslate"><span class="pre">twig</span></code> pour générer les vues</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">vendor/</span></code> : répertoire géré par <code class="docutils literal notranslate"><span class="pre">composer</span></code> qui contient les sources de tous les projets que l”on utilise (ex: les sources de symfony, les sources de twig, les sources de doctrine etc.) =&gt; répertoire non versionné par git ! il suffit d”utiliser <code class="docutils literal notranslate"><span class="pre">composer</span> <span class="pre">install</span></code> pour réinstaller tout <code class="docutils literal notranslate"><span class="pre">vendor</span></code>. (<code class="docutils literal notranslate"><span class="pre">composer</span></code> utilise alors le fichier <code class="docutils literal notranslate"><span class="pre">composer.json</span></code>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">public/</span></code> : répertoire qui contient le fichier index.php et qui est exposé au monde entier (contrairement à nos sources!)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">migrations/</span></code> : répertoire des traitements <code class="docutils literal notranslate"><span class="pre">LDD</span></code> [^ldd] (et parfois <code class="docutils literal notranslate"><span class="pre">LMD</span></code>[^lmd] mais <strong>anecdotique</strong>)</p></li>
+</ul>
+<p>[^ldd]: ou DDL - Langage de définition des données</p>
+<p>[^lmd]: ou DML - Langage de manipulation des données</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="lancer-le-serveur-web">
+<h2>Lancer le serveur web<a class="headerlink" href="#lancer-le-serveur-web" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p>Pour avoir accès au fichier <code class="docutils literal notranslate"><span class="pre">index.php</span></code> dans <code class="docutils literal notranslate"><span class="pre">public/</span></code></p></li>
+<li><p>et pour avoir des urls « jolies » (ex: <code class="docutils literal notranslate"><span class="pre">localhost/articles</span></code> au lieu de <code class="docutils literal notranslate"><span class="pre">localhost?page=articles</span></code>, ou <code class="docutils literal notranslate"><span class="pre">localhost/articles/1</span></code> au lieu de <code class="docutils literal notranslate"><span class="pre">localhost?page=articles&amp;id=1</span></code> !!)</p></li>
+</ul>
+<p>=&gt; on doit paramétrer son serveur web (ex: apache pour wamp).</p>
+<hr class="docutils" />
+<p>Pour se faciliter la vie, on utilise celui qui est fourni par le logiciel « symfony »[^symfony-cli] (<code class="docutils literal notranslate"><span class="pre">symfony-cli</span></code>, càd symfony en ligne de commande), en faisant :</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>symfony server:start
+</pre></div>
+</div>
+<p>[^symfony-cli]: pour l”installer, se rendre sur <a class="reference external" href="https://symfony.com/download">la page de téléchargement</a></p>
+</section>
+</section>
+<section id="mvc">
+<h1>MVC<a class="headerlink" href="#mvc" title="Lien permanent vers ce titre">¶</a></h1>
+<hr class="docutils" />
+<p>Symfony utilise le <em>design pattern</em> (= organise son code) <strong>MVC</strong>.</p>
+<ul class="simple">
+<li><p>Model : partie du code qui va gérer les données et parler à la base</p></li>
+<li><p>Controller : chef d”orchestre, c”est lui qui contient l”intelligence</p></li>
+<li><p>View : partie qui gère l”IHM[^ihm] et l”affichage à l”utilisateur</p></li>
+</ul>
+<hr class="docutils" />
+<ul class="simple">
+<li><p>! Ne pas oublier:</p>
+<ul>
+<li><p>router</p></li>
+<li><p>database</p></li>
+</ul>
+</li>
+</ul>
+<p>à compléter : comment M, V et C intéragissent les uns avec les autres (et dans quel ordre).</p>
+<p>[^ihm]: <a class="reference external" href="https://fr.wikipedia.org/wiki/Interactions_homme-machine">Interface Homme - Machine</a></p>
+<hr class="docutils" />
+<section id="controller">
+<h2>Controller<a class="headerlink" href="#controller" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Se trouve dans le répertoire <code class="docutils literal notranslate"><span class="pre">src/Controller</span></code>.</p>
+<p>Pour créer un nouveau Controller, je crée un fichier <code class="docutils literal notranslate"><span class="pre">ArticleController</span></code>.</p>
+<hr class="docutils" />
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Controller</span><span class="p">;</span>
+
+<span class="c1"># &quot;use&quot; est une sorte de &quot;include()&quot;.</span>
+<span class="c1"># utiliser l&#39;auto import, pas besoin de connaître par coeur les</span>
+<span class="c1"># composants symfony</span>
+<span class="k">use</span> <span class="nx">Symfony\Component\Routing\Annotation\Route</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Symfony\Bundle\FrameworkBundle\</span><span class="o">...</span><span class="nx">\AbstractController</span><span class="p">;</span>
+<span class="c1">// importer Symfony\...\Response : la réponse HTTP vers l&#39;utilisateur</span>
+<span class="k">use</span> <span class="nx">Symfony\</span><span class="o">...</span><span class="nx">\Response</span><span class="p">;</span>
+<span class="c1"># code qui vient de mon application :</span>
+<span class="k">use</span> <span class="nx">App\Entity\Article</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * Mon controller hérite de celui de symfony,</span>
+<span class="sd"> * par conséquent j&#39;ai accès à $this-&gt;render qui me permet</span>
+<span class="sd"> * de générer du html en utilisant TWIG.</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">ArticleController</span> <span class="k">extends</span> <span class="nx">AbstractController</span>
+<span class="p">{</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @Route(&quot;/articles&quot;, name=&quot;articles&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">index</span><span class="p">()</span> <span class="o">:</span> <span class="nx">Response</span>
+    <span class="p">{</span>
+        <span class="sd">/**</span>
+<span class="sd">         * Traitements intelligents</span>
+<span class="sd">         */</span>
+
+        <span class="nv">$valeur</span> <span class="o">=</span> <span class="s2">&quot;val1&quot;</span><span class="p">;</span> <span class="c1">// ou n&#39;importe quel structure PHP</span>
+        <span class="nv">$article</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Article</span><span class="p">();</span>
+
+        <span class="sd">/**</span>
+<span class="sd">         * Renvoie la vue !</span>
+<span class="sd">         */</span>
+        <span class="c1">// &quot;mon_template&quot; est situé dans le répertoire &quot;templates&quot;</span>
+        <span class="c1">// penser à indiquer l&#39;arborescence complète à partir de &quot;templates/&quot;</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">render</span><span class="p">(</span><span class="s2">&quot;mon_template.html.twig&quot;</span><span class="p">,</span> <span class="p">[</span>
+            <span class="s2">&quot;nom_var1&quot;</span> <span class="o">=&gt;</span> <span class="nv">$valeur</span><span class="p">,</span>
+            <span class="s2">&quot;article&quot;</span> <span class="o">=&gt;</span> <span class="nv">$article</span><span class="p">,</span>
+        <span class="p">]);</span>
+
+        <span class="c1">// bad mais possible: (en vérifiant la bonne syntaxe)</span>
+        <span class="c1">// return new Response(&quot;&lt;html&gt;....&quot;);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>NB: Symfony vous aide grâce à <code class="docutils literal notranslate"><span class="pre">bin/console</span></code> (petite ligne de commande écrite en php qui vous facilite la vie ❤️)</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>php bin/console make:controller CategorieController
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="view">
+<h2>View<a class="headerlink" href="#view" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Puis il faut que je construise mon template twig.</p>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;!-- dans templates/mon_template.html.twig --&gt;</span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;head&gt;...&lt;/head&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        &lt;h1&gt;</span><span class="cp">{{</span> <span class="nv">nom_var1</span> <span class="cp">}}</span><span class="x">&lt;/h1&gt;</span>
+<span class="x">        &lt;p&gt;</span>
+<span class="x">            </span><span class="cp">{{</span> <span class="nv">article.contenu</span> <span class="cp">}}</span><span class="x"></span>
+<span class="x">        &lt;/p&gt;</span>
+<span class="x">        &lt;p&gt;On note que l&#39;accès aux propriétés de l&#39;objet article ressemble à la syntaxe du javascript !! (cf &lt;pre&gt;eleve.nom&lt;/pre&gt;)&lt;/p&gt;</span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="twig">
+<h1>TWIG<a class="headerlink" href="#twig" title="Lien permanent vers ce titre">¶</a></h1>
+<hr class="docutils" />
+<p>Langage de templating.</p>
+<section id="cheatsheet">
+<h2>Cheatsheet<a class="headerlink" href="#cheatsheet" title="Lien permanent vers ce titre">¶</a></h2>
+<p><a class="reference external" href="https://danielmg.org/php/twig-cheatsheet.html">cheatsheet/antisèche</a></p>
+</section>
+<hr class="docutils" />
+<section id="syntaxe">
+<h2>Syntaxe<a class="headerlink" href="#syntaxe" title="Lien permanent vers ce titre">¶</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">ma_var</span> <span class="pre">}}</span></code> : affiche la variable (si elle est affichable)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{#</span> <span class="pre">mon</span> <span class="pre">commentaire</span> <span class="pre">#}</span></code> : commentaire dans le code twig, non affiché dans le html</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">for</span> <span class="pre">element</span> <span class="pre">in</span> <span class="pre">tableau</span> <span class="pre">%}</span> <span class="pre">{{</span> <span class="pre">element</span> <span class="pre">}}</span> <span class="pre">{%</span> <span class="pre">endfor</span> <span class="pre">%}</span></code> : boucle</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">{%</span> <span class="pre">if</span> <span class="pre">ma_var</span> <span class="pre">==</span> <span class="pre">&quot;jour&quot;</span> <span class="pre">%}</span> <span class="pre">Bonjour</span> <span class="pre">{{</span> <span class="pre">nom</span> <span class="pre">}}</span> <span class="pre">{%</span> <span class="pre">else</span> <span class="pre">%}</span> <span class="pre">Bonsoir</span> <span class="pre">{%</span> <span class="pre">endif</span> <span class="pre">%}</span></code> : test sur les variables disponibles</p></li>
+<li><p>etc.</p></li>
+</ul>
+<hr class="docutils" />
+<section id="heritage-des-templates">
+<h3>Héritage des templates<a class="headerlink" href="#heritage-des-templates" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;!-- templates/parent.html.twig --&gt;</span>
+
+<span class="x">&lt;html&gt;</span>
+<span class="x">    &lt;head&gt;&lt;/head&gt;</span>
+<span class="x">    &lt;body&gt;</span>
+<span class="x">        &lt;nav&gt;&lt;/nav&gt;</span>
+<span class="x">        &lt;main&gt;</span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">mon_block_main</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">                l&#39;enfant peut effacer le contenu de ce bloc et le remplacer par ce qu&#39;il veut !!</span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;/main&gt;</span>
+<span class="x">        &lt;footer&gt;</span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">block</span> <span class="nv">block_footer</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">            </span><span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">        &lt;/footer&gt;</span>
+<span class="x">    &lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>et l”enfant :</p>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="x">&lt;!-- templates/enfant.html.twig --&gt;</span>
+<span class="cp">{%</span> <span class="k">extends</span> <span class="s2">&quot;parent.html.twig&quot;</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">mon_block_main</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Ici j&#39;écris dans le parent !!!!!</span>
+
+<span class="x">J&#39;utilise ici la variable </span><span class="cp">{{</span> <span class="nv">nom_var1</span> <span class="cp">}}</span><span class="x">.</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+
+<span class="cp">{%</span> <span class="k">block</span> <span class="nv">block_footer</span> <span class="cp">%}</span><span class="x"></span>
+<span class="x">Voici le footer de ma page enfant !!!</span>
+<span class="cp">{%</span> <span class="k">endblock</span> <span class="cp">%}</span><span class="x"></span>
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Permet de réduire la duplication de code et d”avoir un style commun pour tout le site !</p>
+</section>
+</section>
+</section>
+<section id="la-base-de-donnees">
+<h1>La base de données<a class="headerlink" href="#la-base-de-donnees" title="Lien permanent vers ce titre">¶</a></h1>
+<hr class="docutils" />
+<section id="connexion">
+<h2>Connexion<a class="headerlink" href="#connexion" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Les informations de connexion sont stockées dans un fichier <code class="docutils literal notranslate"><span class="pre">.env</span></code> (appelé : <code class="docutils literal notranslate"><span class="pre">dotenv</span></code>).</p>
+<p>Il y aura un fichier <code class="docutils literal notranslate"><span class="pre">.env</span></code> différent par machine, cela permet de ne pas partager les informations « secrètes ».</p>
+<hr class="docutils" />
+<section id="exemple">
+<h3>exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Sur mon pc « maison », dans mon fichier <code class="docutils literal notranslate"><span class="pre">.env.local</span></code> j”indique : login=marc, pwd=marc.</p>
+<p>Par contre au greta, dans le fichier <code class="docutils literal notranslate"><span class="pre">.env.local</span></code>, j”indique : login=greta, pwd=greta.</p>
+<blockquote>
+<div><p>je peux avoir plusieurs « secrets » différents en fonction de la machine.</p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Attention, on ne commite pas le fichier <code class="docutils literal notranslate"><span class="pre">.env.local</span></code> car il contient des secrets à ne pas partager !!</p>
+<p>Le <code class="docutils literal notranslate"><span class="pre">.env</span></code> lui contient les exemples ou les valeurs « non secrètes ».</p>
+</section>
+</section>
+<section id="informations-de-connexion">
+<h2>Informations de connexion<a class="headerlink" href="#informations-de-connexion" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Il faut donc <strong>créer</strong> et écrire dans le fichier <code class="docutils literal notranslate"><span class="pre">.env.local</span></code> :</p>
+<div class="highlight-.env notranslate"><div class="highlight"><pre><span></span>DATABASE_URL=&quot;mysql://login:mdp@127.0.0.1:3306/2022_news_symfony?serverVersion=8.0&quot;
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Vérification de la connexion (à écrire dans le terminal):</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>php bin/console doctrine:database:create
+</pre></div>
+</div>
+<p>ou avec symfony-cli :</p>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>symfony console doctrine:database:create
+</pre></div>
+</div>
+</section>
+<hr class="docutils" />
+<section id="mvc-model">
+<h2>MVC : Model<a class="headerlink" href="#mvc-model" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Partie de l”architecture chargée de « parler » avec la base de données (donc LDD[^ldd] et LMD[^lmd]), et transformer les données de la base vers des données exploitables en PHP.</p>
+<hr class="docutils" />
+<section id="representation-objet">
+<h3>Représentation Objet<a class="headerlink" href="#representation-objet" title="Lien permanent vers ce titre">¶</a></h3>
+<blockquote>
+<div><p>cf : MCD</p>
+</div></blockquote>
+<p>Dans mon code « objet » (POO), on ne manipule pas les « tables » SQL. On manipule des objets. Ces objets, qui représentent des données dans la base, sont appelés : <strong>Entités</strong>.</p>
+</section>
+<hr class="docutils" />
+<section id="dans-symfony">
+<h3>Dans Symfony<a class="headerlink" href="#dans-symfony" title="Lien permanent vers ce titre">¶</a></h3>
+<p>On doit créer les « Entity » : les classes qui vont contenir mes données en php.</p>
+<blockquote>
+<div><p>à créer dans <code class="docutils literal notranslate"><span class="pre">src/Entity</span></code></p>
+</div></blockquote>
+<hr class="docutils" />
+<p>Il s”agit de classes PHP, qui seront « mappées » vers les tables de la BDD.</p>
+<p>On peut soit :</p>
+<ol class="simple">
+<li><p>écrire ces classes à la main ! (comme on a fait pour le controller)</p></li>
+<li><p>soit demander à <code class="docutils literal notranslate"><span class="pre">bin/console</span></code> !</p></li>
+</ol>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>php bin/console make:entity
+</pre></div>
+</div>
+<hr class="docutils" />
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Entity</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">App\Repository\ArticleRepository</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Doctrine\ORM\Mapping</span> <span class="k">as</span> <span class="nx">ORM</span><span class="p">;</span>
+
+<span class="sd">/**</span>
+<span class="sd"> * @ORM\Entity(repositoryClass=ArticleRepository::class)</span>
+<span class="sd"> */</span>
+<span class="k">class</span> <span class="nc">Article</span>
+<span class="p">{</span>
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Id</span>
+<span class="sd">     * @ORM\GeneratedValue</span>
+<span class="sd">     * @ORM\Column(type=&quot;integer&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$id</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Column(type=&quot;string&quot;, length=255)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$title</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Column(type=&quot;text&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$content</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Column(type=&quot;string&quot;, length=100)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$image</span><span class="p">;</span>
+
+    <span class="sd">/**</span>
+<span class="sd">     * @ORM\Column(type=&quot;datetime&quot;)</span>
+<span class="sd">     */</span>
+    <span class="k">private</span> <span class="nv">$date</span><span class="p">;</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getId</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="nx">int</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">id</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getTitle</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="nx">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">title</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setTitle</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$title</span><span class="p">)</span><span class="o">:</span> <span class="nx">self</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">title</span> <span class="o">=</span> <span class="nv">$title</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getContent</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="nx">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setContent</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$content</span><span class="p">)</span><span class="o">:</span> <span class="nx">self</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">content</span> <span class="o">=</span> <span class="nv">$content</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getImage</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="nx">string</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">image</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setImage</span><span class="p">(</span><span class="nx">string</span> <span class="nv">$image</span><span class="p">)</span><span class="o">:</span> <span class="nx">self</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">image</span> <span class="o">=</span> <span class="nv">$image</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">getDate</span><span class="p">()</span><span class="o">:</span> <span class="o">?</span><span class="nx">\DateTimeInterface</span>
+    <span class="p">{</span>
+        <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">date</span><span class="p">;</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">setDate</span><span class="p">(</span><span class="nx">\DateTimeInterface</span> <span class="nv">$date</span><span class="p">)</span><span class="o">:</span> <span class="nx">self</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">date</span> <span class="o">=</span> <span class="nv">$date</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="nv">$this</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<hr class="docutils" />
+<section id="orm">
+<h2>ORM<a class="headerlink" href="#orm" title="Lien permanent vers ce titre">¶</a></h2>
+<p>ORM = Object Relational Mapping</p>
+<p>Il s”agit d”un bout de code qui sait transformer des objets PHP en tables SQL.</p>
+<p>Symfony utilise l”ORM<a class="reference external" href="%5Bd%C3%A9finition%5D(https://fr.wikipedia.org/wiki/Mapping_objet-relationnel)">^orm</a> qui s”appelle <strong>Doctrine</strong>.</p>
+<hr class="docutils" />
+<section id="migration">
+<h3>Migration<a class="headerlink" href="#migration" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="declaration">
+<h4>Déclaration<a class="headerlink" href="#declaration" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>php bin/console make:migration
+</pre></div>
+</div>
+<p>=&gt; Demande à doctrine de générer les requêtes LDD[^ldd] associées aux entités PHP que l”on a crées (donc Article pour nous)</p>
+<p>=&gt; regarder dans le répertoire <code class="docutils literal notranslate"><span class="pre">migrations/</span></code> pour les voir.</p>
+</section>
+<hr class="docutils" />
+<section id="execution">
+<h4>Exécution<a class="headerlink" href="#execution" title="Lien permanent vers ce titre">¶</a></h4>
+<div class="highlight-sh notranslate"><div class="highlight"><pre><span></span>php bin/console doctrine:migration:migrate
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<hr class="docutils" />
+<section id="precisions-symfony">
+<h2>Précisions Symfony<a class="headerlink" href="#precisions-symfony" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Model = Manager + Entity + Repository</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="../index.html">Cours Greta DWWM93 2021</a></h1>
+
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html">Lundi 2021-10-18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-10-19">Mardi 2021-10-19</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-10-25">Lundi 2021-10-25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-02">Mardi 2021-11-02</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-09">Mardi 2021-11-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-16">Mardi 2021-11-16</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-17">Mercredi 2021-11-17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-23">Mardi 2021/11/23</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-11-24">Mercredi 2021/11/24</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-11-30">Mardi 2021-11-30</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2021-12-08">Mercredi 2021-12-08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#jeudi-2021-12-09">Jeudi 2021-12-09</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2021-12-14">Mardi 2021-12-14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2021-12-20">Lundi 2021/12/20</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-03">Lundi 2022/01/03</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-04">Mardi 2022/01/04</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-10">Lundi 2022/01/10</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-11">Mardi 2022/01/11</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mercredi-2022-01-12">Mercredi 2022/01/12</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-17">Lundi 2022/01/17</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-18">Mardi 2022/01/18</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-01-25">Mardi 2022/01/25</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#vendredi-2022-01-28">Vendredi 2022/01/28</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-01-31">Lundi 2022/01/31</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-02-01">Mardi 2022/02/01</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-02-07">Lundi 2022/02/07</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-02-08">Mardi 2022/02/08</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#lundi-2022-02-14">Lundi 2022/02/14</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mardi-2022-02-15">Mardi 2022/02/15</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#afficher-la-premiere-vue-gracea-this-render">Afficher la premiere vue grâceà $this-&gt;render !</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#librairie-vs-framework">Librairie vs Framework</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#mvc">MVC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#twig">TWIG</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#la-base-de-donnees">La base de données</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="../index.html">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Recherche rapide</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &copy;2021, Esat + Marc.
+      
+      |
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
+      
+      |
+      <a href="../_sources/cours/2022-02-21_lundi_symfony.md.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>
