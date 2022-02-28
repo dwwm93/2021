@@ -13,16 +13,16 @@ revealjs-url: https://unpkg.com/reveal.js@3.9.2
 
 ---
 
-* librairie : des blocs de codes à intégrer dans votre structure
-* framework : une structure dans laquelle vous intégrez des bouts de votre code !
+- librairie : des blocs de codes à intégrer dans votre structure
+- framework : une structure dans laquelle vous intégrez des bouts de votre code !
 
 ---
 
 ## Dans le cas de symfony
 
-* soit on prend les petits bouts qu'on met dans son code (donc librairie), par ex: utiliser symfony mailer pour envoyer des mails, ou twig pour le templating (mise en forme)
-* soit on utilise le squelette qu'on nous propose : ie quasiment tous les modules de symfony, et on doit adapter notre code en conséquence.
-  
+- soit on prend les petits bouts qu'on met dans son code (donc librairie), par ex: utiliser symfony mailer pour envoyer des mails, ou twig pour le templating (mise en forme)
+- soit on utilise le squelette qu'on nous propose : ie quasiment tous les modules de symfony, et on doit adapter notre code en conséquence.
+
 ---
 
 ## Cas framework
@@ -65,29 +65,28 @@ Il faut se conformer à la structure :
 
 ---
 
-* `config/` : répertoire des configurations (fichiers `yaml`)
-* `src/` : répertoire qui contient les sources de notre code
-* `src/Controller/` : code qui concerne les ... controllers
-* `src/Entity/` : TBD
-* `src/Repository/` : TBD
-* `templates/` : répertoire des templates `twig` pour générer les vues
+- `config/` : répertoire des configurations (fichiers `yaml`)
+- `src/` : répertoire qui contient les sources de notre code
+- `src/Controller/` : code qui concerne les ... controllers
+- `src/Entity/` : TBD
+- `src/Repository/` : TBD
+- `templates/` : répertoire des templates `twig` pour générer les vues
 
 ---
 
-* `vendor/` : répertoire géré par `composer` qui contient les sources de tous les projets que l'on utilise (ex: les sources de symfony, les sources de twig, les sources de doctrine etc.) => répertoire non versionné par git ! il suffit d'utiliser `composer install` pour réinstaller tout `vendor`. (`composer` utilise alors le fichier `composer.json`)
-* `public/` : répertoire qui contient le fichier index.php et qui est exposé au monde entier (contrairement à nos sources!)
-* `migrations/` : répertoire des traitements `LDD` [^ldd] (et parfois `LMD`[^lmd] mais **anecdotique**)
+- `vendor/` : répertoire géré par `composer` qui contient les sources de tous les projets que l'on utilise (ex: les sources de symfony, les sources de twig, les sources de doctrine etc.) => répertoire non versionné par git ! il suffit d'utiliser `composer install` pour réinstaller tout `vendor`. (`composer` utilise alors le fichier `composer.json`)
+- `public/` : répertoire qui contient le fichier index.php et qui est exposé au monde entier (contrairement à nos sources!)
+- `migrations/` : répertoire des traitements `LDD` [^ldd] (et parfois `LMD`[^lmd] mais **anecdotique**)
 
 [^ldd]: ou DDL - Langage de définition des données
-
 [^lmd]: ou DML - Langage de manipulation des données
 
 ---
 
 ## Lancer le serveur web
 
-* Pour avoir accès au fichier `index.php` dans `public/`
-* et pour avoir des urls "jolies" (ex: `localhost/articles` au lieu de `localhost?page=articles`, ou `localhost/articles/1` au lieu de `localhost?page=articles&id=1` !!)
+- Pour avoir accès au fichier `index.php` dans `public/`
+- et pour avoir des urls "jolies" (ex: `localhost/articles` au lieu de `localhost?page=articles`, ou `localhost/articles/1` au lieu de `localhost?page=articles&id=1` !!)
 
 => on doit paramétrer son serveur web (ex: apache pour wamp).
 
@@ -107,15 +106,15 @@ symfony server:start
 
 Symfony utilise le _design pattern_ (= organise son code) **MVC**.
 
-* Model : partie du code qui va gérer les données et parler à la base
-* Controller : chef d'orchestre, c'est lui qui contient l'intelligence
-* View : partie qui gère l'IHM[^ihm] et l'affichage à l'utilisateur
+- Model : partie du code qui va gérer les données et parler à la base
+- Controller : chef d'orchestre, c'est lui qui contient l'intelligence
+- View : partie qui gère l'IHM[^ihm] et l'affichage à l'utilisateur
 
 ---
 
-* ! Ne pas oublier:
-  * router
-  * database
+- ! Ne pas oublier:
+  - router
+  - database
 
 à compléter : comment M, V et C intéragissent les uns avec les autres (et dans quel ordre).
 
@@ -125,7 +124,7 @@ Symfony utilise le _design pattern_ (= organise son code) **MVC**.
 
 ## Controller
 
-Se trouve dans le répertoire `src/Controller`. 
+Se trouve dans le répertoire `src/Controller`.
 
 Pour créer un nouveau Controller, je crée un fichier `ArticleController`.
 
@@ -224,11 +223,11 @@ Langage de templating.
 
 ## Syntaxe
 
-* `{{ ma_var }}` : affiche la variable (si elle est affichable)
-* `{# mon commentaire #}` : commentaire dans le code twig, non affiché dans le html
-* `{% for element in tableau %} {{ element }} {% endfor %}` : boucle
-* `{% if ma_var == "jour" %} Bonjour {{ nom }} {% else %} Bonsoir {% endif %}` : test sur les variables disponibles
-* etc.
+- `{{ ma_var }}` : affiche la variable (si elle est affichable)
+- `{# mon commentaire #}` : commentaire dans le code twig, non affiché dans le html
+- `{% for element in tableau %} {{ element }} {% endfor %}` : boucle
+- `{% if ma_var == "jour" %} Bonjour {{ nom }} {% else %} Bonsoir {% endif %}` : test sur les variables disponibles
+- etc.
 
 ---
 
@@ -461,7 +460,7 @@ class Article
 
 ## ORM
 
-ORM = Object Relational Mapping
+ORM = Object Relational Mapping = correspondance table / classe
 
 Il s'agit d'un bout de code qui sait transformer des objets PHP en tables SQL.
 
