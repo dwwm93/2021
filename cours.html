@@ -1248,8 +1248,8 @@ composer require webapp
 <li><p><code class="docutils literal notranslate"><span class="pre">public/</span></code> : répertoire qui contient le fichier index.php et qui est exposé au monde entier (contrairement à nos sources!)</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">migrations/</span></code> : répertoire des traitements <code class="docutils literal notranslate"><span class="pre">LDD</span></code> [^ldd] (et parfois <code class="docutils literal notranslate"><span class="pre">LMD</span></code>[^lmd] mais <strong>anecdotique</strong>)</p></li>
 </ul>
-<p>[^ldd]: ou DDL - Langage de définition des données</p>
-<p>[^lmd]: ou DML - Langage de manipulation des données</p>
+<p>[^ldd]: ou DDL - Langage de définition des données
+[^lmd]: ou DML - Langage de manipulation des données</p>
 </section>
 </section>
 <hr class="docutils" />
@@ -1595,7 +1595,7 @@ composer require webapp
 <hr class="docutils" />
 <section id="orm">
 <h2>ORM<a class="headerlink" href="#orm" title="Lien permanent vers ce titre">¶</a></h2>
-<p>ORM = Object Relational Mapping</p>
+<p>ORM = Object Relational Mapping = correspondance table / classe</p>
 <p>Il s”agit d”un bout de code qui sait transformer des objets PHP en tables SQL.</p>
 <p>Symfony utilise l”ORM<a class="reference external" href="%5Bd%C3%A9finition%5D(https://fr.wikipedia.org/wiki/Mapping_objet-relationnel)">^orm</a> qui s”appelle <strong>Doctrine</strong>.</p>
 <hr class="docutils" />
@@ -1622,6 +1622,54 @@ composer require webapp
 <section id="precisions-symfony">
 <h2>Précisions Symfony<a class="headerlink" href="#precisions-symfony" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Model = Manager + Entity + Repository</p>
+</section>
+<section id="lundi-2022-02-28">
+<h2>Lundi 2022/02/28<a class="headerlink" href="#lundi-2022-02-28" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="id14">
+<h3>ORM<a class="headerlink" href="#id14" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Doctrine est l”ORM utilisé par symfony.</p>
+</section>
+<section id="decoupage-de-doctrine">
+<h3>Découpage de Doctrine<a class="headerlink" href="#decoupage-de-doctrine" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Le Model est découpé en :</p>
+<ul class="simple">
+<li><p>Entity (propriétés de l”entité)</p></li>
+<li><p>Repository (lecture)</p></li>
+<li><p>Manager (modification)</p></li>
+</ul>
+</section>
+<section id="utiliser-dans-le-controller">
+<h3>Utiliser dans le Controller<a class="headerlink" href="#utiliser-dans-le-controller" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$mes_entités = $this-&gt;getDoctrine()-&gt;getRepository(MyEntity::class)-&gt;findAll();</span>
+</pre></div>
+</div>
+<p>ou pour récupérer un élément seulement dans la base :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$mon_entité = $this-&gt;getDoctrine()-&gt;getRepository(MyEntity::class)-&gt;find($id);</span>
+</pre></div>
+</div>
+</section>
+<section id="route-avec-parametre">
+<h3>Route avec paramètre<a class="headerlink" href="#route-avec-parametre" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">/**</span>
+<span class="x"> * @Route(&quot;/articles/{id}&quot;, name=&quot;article&quot;)</span>
+<span class="x"> */</span>
+<span class="x">function show($id)</span>
+<span class="x">{</span>
+
+<span class="x">}</span>
+</pre></div>
+</div>
+</section>
+<section id="url-dans-twig">
+<h3>Url dans twig<a class="headerlink" href="#url-dans-twig" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">path</span><span class="o">(</span><span class="s1">&#39;name_route&#39;</span><span class="o">,</span> <span class="o">{</span><span class="nv">id</span><span class="o">:</span> <span class="nv">entity.id</span><span class="o">})</span> <span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</div>
+</section>
+<section id="id15">
+<h3>Exercice<a class="headerlink" href="#id15" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Ajouter une page qui liste les articles ou les users, et un lien vers la page (à faire aussi) qui concerne un article ou un user.</p>
+</section>
 </section>
 </section>
 
@@ -1827,6 +1875,7 @@ composer require webapp
 <li class="toctree-l2"><a class="reference internal" href="#mvc-model">MVC : Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#orm">ORM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#precisions-symfony">Précisions Symfony</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#lundi-2022-02-28">Lundi 2022/02/28</a></li>
 </ul>
 </li>
 </ul>
