@@ -1671,6 +1671,111 @@ composer require webapp
 <p>Ajouter une page qui liste les articles ou les users, et un lien vers la page (à faire aussi) qui concerne un article ou un user.</p>
 </section>
 </section>
+<section id="mardi-2022-03-01">
+<h2>Mardi 2022/03/01<a class="headerlink" href="#mardi-2022-03-01" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="formulaires-avec-symfony">
+<h3>Formulaires avec Symfony<a class="headerlink" href="#formulaires-avec-symfony" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>Faire la route et la méthode dans le Controller</p></li>
+<li><p>Faire le template pour la page de création</p></li>
+</ol>
+<p>=&gt; il manque le formulaire html !</p>
+<ul class="simple">
+<li><p>Option 1 : je le fais à la main …</p></li>
+<li><p>Option 2 : je demande à symfony de le faire pour moi</p></li>
+</ul>
+</section>
+<section id="make-form">
+<h3>make:form<a class="headerlink" href="#make-form" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Grâce à <code class="docutils literal notranslate"><span class="pre">bin/console</span></code>, je peux demander à symfony de créer un formulaire pour moi.</p>
+<p>Attention il s”agit d”une <code class="docutils literal notranslate"><span class="pre">classe</span></code> formulaire ! donc pas d”un formulaire html direct !</p>
+<p>En revanche cette classe possède des méthodes qui lui permettent de générer ce html ! youpi !</p>
+<section id="monentitetype">
+<h4>MonEntitéType<a class="headerlink" href="#monentitetype" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Le nom de la classe recommandé est « EntitéType » (si mon entité est Article, alors <code class="docutils literal notranslate"><span class="pre">ArticleType</span></code>). C”est fait de telle sorte que « théoriquement parlant », on un nouveau <code class="docutils literal notranslate"><span class="pre">type</span></code>d”<code class="docutils literal notranslate"><span class="pre">input</span></code> qui serait le type <code class="docutils literal notranslate"><span class="pre">article</span></code>.</p>
+<p>Dans les faits, ce sera juste un assemblage de plusieurs inputs : ceux dont Article a besoin.</p>
+</section>
+<section id="entite-associee">
+<h4>Entité associée<a class="headerlink" href="#entite-associee" title="Lien permanent vers ce titre">¶</a></h4>
+<p><code class="docutils literal notranslate"><span class="pre">make:form</span></code> nous demande l”entité associée : il s”agit de celle que je veux remplir avec le formulaire que je crée.</p>
+<p>Si je veux remplir un User, mon formulaire sera bien différent de si je veux remplir un Article.</p>
+</section>
+</section>
+<section id="utilisation">
+<h3>Utilisation<a class="headerlink" href="#utilisation" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Une fois créé le nouveau <code class="docutils literal notranslate"><span class="pre">ArticleType</span></code>, je vois qu”il possède les inputs adaptés à l”entité Article :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function buildForm(...): void</span>
+<span class="x">    {</span>
+<span class="x">        $builder</span>
+<span class="x">            -&gt;add(&#39;title&#39;) // l&#39;article possède un $title</span>
+<span class="x">            -&gt;add(&#39;content&#39;) // etc.</span>
+<span class="x">            -&gt;add(&#39;image&#39;)</span>
+<span class="x">            -&gt;add(&#39;date&#39;)</span>
+<span class="x">        ;</span>
+<span class="x">    }</span>
+</pre></div>
+</div>
+</section>
+<section id="integration-dans-le-controller">
+<h3>Intégration dans le Controller<a class="headerlink" href="#integration-dans-le-controller" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Utiliser <code class="docutils literal notranslate"><span class="pre">$this-&gt;createForm(ArticleType::class)</span></code> fourni par le <code class="docutils literal notranslate"><span class="pre">AbstractController</span></code> de symfony.</p>
+<p>Cela génère un objet Form, qui nous permettra de générer la vue etc.</p>
+<p>Je l”appelle dans le template :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$this-&gt;render(&#39;template.html.twig&#39;, [</span>
+<span class="x">    &#39;formView&#39; =&gt; $form-&gt;createView(),</span>
+<span class="x">])</span>
+</pre></div>
+</div>
+<p>et dans le fichier twig :</p>
+<div class="highlight-twig notranslate"><div class="highlight"><pre><span></span><span class="cp">{{</span> <span class="nv">form</span> <span class="o">(</span><span class="nv">formView</span><span class="o">)</span><span class="cp">}}</span><span class="x"></span>
+
+<span class="x">ou</span>
+
+<span class="cp">{{</span> <span class="nv">form_start</span><span class="o">(</span><span class="nv">formView</span><span class="o">)</span><span class="cp">}}</span><span class="x"></span>
+
+<span class="cp">{{</span> <span class="nv">form_widget</span><span class="o">(</span><span class="nv">formView</span><span class="o">)</span><span class="cp">}}</span><span class="x"></span>
+
+<span class="x">&lt;button type=&quot;submit&quot;&gt;Ajouter&lt;/button&gt;</span>
+
+<span class="cp">{{</span> <span class="nv">form_end</span><span class="o">(</span><span class="nv">formView</span><span class="o">)</span><span class="cp">}}</span><span class="x"></span>
+</pre></div>
+</div>
+</section>
+<section id="injection-de-dependances">
+<h3>Injection de dépendances<a class="headerlink" href="#injection-de-dependances" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Une fois le formulaire posté, la méthode est de nouveau appelée, et le formulaire réaffiché.</p>
+<p>Mais pour savoir ce qu”il contenait on a besoin de lire la Request HTTP, et mettre à jour $form.</p>
+<p>Pour ce faire, on va <em>demander</em> à Symfony de nous donner des éléments dont on a besoin.</p>
+<p>Comme C”est Symfony (son routeur) qui exécute les méthodes du Controller, il est en mesure (car il est très intelligent, c”est un mécanisme compliqué) d”appeler les méthodes avec des arguments spécifiques si ils sont demandés.</p>
+<p>Donc si je définis</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">public function create(Request $request)</span>
+<span class="x">{</span>
+
+<span class="x">}</span>
+</pre></div>
+</div>
+<p>Symfony sera capable d”appeler <code class="docutils literal notranslate"><span class="pre">create</span></code> en lui donnant l”objet de type <code class="docutils literal notranslate"><span class="pre">Request</span></code>qu”il connaît (càd la requete http de l”utilisateur).</p>
+<p>Ce n”est pas magique, et c”est très puissant.</p>
+</section>
+<section id="integrer-la-request-dans-le-form">
+<h3>Intégrer la Request dans le $form<a class="headerlink" href="#integrer-la-request-dans-le-form" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$form-&gt;handleRequest($request);</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">$form</span></code> est maintenant à jour, avec les infos récupérées du $_POST contenu dans la Request.</p>
+<p>Je peux donc tester les données et l”état du formulaire :</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">if ($form-&gt;isSubmitted() &amp;&amp; $form-&gt;isValid())</span>
+<span class="x">{</span>
+<span class="x">    // Traitement à jouer si le formulaire est soumis depuis le front et valide.</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</section>
+<section id="si-le-formulaire-est-soumis-et-il-est-valide">
+<h3>Si le formulaire est soumis et il est valide<a class="headerlink" href="#si-le-formulaire-est-soumis-et-il-est-valide" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Alors je vais créer une nouvelle Entité contenant les informations du formulaire.</p>
+</section>
+</section>
 </section>
 
 
@@ -1876,6 +1981,7 @@ composer require webapp
 <li class="toctree-l2"><a class="reference internal" href="#orm">ORM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#precisions-symfony">Précisions Symfony</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#lundi-2022-02-28">Lundi 2022/02/28</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mardi-2022-03-01">Mardi 2022/03/01</a></li>
 </ul>
 </li>
 </ul>

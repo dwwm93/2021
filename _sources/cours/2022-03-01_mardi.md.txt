@@ -1,0 +1,121 @@
+## Mardi 2022/03/01
+
+### Formulaires avec Symfony
+
+1. Faire la route et la méthode dans le Controller
+2. Faire le template pour la page de création
+
+=> il manque le formulaire html !
+
+- Option 1 : je le fais à la main ...
+- Option 2 : je demande à symfony de le faire pour moi
+
+### make:form
+
+Grâce à `bin/console`, je peux demander à symfony de créer un formulaire pour moi.
+
+Attention il s'agit d'une `classe` formulaire ! donc pas d'un formulaire html direct !
+
+En revanche cette classe possède des méthodes qui lui permettent de générer ce html ! youpi !
+
+#### MonEntitéType
+
+Le nom de la classe recommandé est "EntitéType" (si mon entité est Article, alors `ArticleType`). C'est fait de telle sorte que "théoriquement parlant", on un nouveau `type`d'`input` qui serait le type `article`.
+
+Dans les faits, ce sera juste un assemblage de plusieurs inputs : ceux dont Article a besoin.
+
+#### Entité associée
+
+`make:form` nous demande l'entité associée : il s'agit de celle que je veux remplir avec le formulaire que je crée.
+
+Si je veux remplir un User, mon formulaire sera bien différent de si je veux remplir un Article.
+
+### Utilisation
+
+Une fois créé le nouveau `ArticleType`, je vois qu'il possède les inputs adaptés à l'entité Article :
+
+```php
+public function buildForm(...): void
+    {
+        $builder
+            ->add('title') // l'article possède un $title
+            ->add('content') // etc.
+            ->add('image')
+            ->add('date')
+        ;
+    }
+```
+
+### Intégration dans le Controller
+
+Utiliser `$this->createForm(ArticleType::class)` fourni par le `AbstractController` de symfony.
+
+Cela génère un objet Form, qui nous permettra de générer la vue etc.
+
+Je l'appelle dans le template :
+
+```php
+$this->render('template.html.twig', [
+    'formView' => $form->createView(),
+])
+```
+
+et dans le fichier twig :
+
+```twig
+{{ form (formView)}}
+
+ou
+
+{{ form_start(formView)}}
+
+{{ form_widget(formView)}}
+
+<button type="submit">Ajouter</button>
+
+{{ form_end(formView)}}
+```
+
+### Injection de dépendances
+
+Une fois le formulaire posté, la méthode est de nouveau appelée, et le formulaire réaffiché.
+
+Mais pour savoir ce qu'il contenait on a besoin de lire la Request HTTP, et mettre à jour $form.
+
+Pour ce faire, on va _demander_ à Symfony de nous donner des éléments dont on a besoin.
+
+Comme C'est Symfony (son routeur) qui exécute les méthodes du Controller, il est en mesure (car il est très intelligent, c'est un mécanisme compliqué) d'appeler les méthodes avec des arguments spécifiques si ils sont demandés.
+
+Donc si je définis
+
+```php
+public function create(Request $request)
+{
+
+}
+```
+
+Symfony sera capable d'appeler `create` en lui donnant l'objet de type `Request`qu'il connaît (càd la requete http de l'utilisateur).
+
+Ce n'est pas magique, et c'est très puissant.
+
+### Intégrer la Request dans le $form
+
+```php
+$form->handleRequest($request);
+```
+
+`$form` est maintenant à jour, avec les infos récupérées du $\_POST contenu dans la Request.
+
+Je peux donc tester les données et l'état du formulaire :
+
+```php
+if ($form->isSubmitted() && $form->isValid())
+{
+    // Traitement à jouer si le formulaire est soumis depuis le front et valide.
+}
+```
+
+### Si le formulaire est soumis et il est valide
+
+Alors je vais créer une nouvelle Entité contenant les informations du formulaire.
