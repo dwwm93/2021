@@ -3,9 +3,11 @@
 {% block body %}
 <h1>Articles</h1>
 
+<a href="{{ path('create_article') }}" class="btn">Créer</a>
+
 <ul>
 {% for article in articles %}
-    <li><a href="{{ path('article', {id: article.id}) }}">{{ article.title }}</a></li>
+    <li><a href="{{ path('show_article', {id: article.id}) }}">{{ article.title }}</a></li>
 {% endfor %}
 </ul>
 

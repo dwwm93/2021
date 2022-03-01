@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<article>
+<h1>Création article</h1>
+
+{{ form_start(viewForm) }}
+
+{{ form_widget(viewForm)}}
+
+<button type="submit">+</button>
+{{ form_end(viewForm) }}
+
+
+</article>
+
+{% endblock %}
