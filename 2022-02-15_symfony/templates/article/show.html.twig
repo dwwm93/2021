@@ -4,6 +4,7 @@
 
 <article>
 <h1>{{ article.title }}</h1>
+<a href="{{ path('update_article', {id: article.id }) }}">Modifier</a>
 <section>
     <img src="{{ article.image }}" alt="" />
 </section>
