@@ -1703,7 +1703,7 @@ En revanche cette classe possède des méthodes qui lui permettent de générer 
 
 #### MonEntitéType
 
-Le nom de la classe recommandé est "EntitéType" (si mon entité est Article, alors `ArticleType`). C'est fait de telle sorte que "théoriquement parlant", on un nouveau `type`d'`input` qui serait le type `article`.
+Le nom de la classe recommandé est "EntitéType" (si mon entité est Article, alors `ArticleType`). C'est fait de telle sorte que "théoriquement parlant", on un nouveau `type` d'`input` qui serait le type `article`.
 
 Dans les faits, ce sera juste un assemblage de plusieurs inputs : ceux dont Article a besoin.
 
@@ -1802,3 +1802,45 @@ if ($form->isSubmitted() && $form->isValid())
 ### Si le formulaire est soumis et il est valide
 
 Alors je vais créer une nouvelle Entité contenant les informations du formulaire.
+
+#### Marche à suivre
+
+```php
+$article = new Article();
+// Le deuxième paramètre de la méthode `createForm` prend
+// un objet qui peut stocker les valeurs du formulaire.
+// (cf : `data_class` dans ArticleType).
+// Dans notre cas, la data class est une classe "entité", donc
+// une fois remplie on pourra la sauvegarder en base.
+// En résumé j'ai :
+//                     Form              ORM
+// données formulaires <-> class Article <-> table article
+$form = $this->createForm(ArticleType::class, $article);
+```
+
+Comme le `handleRequest` remplit le Form, le Form remplit $article.
+
+Il suffit ensuite de sauvegarder l'article. (on demande au Manager de Doctrine de le faire ! Et pour avoir le manager, on le demande à Symfony avec de l'Injection de Dépendance)
+
+```php
+function create(...., ObjectManager $manager)
+{
+    ...
+    $manager->persist($article);
+    $manager->flush();
+}
+```
+
+### Update d'un article
+
+C'est la même chose que la création.
+
+La seule différence c'est que le formulaire doit être prérempli avec les données existantes, récupérées depuis le paramètre `id` de la route.
+
+Donc on ajoute juste une étape supplémentaire, qui est une requête à la base grâce au Repository (qu'on obtient également par Injection de Dépendance).
+
+### @ParamConverter
+
+Symfony est même capable de nous injecter l'objet Article directement, si on type correctement le paramètre.
+
+Le service symfony qui s'en charge s'appelle le ParamConverter

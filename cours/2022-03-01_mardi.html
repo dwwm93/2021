@@ -53,7 +53,7 @@
 <p>En revanche cette classe possède des méthodes qui lui permettent de générer ce html ! youpi !</p>
 <section id="monentitetype">
 <h3>MonEntitéType<a class="headerlink" href="#monentitetype" title="Lien permanent vers ce titre">¶</a></h3>
-<p>Le nom de la classe recommandé est « EntitéType » (si mon entité est Article, alors <code class="docutils literal notranslate"><span class="pre">ArticleType</span></code>). C”est fait de telle sorte que « théoriquement parlant », on un nouveau <code class="docutils literal notranslate"><span class="pre">type</span></code>d”<code class="docutils literal notranslate"><span class="pre">input</span></code> qui serait le type <code class="docutils literal notranslate"><span class="pre">article</span></code>.</p>
+<p>Le nom de la classe recommandé est « EntitéType » (si mon entité est Article, alors <code class="docutils literal notranslate"><span class="pre">ArticleType</span></code>). C”est fait de telle sorte que « théoriquement parlant », on un nouveau <code class="docutils literal notranslate"><span class="pre">type</span></code> d”<code class="docutils literal notranslate"><span class="pre">input</span></code> qui serait le type <code class="docutils literal notranslate"><span class="pre">article</span></code>.</p>
 <p>Dans les faits, ce sera juste un assemblage de plusieurs inputs : ceux dont Article a besoin.</p>
 </section>
 <section id="entite-associee">
@@ -135,6 +135,42 @@
 <section id="si-le-formulaire-est-soumis-et-il-est-valide">
 <h2>Si le formulaire est soumis et il est valide<a class="headerlink" href="#si-le-formulaire-est-soumis-et-il-est-valide" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Alors je vais créer une nouvelle Entité contenant les informations du formulaire.</p>
+<section id="marche-a-suivre">
+<h3>Marche à suivre<a class="headerlink" href="#marche-a-suivre" title="Lien permanent vers ce titre">¶</a></h3>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">$article = new Article();</span>
+<span class="x">// Le deuxième paramètre de la méthode `createForm` prend</span>
+<span class="x">// un objet qui peut stocker les valeurs du formulaire.</span>
+<span class="x">// (cf : `data_class` dans ArticleType).</span>
+<span class="x">// Dans notre cas, la data class est une classe &quot;entité&quot;, donc</span>
+<span class="x">// une fois remplie on pourra la sauvegarder en base.</span>
+<span class="x">// En résumé j&#39;ai :</span>
+<span class="x">//                     Form              ORM</span>
+<span class="x">// données formulaires &lt;-&gt; class Article &lt;-&gt; table article</span>
+<span class="x">$form = $this-&gt;createForm(ArticleType::class, $article);</span>
+</pre></div>
+</div>
+<p>Comme le <code class="docutils literal notranslate"><span class="pre">handleRequest</span></code> remplit le Form, le Form remplit $article.</p>
+<p>Il suffit ensuite de sauvegarder l”article. (on demande au Manager de Doctrine de le faire ! Et pour avoir le manager, on le demande à Symfony avec de l”Injection de Dépendance)</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="x">function create(...., ObjectManager $manager)</span>
+<span class="x">{</span>
+<span class="x">    ...</span>
+<span class="x">    $manager-&gt;persist($article);</span>
+<span class="x">    $manager-&gt;flush();</span>
+<span class="x">}</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="update-d-un-article">
+<h2>Update d”un article<a class="headerlink" href="#update-d-un-article" title="Lien permanent vers ce titre">¶</a></h2>
+<p>C”est la même chose que la création.</p>
+<p>La seule différence c”est que le formulaire doit être prérempli avec les données existantes, récupérées depuis le paramètre <code class="docutils literal notranslate"><span class="pre">id</span></code> de la route.</p>
+<p>Donc on ajoute juste une étape supplémentaire, qui est une requête à la base grâce au Repository (qu”on obtient également par Injection de Dépendance).</p>
+</section>
+<section id="paramconverter">
+<h2>&#64;ParamConverter<a class="headerlink" href="#paramconverter" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Symfony est même capable de nous injecter l”objet Article directement, si on type correctement le paramètre.</p>
+<p>Le service symfony qui s”en charge s”appelle le ParamConverter</p>
 </section>
 </section>
 
