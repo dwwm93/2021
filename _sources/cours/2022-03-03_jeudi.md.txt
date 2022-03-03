@@ -1,0 +1,11 @@
+## Jeudi 2022/03/03
+
+### Authentification avec Symfony
+
+- utilisation de la doc symfony pour s'entraîner.
+
+https://symfony.com/doc/5.4/security.html
+
+### Interface en php
+
+contrat avec la classe qui l'implémente.

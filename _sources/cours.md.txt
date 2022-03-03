@@ -1844,3 +1844,14 @@ Donc on ajoute juste une étape supplémentaire, qui est une requête à la base
 Symfony est même capable de nous injecter l'objet Article directement, si on type correctement le paramètre.
 
 Le service symfony qui s'en charge s'appelle le ParamConverter
+## Jeudi 2022/03/03
+
+### Authentification avec Symfony
+
+- utilisation de la doc symfony pour s'entraîner.
+
+https://symfony.com/doc/5.4/security.html
+
+### Interface en php
+
+contrat avec la classe qui l'implémente.
