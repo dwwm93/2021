@@ -1,0 +1,49 @@
+## 2020/11/05
+
+Retour sur le javascript, variables et fonctions.
+
+### Portée des variables
+
+Exercice pour comprendre qu'une fonction peut modifier une 
+variable à l'extérieur d'elle même mais personne ne peut 
+lire les variables qui sont à l'intérieur d'elle, à part
+si on est déjà dedans.
+
+Donc les variables dans les fonctions, meme si elles ont les 
+noms des variables à l'extérieur sont des variables différentes.
+
+Petit tp pour tester les vars dans les fonctions et les var dans
+les boucles ou les if ! là par contre on modifie la var globale 
+tout le temps, et on peut accéder aux variables définies dans le
+if ou le for, à condition qu'on soit déjà rentré dedans une fois.
+(exemple de la boite soit noire soit blanche)
+
+Le tp consiste en des fonctions de calcul de salaire.
+
+## 2020/11/06
+
+### TP Banque
+
+Faire une IHM qui liste les transactions de son compte bancaire
+et avec un champ input pour lancer le calcul d'une prévision de solde
+en fonction du salaire par mois et du nombre de mois où on est payés.
+
+Il faut le faire pour 2 comptes distincts.
+
+Ensuite on cherche à faire du js pour :
+* récupérer la valeur du montant du compte dans le html
+* récupérer les champs salaire et durée dans le formulaire
+* les transformer en chiffre (cf typeof pour contrôler)
+* faire le calcul
+* afficher le résultat du calcul à un endroit donné
+
+Il faudrait voir les listes à ce moment là, mais un vendredi c'est 
+compliqué !
+
+### Font Awesome
+
+Comment utiliser les pictogrammes.
+
+### css :after
+
+Pour afficher les "€" sans avoir à les enlever/remettre en js.
