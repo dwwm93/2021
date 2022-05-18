@@ -57,12 +57,12 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <section id="definition-declaration">
 <h3>1. Définition / Déclaration<a class="headerlink" href="#definition-declaration" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Syntaxe en javascript:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">argument1</span><span class="p">,</span> <span class="nx">argument2</span><span class="p">){</span>
-    <span class="cm">/** Ici traitement en javascript ! */</span>
-    <span class="c1">// Par exemple : </span>
-    <span class="kd">let</span> <span class="nx">somme</span> <span class="o">=</span> <span class="nx">argument1</span> <span class="o">+</span> <span class="nx">argument2</span>
-    <span class="k">return</span> <span class="nx">somme</span><span class="p">;</span> <span class="c1">// ce que la fonction &quot;renvoie&quot; en sortie</span>
-<span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">argument1</span><span class="p">,</span><span class="w"> </span><span class="nx">argument2</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/** Ici traitement en javascript ! */</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Par exemple : </span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">somme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">argument1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">argument2</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">somme</span><span class="p">;</span><span class="w"> </span><span class="c1">// ce que la fonction &quot;renvoie&quot; en sortie</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>cf en mathématique : <code class="docutils literal notranslate"><span class="pre">f(x)=x+1</span></code>.</p>
@@ -71,12 +71,12 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <section id="execution">
 <h3>2. Execution<a class="headerlink" href="#execution" title="Lien permanent vers ce titre">¶</a></h3>
 <p>ou : comment utiliser la fonction ?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">valeur1</span> <span class="o">=</span> <span class="s2">&quot;valeur1&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">valeur2</span> <span class="o">=</span> <span class="s2">&quot;valeur2&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">valeur1</span><span class="p">,</span> <span class="nx">valeur2</span><span class="p">);</span>
-<span class="c1">// Questions :</span>
-<span class="c1">// resultat contient quoi ?</span>
-<span class="c1">// resultat -&gt; &quot;valeur1&quot; + &quot;valeur2&quot; -&gt; &quot;valeur1valeur2&quot;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">valeur1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;valeur1&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valeur2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;valeur2&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">valeur1</span><span class="p">,</span><span class="w"> </span><span class="nx">valeur2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Questions :</span><span class="w"></span>
+<span class="c1">// resultat contient quoi ?</span><span class="w"></span>
+<span class="c1">// resultat -&gt; &quot;valeur1&quot; + &quot;valeur2&quot; -&gt; &quot;valeur1valeur2&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -140,6 +140,7 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#mvc">MVC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#twig">TWIG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#la-base-de-donnees">La base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#securite">Sécurité</a></li>
 </ul>
 
 <div class="relations">
@@ -175,7 +176,7 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
       &copy;2021, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

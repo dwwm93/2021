@@ -41,7 +41,7 @@
 <section id="fonctionnement">
 <h3>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Quand je fais en jquery :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>je fais 2 actions successives :</p>
@@ -54,43 +54,43 @@
 <h3>Reprise sur les getter/setter<a class="headerlink" href="#reprise-sur-les-getter-setter" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/** getter = pour recuperer la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
 <span class="cm"> * utiliser :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter =pour modifier la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
 <span class="cm"> * utiliser : </span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;la nouvelle valeur&quot;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;la nouvelle valeur&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="cm">/** getter = pour recuperer le text d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res2</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter = pour modifier le text d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;le nouveau text&quot;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;le nouveau text&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="cm">/** getter = pour recuperer le html d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res3</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter = pour modifier le html d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;le nouveau html&lt;/p&gt;&quot;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;le nouveau html&lt;/p&gt;&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="cm">/** getter = pour recuperer l&#39;attribut d&#39;une balise quelconque (ex: href pour a ..)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res4</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter = pour modifier un attribut d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="s1">&#39;https://impots.gouv.fr&#39;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;https://impots.gouv.fr&#39;</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </section>
@@ -108,16 +108,16 @@
 <li><p>l”événement en tant que tel associé à l”élément HTML qui l”a déclenché</p></li>
 <li><p>la fonction qui « écoute » les événements, pour se déclencher quand elle en voit un passer qui correspond à ce qu”elle attend</p></li>
 </ol>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-<span class="p">});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>⚠️  attention, ça ne veut pas dire que le js déclenche le click, mais qu”il réagit s”il y a un clic !</p>
 <p>ici le this correspond à l”élément qui a déclenché l”événement, donc c”est « button » et $(this) ça nous renvoie le bouton en version « jquery ».</p>
 <section id="syntaxe-bis">
 <h4>Syntaxe bis<a class="headerlink" href="#syntaxe-bis" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">.....;});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="w"> </span><span class="p">.....;});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>avec « event » : « click », « dblclik » etc.</p>
@@ -149,15 +149,15 @@
 </ol>
 <section id="correction-1">
 <h3>Correction 1<a class="headerlink" href="#correction-1" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(){</span>
-  <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">inputVal</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="sr">/^[\w]+@[\w]+\.[\w]{1,3}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">inputVal</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">input</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">input</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">inputVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="sr">/^[\w]+@[\w]+\.[\w]{1,3}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">inputVal</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">input</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">input</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -217,6 +217,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#mvc">MVC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#twig">TWIG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#la-base-de-donnees">La base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#securite">Sécurité</a></li>
 </ul>
 
 <div class="relations">
@@ -252,7 +253,7 @@
       &copy;2021, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

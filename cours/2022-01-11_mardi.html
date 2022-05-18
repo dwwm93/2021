@@ -35,10 +35,10 @@
   <section id="mardi-2022-01-11">
 <h1>Mardi 2022/01/11<a class="headerlink" href="#mardi-2022-01-11" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Révisions event jQuery :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isEmail</span><span class="p">(){</span>
-  <span class="c1">// contenu</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="nx">isEmail</span><span class="p">)</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">isEmail</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// contenu</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isEmail</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ici on a une fonction nommée, alors qu”hier on a vu des fonctions « anonymes ».</p>
@@ -52,30 +52,30 @@
 <p>contrainte : au moins une fois, utiliser une fonction « non anonyme », donc déclarée avant</p>
 <section id="desactiver-le-bouton-du-formulaire-quand-on-clique-dessus">
 <h3>Désactiver le bouton du formulaire quand on clique dessus<a class="headerlink" href="#desactiver-le-bouton-du-formulaire-quand-on-clique-dessus" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">disableButton</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">disableButton</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">disableButton</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">disableButton</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="afficher-une-aide-au-survol-de-l-input-et-passer-le-texte-en-orange">
 <h3>Afficher une aide au survol de l”input et passer le texte en orange<a class="headerlink" href="#afficher-une-aide-au-survol-de-l-input-et-passer-le-texte-en-orange" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">afficheAide</span><span class="p">(){</span>
-  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;text-orange&#39;</span><span class="p">);</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#helperText&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;input.helper&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mouseenter&#39;</span><span class="p">,</span> <span class="nx">afficheAide</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">afficheAide</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;text-orange&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#helperText&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;input.helper&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mouseenter&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">afficheAide</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="afficher-cacher-la-modal-avec-le-formulaire">
 <h3>Afficher / cacher la modal avec le formulaire<a class="headerlink" href="#afficher-cacher-la-modal-avec-le-formulaire" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#showModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#modal&#39;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#showModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#modal&#39;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -146,6 +146,7 @@
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#mvc">MVC</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#twig">TWIG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../cours.html#la-base-de-donnees">La base de données</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../cours.html#securite">Sécurité</a></li>
 </ul>
 
 <div class="relations">
@@ -181,7 +182,7 @@
       &copy;2021, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |

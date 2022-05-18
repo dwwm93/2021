@@ -427,9 +427,9 @@ la photo, le nom/prénom, les compétences et les langues.</p>
 <section id="decouverte-des-boucles">
 <h2>Découverte des boucles<a class="headerlink" href="#decouverte-des-boucles" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Syntaxe js des boucles :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="p">(</span><span class="kd">let</span> <span class="nx">i</span> <span class="o">=</span> <span class="mf">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mf">10</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span>
-    <span class="c1">// traitement</span>
-<span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="k">for</span><span class="w"> </span><span class="p">(</span><span class="kd">let</span><span class="w"> </span><span class="nx">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0</span><span class="p">;</span><span class="nx">i</span><span class="o">&lt;</span><span class="mf">10</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// traitement</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Exercice : demander un nombre à l”utilisateur et énumerer tous les nombres de 0 au chiffre demandé dans une liste html.</p>
@@ -460,12 +460,12 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <section id="definition-declaration">
 <h3>1. Définition / Déclaration<a class="headerlink" href="#definition-declaration" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Syntaxe en javascript:</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">argument1</span><span class="p">,</span> <span class="nx">argument2</span><span class="p">){</span>
-    <span class="cm">/** Ici traitement en javascript ! */</span>
-    <span class="c1">// Par exemple : </span>
-    <span class="kd">let</span> <span class="nx">somme</span> <span class="o">=</span> <span class="nx">argument1</span> <span class="o">+</span> <span class="nx">argument2</span>
-    <span class="k">return</span> <span class="nx">somme</span><span class="p">;</span> <span class="c1">// ce que la fonction &quot;renvoie&quot; en sortie</span>
-<span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">argument1</span><span class="p">,</span><span class="w"> </span><span class="nx">argument2</span><span class="p">){</span><span class="w"></span>
+<span class="w">    </span><span class="cm">/** Ici traitement en javascript ! */</span><span class="w"></span>
+<span class="w">    </span><span class="c1">// Par exemple : </span><span class="w"></span>
+<span class="w">    </span><span class="kd">let</span><span class="w"> </span><span class="nx">somme</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">argument1</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">argument2</span><span class="w"></span>
+<span class="w">    </span><span class="k">return</span><span class="w"> </span><span class="nx">somme</span><span class="p">;</span><span class="w"> </span><span class="c1">// ce que la fonction &quot;renvoie&quot; en sortie</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>cf en mathématique : <code class="docutils literal notranslate"><span class="pre">f(x)=x+1</span></code>.</p>
@@ -474,12 +474,12 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <section id="execution">
 <h3>2. Execution<a class="headerlink" href="#execution" title="Lien permanent vers ce titre">¶</a></h3>
 <p>ou : comment utiliser la fonction ?</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">valeur1</span> <span class="o">=</span> <span class="s2">&quot;valeur1&quot;</span><span class="p">;</span>
-<span class="kd">let</span> <span class="nx">valeur2</span> <span class="o">=</span> <span class="s2">&quot;valeur2&quot;</span><span class="p">;</span>
-<span class="kd">const</span> <span class="nx">resultat</span> <span class="o">=</span> <span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">valeur1</span><span class="p">,</span> <span class="nx">valeur2</span><span class="p">);</span>
-<span class="c1">// Questions :</span>
-<span class="c1">// resultat contient quoi ?</span>
-<span class="c1">// resultat -&gt; &quot;valeur1&quot; + &quot;valeur2&quot; -&gt; &quot;valeur1valeur2&quot;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">let</span><span class="w"> </span><span class="nx">valeur1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;valeur1&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">let</span><span class="w"> </span><span class="nx">valeur2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;valeur2&quot;</span><span class="p">;</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">resultat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">nomDeMaFonction</span><span class="p">(</span><span class="nx">valeur1</span><span class="p">,</span><span class="w"> </span><span class="nx">valeur2</span><span class="p">);</span><span class="w"></span>
+<span class="c1">// Questions :</span><span class="w"></span>
+<span class="c1">// resultat contient quoi ?</span><span class="w"></span>
+<span class="c1">// resultat -&gt; &quot;valeur1&quot; + &quot;valeur2&quot; -&gt; &quot;valeur1valeur2&quot;</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -506,31 +506,31 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <p>A partir d”un tableau qui contient les élèves (sous forme d”un tableau également), écrire les fonctions qui permettent leur affichage sous forme de cards.</p>
 <p>Commencer par écrire sa démarche sur papier, puis déterminer les fonctions (squelette) puis les coder.</p>
 <p>Une fois avancés, un peu d”aide :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">studentsDWWM</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">[</span><span class="s2">&quot;léponge&quot;</span><span class="p">,</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=léponge&quot;</span><span class="p">],</span>
-    <span class="p">[</span><span class="s2">&quot;émorti&quot;</span><span class="p">,</span> <span class="s2">&quot;rik&quot;</span><span class="p">,</span> <span class="s2">&quot;99&quot;</span><span class="p">,</span> <span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">],</span>
-<span class="p">];</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">studentsDWWM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;léponge&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;bob&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://i.pravatar.cc/100?u=léponge&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="s2">&quot;émorti&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;rik&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;99&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">],</span><span class="w"></span>
+<span class="p">];</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * </span>
 <span class="cm"> * @param {Array} students Tableau de tableaux [ [nom, prenom, age, avatar], ]</span>
 <span class="cm"> * @returns {string} Le html de toutes les cards de tous les étudiants</span>
-<span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">genCards</span><span class="p">(</span><span class="nx">students</span><span class="p">)</span> <span class="p">{}</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">genCards</span><span class="p">(</span><span class="nx">students</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
 <span class="cm">/**</span>
 <span class="cm"> * </span>
 <span class="cm"> * @param {Array} student [nom, prenom, age, avatar]</span>
 <span class="cm"> * @returns {string} La card html pour un étudiant</span>
-<span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">genCard</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{}</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">genCard</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-<span class="kd">function</span> <span class="nx">getStudentInfos</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">getStudentInfos</span><span class="p">(</span><span class="nx">student</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-<span class="kd">function</span> <span class="nx">genHtmlCard</span><span class="p">(</span><span class="nx">header</span><span class="p">,</span> <span class="nx">content</span><span class="p">,</span> <span class="nx">footer</span><span class="p">)</span> <span class="p">{}</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">genHtmlCard</span><span class="p">(</span><span class="nx">header</span><span class="p">,</span><span class="w"> </span><span class="nx">content</span><span class="p">,</span><span class="w"> </span><span class="nx">footer</span><span class="p">)</span><span class="w"> </span><span class="p">{}</span><span class="w"></span>
 
-<span class="c1">// Appel de la fonction et écriture dans le HTML</span>
-<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;div#students&quot;</span><span class="p">).</span><span class="nx">innerHTML</span> <span class="o">=</span> <span class="nx">genCards</span><span class="p">(</span><span class="nx">studentsDWWM</span><span class="p">);</span>
+<span class="c1">// Appel de la fonction et écriture dans le HTML</span><span class="w"></span>
+<span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s2">&quot;div#students&quot;</span><span class="p">).</span><span class="nx">innerHTML</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">genCards</span><span class="p">(</span><span class="nx">studentsDWWM</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -575,20 +575,20 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <h3>2 syntaxes de déclaration / écriture<a class="headerlink" href="#syntaxes-de-declaration-ecriture" title="Lien permanent vers ce titre">¶</a></h3>
 <ol>
 <li><p>Les clés sont des strings, et on l”indique explicitement :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">eleve</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;SON_NOM&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;SON_PRENOM&quot;</span><span class="p">,</span>
-    <span class="s2">&quot;age&quot;</span><span class="o">:</span> <span class="mf">25</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">eleve</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SON_NOM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SON_PRENOM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="s2">&quot;age&quot;</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 <li><p>Les clés sont toujours des strings mais c”est implicite :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">eleves</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="nx">nom</span><span class="o">:</span> <span class="s2">&quot;SON_NOM&quot;</span><span class="p">,</span>
-    <span class="nx">prenom</span><span class="o">:</span> <span class="s2">&quot;SON_PRENOM&quot;</span><span class="p">,</span>
-    <span class="nx">age</span><span class="o">:</span> <span class="mf">25</span><span class="p">,</span>
-<span class="p">};</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">eleves</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">nom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SON_NOM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">prenom</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;SON_PRENOM&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nx">age</span><span class="o">:</span><span class="w"> </span><span class="mf">25</span><span class="p">,</span><span class="w"></span>
+<span class="p">};</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -598,12 +598,12 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <h3>2 syntaxes d”utilisation / lecture<a class="headerlink" href="#syntaxes-d-utilisation-lecture" title="Lien permanent vers ce titre">¶</a></h3>
 <ol>
 <li><p>Explicite, sur le même type que pour les tableaux à indices numériques :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">nom</span> <span class="o">=</span> <span class="nx">eleve</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">];</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">eleve</span><span class="p">[</span><span class="s2">&quot;nom&quot;</span><span class="p">];</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
 <li><p>Implicite, l”indice est collé avec « . », sans préciser qu”il s”agit d”une string</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">nom</span> <span class="o">=</span> <span class="nx">eleve</span><span class="p">.</span><span class="nx">nom</span><span class="p">;</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">nom</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">eleve</span><span class="p">.</span><span class="nx">nom</span><span class="p">;</span><span class="w"></span>
 </pre></div>
 </div>
 </li>
@@ -613,8 +613,8 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <h3>Typage et commentaires<a class="headerlink" href="#typage-et-commentaires" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @param {{nom: string, prenom: string}} eleve - Elève à traiter</span>
-<span class="cm"> */</span>
-<span class="kd">function</span> <span class="nx">traitement</span><span class="p">(</span><span class="nx">eleve</span><span class="p">){}</span>
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">traitement</span><span class="p">(</span><span class="nx">eleve</span><span class="p">){}</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -622,14 +622,14 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <section id="id4">
 <h2>Exercice<a class="headerlink" href="#id4" title="Lien permanent vers ce titre">¶</a></h2>
 <p>Afficher la liste des élèves dans une table HTML.</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span> <span class="nx">studentsDWWM</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;léponge&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;bob&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=léponge&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;létoiledemer&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;patrick&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;25&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=létoiledemer&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;z&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;dragonball&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;105&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=z&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;han&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;sango&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://i.pravatar.cc/100?u=han&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;seagall&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;steven&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;?&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">},</span>
-    <span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span> <span class="s2">&quot;émorti&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span> <span class="s2">&quot;rik&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span> <span class="o">:</span> <span class="s2">&quot;99&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span> <span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">},</span>
-<span class="p">];</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">const</span><span class="w"> </span><span class="nx">studentsDWWM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;léponge&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;bob&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;5&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://i.pravatar.cc/100?u=léponge&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;létoiledemer&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;patrick&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;25&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://i.pravatar.cc/100?u=létoiledemer&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;z&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;dragonball&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;105&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://i.pravatar.cc/100?u=z&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;han&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;sango&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;12&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://i.pravatar.cc/100?u=han&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;seagall&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;steven&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;?&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="p">{</span><span class="s2">&quot;nom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;émorti&quot;</span><span class="p">,</span><span class="s2">&quot;prenom&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;rik&quot;</span><span class="p">,</span><span class="s2">&quot;age&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;99&quot;</span><span class="p">,</span><span class="s2">&quot;avatar&quot;</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;https://www.stevensegallery.com/100/100&quot;</span><span class="p">},</span><span class="w"></span>
+<span class="p">];</span><span class="w"></span>
 </pre></div>
 </div>
 <p>=&gt; <a class="reference external" href="https://github.com/dwwm93/2021/tree/main/2021-12-14_tableaux_associatifs">exercice et corrigé</a></p>
@@ -644,11 +644,11 @@ entrée ----&gt; <span class="p">|</span> fonction <span class="p">|</span> ----
 <li><p>calculer et afficher le solde du compte (le total du montant des opérations)
 exemple de tableau associatif pour une ligne de compte :</p></li>
 </ol>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
-   <span class="nx">operation</span><span class="o">:</span> <span class="s2">&quot;Kebab Royal&quot;</span><span class="p">,</span>
-   <span class="nx">montant</span><span class="o">:</span> <span class="mf">9.00</span><span class="p">,</span>
-   <span class="nx">date</span><span class="o">:</span> <span class="s2">&quot;2021/12/14&quot;</span><span class="p">,</span>
-<span class="p">}</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">   </span><span class="nx">operation</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Kebab Royal&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">montant</span><span class="o">:</span><span class="w"> </span><span class="mf">9.00</span><span class="p">,</span><span class="w"></span>
+<span class="w">   </span><span class="nx">date</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;2021/12/14&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
 </pre></div>
 </div>
 <p>=&gt; <a class="reference external" href="https://github.com/dwwm93/2021/tree/main/2021-12-09%20tp%20banque">exercice et corrigé</a></p>
@@ -666,7 +666,7 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <h2>Précisions sur les &#64;typedef<a class="headerlink" href="#precisions-sur-les-typedef" title="Lien permanent vers ce titre">¶</a></h2>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/**</span>
 <span class="cm"> * @typedef {xxx} NomType - description</span>
-<span class="cm"> */</span>
+<span class="cm"> */</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -702,7 +702,7 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <section id="fonctionnement">
 <h3>Fonctionnement<a class="headerlink" href="#fonctionnement" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Quand je fais en jquery :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;thead&#39;</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;hello&#39;</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 <p>je fais 2 actions successives :</p>
@@ -715,43 +715,43 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <h3>Reprise sur les getter/setter<a class="headerlink" href="#reprise-sur-les-getter-setter" title="Lien permanent vers ce titre">¶</a></h3>
 <div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="cm">/** getter = pour recuperer la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
 <span class="cm"> * utiliser :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">()</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter =pour modifier la valeur d&#39;un champs du formulaire (input,select,textarea...)</span>
 <span class="cm"> * utiliser : </span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;la nouvelle valeur&quot;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="s2">&quot;la nouvelle valeur&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="cm">/** getter = pour recuperer le text d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res2</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">()</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter = pour modifier le text d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;le nouveau text&quot;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">text</span><span class="p">(</span><span class="s2">&quot;le nouveau text&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="cm">/** getter = pour recuperer le html d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res3</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">()</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter = pour modifier le html d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;le nouveau html&lt;/p&gt;&quot;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">html</span><span class="p">(</span><span class="s2">&quot;&lt;p&gt;le nouveau html&lt;/p&gt;&quot;</span><span class="p">)</span><span class="w"> </span>
 
 <span class="cm">/** getter = pour recuperer l&#39;attribut d&#39;une balise quelconque (ex: href pour a ..)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="kd">const</span> <span class="nx">res4</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">res4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span><span class="w"> </span>
 <span class="cm">/**</span>
 <span class="cm"> *  setter = pour modifier un attribut d&#39;une balise (div,p,span...)</span>
 <span class="cm"> *  on utilise :</span>
-<span class="cm"> */</span>
-<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span> <span class="s1">&#39;https://impots.gouv.fr&#39;</span><span class="p">)</span> 
+<span class="cm"> */</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="nx">selecteur</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;https://impots.gouv.fr&#39;</span><span class="p">)</span><span class="w"> </span>
 </pre></div>
 </div>
 </section>
@@ -769,16 +769,16 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <li><p>l”événement en tant que tel associé à l”élément HTML qui l”a déclenché</p></li>
 <li><p>la fonction qui « écoute » les événements, pour se déclencher quand elle en voit un passer qui correspond à ce qu”elle attend</p></li>
 </ol>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
-  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span>
-<span class="p">});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;button&quot;</span><span class="p">).</span><span class="nx">click</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">hide</span><span class="p">();</span><span class="w"></span>
+<span class="p">});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>⚠️  attention, ça ne veut pas dire que le js déclenche le click, mais qu”il réagit s”il y a un clic !</p>
 <p>ici le this correspond à l”élément qui a déclenché l”événement, donc c”est « button » et $(this) ça nous renvoie le bouton en version « jquery ».</p>
 <section id="syntaxe-bis">
 <h4>Syntaxe bis<a class="headerlink" href="#syntaxe-bis" title="Lien permanent vers ce titre">¶</a></h4>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span> <span class="p">.....;});</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="nx">selector</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;event&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="w"> </span><span class="p">.....;});</span><span class="w"></span>
 </pre></div>
 </div>
 <p>avec « event » : « click », « dblclik » etc.</p>
@@ -810,15 +810,15 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 </ol>
 <section id="correction-1">
 <h3>Correction 1<a class="headerlink" href="#correction-1" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(){</span>
-  <span class="kd">const</span> <span class="nx">input</span> <span class="o">=</span> <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-  <span class="kd">const</span> <span class="nx">inputVal</span> <span class="o">=</span> <span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span>
-  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="sr">/^[\w]+@[\w]+\.[\w]{1,3}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">inputVal</span><span class="p">))</span> <span class="p">{</span>
-    <span class="nx">input</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
-  <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
-    <span class="nx">input</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span>
-  <span class="p">}</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">input</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">inputVal</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">input</span><span class="p">.</span><span class="nx">val</span><span class="p">();</span><span class="w"></span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="o">!</span><span class="sr">/^[\w]+@[\w]+\.[\w]{1,3}$/</span><span class="p">.</span><span class="nx">test</span><span class="p">(</span><span class="nx">inputVal</span><span class="p">))</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">input</span><span class="p">.</span><span class="nx">addClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">input</span><span class="p">.</span><span class="nx">removeClass</span><span class="p">(</span><span class="s2">&quot;error&quot;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="p">}</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -827,10 +827,10 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <section id="mardi-2022-01-11">
 <h1>Mardi 2022/01/11<a class="headerlink" href="#mardi-2022-01-11" title="Lien permanent vers ce titre">¶</a></h1>
 <p>Révisions event jQuery :</p>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">isEmail</span><span class="p">(){</span>
-  <span class="c1">// contenu</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span> <span class="nx">isEmail</span><span class="p">)</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">isEmail</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="c1">// contenu</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;input&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;keypress&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">isEmail</span><span class="p">)</span><span class="w"></span>
 </pre></div>
 </div>
 <p>Ici on a une fonction nommée, alors qu”hier on a vu des fonctions « anonymes ».</p>
@@ -844,30 +844,30 @@ exemple de tableau associatif pour une ligne de compte :</p></li>
 <p>contrainte : au moins une fois, utiliser une fonction « non anonyme », donc déclarée avant</p>
 <section id="desactiver-le-bouton-du-formulaire-quand-on-clique-dessus">
 <h3>Désactiver le bouton du formulaire quand on clique dessus<a class="headerlink" href="#desactiver-le-bouton-du-formulaire-quand-on-clique-dessus" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">disableButton</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span> <span class="p">{</span>
-    <span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span> <span class="kc">true</span><span class="p">)</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">(){</span>
-    <span class="nx">disableButton</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">disableButton</span><span class="p">(</span><span class="nx">button</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nx">$</span><span class="p">(</span><span class="nx">button</span><span class="p">).</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;disabled&#39;</span><span class="p">,</span><span class="w"> </span><span class="kc">true</span><span class="p">)</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;button&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span><span class="w"></span>
+<span class="w">    </span><span class="nx">disableButton</span><span class="p">(</span><span class="k">this</span><span class="p">);</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="afficher-une-aide-au-survol-de-l-input-et-passer-le-texte-en-orange">
 <h3>Afficher une aide au survol de l”input et passer le texte en orange<a class="headerlink" href="#afficher-une-aide-au-survol-de-l-input-et-passer-le-texte-en-orange" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span> <span class="nx">afficheAide</span><span class="p">(){</span>
-  <span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;text-orange&#39;</span><span class="p">);</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#helperText&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span>
-<span class="p">}</span>
-<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;input.helper&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mouseenter&#39;</span><span class="p">,</span> <span class="nx">afficheAide</span><span class="p">);</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="kd">function</span><span class="w"> </span><span class="nx">afficheAide</span><span class="p">(){</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="k">this</span><span class="p">).</span><span class="nx">addClass</span><span class="p">(</span><span class="s1">&#39;text-orange&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#helperText&#39;</span><span class="p">).</span><span class="nx">show</span><span class="p">();</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+<span class="nx">$</span><span class="p">(</span><span class="s1">&#39;form#exercice&gt;input.helper&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;mouseenter&#39;</span><span class="p">,</span><span class="w"> </span><span class="nx">afficheAide</span><span class="p">);</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
 <section id="afficher-cacher-la-modal-avec-le-formulaire">
 <h3>Afficher / cacher la modal avec le formulaire<a class="headerlink" href="#afficher-cacher-la-modal-avec-le-formulaire" title="Lien permanent vers ce titre">¶</a></h3>
-<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#showModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
-  <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#modal&#39;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span>
-<span class="p">})</span>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;button#showModal&#39;</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">  </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#modal&#39;</span><span class="p">).</span><span class="nx">toggle</span><span class="p">();</span><span class="w"></span>
+<span class="p">})</span><span class="w"></span>
 </pre></div>
 </div>
 </section>
@@ -1827,6 +1827,325 @@ composer require webapp
 </section>
 </section>
 </section>
+<section id="securite">
+<h1>Sécurité<a class="headerlink" href="#securite" title="Lien permanent vers ce titre">¶</a></h1>
+<p>Mega important</p>
+<section id="vos-idees">
+<h2>Vos idées ?<a class="headerlink" href="#vos-idees" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>mdp hashés</p></li>
+<li><p>https</p></li>
+<li><p>controle input form (front ET BACK)</p></li>
+<li><p>iSQL =&gt; prepare requete</p></li>
+<li><p>CSRF</p></li>
+<li><p>DDOS</p></li>
+<li><p>POST vs GET</p></li>
+<li><p>protection des fichiers uploadés</p></li>
+<li><p>fishing</p></li>
+<li><p>brute force (recatcha, latence connexion..)</p></li>
+<li><p>2FA</p></li>
+<li><p>IP / DNS</p></li>
+<li><p>serveur web acces limités sources</p></li>
+<li><p>sécurité par l”obscurité / obsfucation</p></li>
+<li><p>supply chain</p></li>
+<li><p>« white room » ?? deconnexion // TODO // backchannel</p></li>
+<li><p>cheval de troie</p></li>
+<li><p>virus / ransomware / zombie</p></li>
+<li><p>chiffrement</p></li>
+<li><p>man in the middle</p></li>
+<li><p>xss</p></li>
+<li><p>social engineering</p></li>
+<li><p>clickjacking</p></li>
+<li><p>faux reseau wifi</p></li>
+<li><p>mot de passe compliqué</p></li>
+<li><p>RGPD</p></li>
+<li><p>.env / constantes config pour ne pas commiter d”infos secrètes</p></li>
+</ol>
+</section>
+<section id="en-bref">
+<h2>En bref<a class="headerlink" href="#en-bref" title="Lien permanent vers ce titre">¶</a></h2>
+<p>La sécurité absolue n”existe pas.</p>
+<p>C”est toujours une question de difficulté vs prix / temps.</p>
+</section>
+<section id="id16">
+<h2><a class="headerlink" href="#id16" title="Lien permanent vers ce titre">¶</a></h2>
+<ol class="simple">
+<li><p>prepare sql - injection sql</p></li>
+<li><p>validation formulaire front (expression rationnelles, type input…)</p></li>
+<li><p>validation formulaire back (expressions rationnelles, escapespecialchars, contrôle des types, type des fichiers acceptés …)</p></li>
+<li><p>.env / constantes config pour ne pas commiter d”infos secrètes</p></li>
+<li><p>paramétrer serveur web pour limiter les accès à certains fichiers</p></li>
+<li><p>upload fichier : utiliser les mime/type pour vérifier le fichier =&gt; changer l”extension , changer le nom (uniqid) du fichier pour éviter un accès illégitime (ex : facebook <code class="docutils literal notranslate"><span class="pre">photos/ghuierg/iurhiure/frehrehreiheirghirehg.jpg</span></code>)</p></li>
+<li><p>hashage de mot de passe (=&gt; non hashé =&gt; <strong>prison</strong>)</p></li>
+<li><p>code de qualité pour éviter les bugs (tests unitaires, tests de bout en bout …)</p></li>
+<li><p>Veille technologique, validation/tests de la qualité des urls/partenaires tierces (cf RGPD : responsabilité des fournisseurs <em>et</em> des clients parfois)</p></li>
+<li><p>RGPD : un DPO, un référentiel des traitements de données, la possibilité de fournir à un utilisateur toutes ses données (et comment on les utilise), supprimer ses données s”il le demande ou les exporter s”il le demande</p></li>
+<li><p>https !</p></li>
+<li><p>chiffrement des données</p></li>
+<li><p>csrf : cross site request forgery</p></li>
+<li><p>xss : cross site scripting</p></li>
+<li><p>CORS : cross origin resource sharing</p></li>
+</ol>
+</section>
+<section id="chiffrement-hashage">
+<h2>Chiffrement / hashage<a class="headerlink" href="#chiffrement-hashage" title="Lien permanent vers ce titre">¶</a></h2>
+<section id="cryptage-decryptage-codage-decodage">
+<h3>Cryptage / décryptage / codage / décodage<a class="headerlink" href="#cryptage-decryptage-codage-decodage" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Illisible.</p>
+</section>
+<section id="chiffrement">
+<h3>Chiffrement<a class="headerlink" href="#chiffrement" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Partager un secret pour que les seules personnes qui connaissent le secret puissent lire le message.</p>
+<blockquote>
+<div><p>important : « Reversibilité » : je peux chiffrer et déchiffrer</p>
+</div></blockquote>
+<p>exemples : A-vaut-K, RSA, ECDSA, ED25519 …</p>
+<p>RSA, ECDSA, ED25519 etc. sont des chiffrements asymétriques : avec une clé publique et une clé privée. (cf connexion à github : <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> pour éviter de taper son login mdp à chaque fois)</p>
+</section>
+<section id="hachage-hash-in-english">
+<h3>Hachage (hash in english)<a class="headerlink" href="#hachage-hash-in-english" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Notamment les mots de passe.</p>
+<p>C”est quoi ?</p>
+<blockquote>
+<div><p>Rend illisible le même message de la même manière, <strong>sans réversibilité</strong>.</p>
+</div></blockquote>
+<p>Hachage , mais pas « déhachage » (penser au steak).</p>
+<p>Pour les BDD de mots de passe, si j”utilisais du chiffrement, la récupération de la clé secrète permettrait d”avoir accès à la liste de tous les mots de passe en clair.</p>
+<section id="attaque-contre-la-base-hachee">
+<h4>Attaque contre la base hachée<a class="headerlink" href="#attaque-contre-la-base-hachee" title="Lien permanent vers ce titre">¶</a></h4>
+<p><strong>Brute force:</strong> je calcule un tableau de correspondance entre tous les mots qui existent et les hash.</p>
+<p>ex: azerty =&gt; ozhfloihdsfhfdvhvgfd</p>
+<p>On a eu qques années de protection, mais aujourd”hui on peut trouver des tableaux pré-calculés de hashs de mdp !</p>
+</section>
+<section id="protection-du-moment-le-salt-le-grain-de-sel">
+<h4>Protection du moment : le Salt (le grain de sel)<a class="headerlink" href="#protection-du-moment-le-salt-le-grain-de-sel" title="Lien permanent vers ce titre">¶</a></h4>
+<p>Le but : augmenter artificiellement la taille du mdp pour lutter contre l”augmentation de la puissance de calcul des hackers.</p>
+<ol class="simple">
+<li><p>inscription :</p></li>
+</ol>
+<ul class="simple">
+<li><p>user =&gt; « toto » (4 caractères, bof)</p></li>
+<li><p>app =&gt; <code class="docutils literal notranslate"><span class="pre">concat(&quot;toto&quot;</span> <span class="pre">,</span> <span class="pre">256</span> <span class="pre">caractères</span> <span class="pre">au</span> <span class="pre">pif</span> <span class="pre">(salt))</span></code></p></li>
+<li><p>app =&gt; hash ce mdp (de 260 caractères)</p></li>
+</ul>
+<ol class="simple">
+<li><p>connexion :</p></li>
+</ol>
+<ul class="simple">
+<li><p>user =&gt; « toto »</p></li>
+<li><p>app =&gt; <code class="docutils literal notranslate"><span class="pre">concat(&quot;toto&quot;</span> <span class="pre">,</span> <span class="pre">avec</span> <span class="pre">les</span> <span class="pre">mêmes</span> <span class="pre">256</span> <span class="pre">caractères</span> <span class="pre">(stockés</span> <span class="pre">en</span> <span class="pre">clair</span> <span class="pre">dans</span> <span class="pre">ma</span> <span class="pre">bdd))</span></code></p></li>
+<li><p>app =&gt; password verify</p></li>
+</ul>
+<p>Je suis protégé tant que les attaquants n”ont pas le tableau des mdp &gt;= 260 caractères.</p>
+<p>Pour éviter qu”un attaquant calcule le tableau (qui n”existe pas encore) uniquement pour mon salt =&gt; ce qui revient à calculer le tableau pour les 8 caractères classiques ! donc c”est pas très long.</p>
+<p>=&gt; astuce : un salt différent par utilisateur !</p>
+</section>
+</section>
+<section id="https-ssl">
+<h3>https (ssl)<a class="headerlink" href="#https-ssl" title="Lien permanent vers ce titre">¶</a></h3>
+<p>HTTP : protocole de communication entre machines sur internet.</p>
+<blockquote>
+<div><p>Analogie (un peu bancale) : http = description de comment envoyer un courrier à un destinataire (càd: enveloppe + adresse + timbre + exp …)</p>
+</div></blockquote>
+<p>=&gt; est-ce que mon courier est protégé ? NON ! on peut ouvrir la lettre et la lire !</p>
+<p>idem pour http : si je fais <code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">mabanqueprivee.com</span> <span class="pre">{identifiant:</span> <span class="pre">&quot;pierre99&quot;,</span> <span class="pre">mdp:</span> <span class="pre">&quot;j'adore</span> <span class="pre">le</span> <span class="pre">code&quot;}</span></code> alors n”importe quel équipement réseau qui peut lire les échanges HTTP peut lire votre login/mdp.</p>
+<blockquote>
+<div><p>l”idée du https est de chiffrer le contenu de ta requete http ! comme si tu mettais dans ton enveloppe un message codé.</p>
+</div></blockquote>
+<section id="cle-publique-cle-privee">
+<h4>Clé publique / clé privée<a class="headerlink" href="#cle-publique-cle-privee" title="Lien permanent vers ce titre">¶</a></h4>
+<p>C”est une paire de secrets, ça s”appelle du chiffrement asymétrique !</p>
+<p>Grâce à des calculs mathématiques, je peux :</p>
+<ul class="simple">
+<li><p>chiffrer un message avec ma clé privée : seuls ceux qui ont la clé publique peuvent le déchiffrer (donc tout le monde) =&gt; ça prouve mon identité</p></li>
+<li><p>chiffrer un message avec ma clé publique : seuls ceux qui ont ma clé privée (moi) peuvent déchiffrer le message =&gt; confidentialité</p></li>
+</ul>
+<p>=&gt; tout repose sur la sécurité de la clé privée ! ne doit pas être accessible !</p>
+</section>
+<section id="demarche">
+<h4>Démarche<a class="headerlink" href="#demarche" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>le site me passe sa clé publique</p></li>
+<li><p>je demande à l”autorité de certification si la clé publique est bonne</p></li>
+<li><p>j”utilise sa clé pour chiffrer ma demande (et lui envoyer ma clé publique en meme temps)</p></li>
+<li><p>je lui envoie (et personne ne peut la lire)</p></li>
+<li><p>le site déchiffre ma demande etc. et me répond en chiffrant avec ma clé publique + sa clé privée !</p></li>
+</ol>
+<p>NB: pour vous : soit acheter un « certificat » à votre hébergeur (ovh, gandi…), soit utiliser letsencrypt.org qui fournit des certificats gratuits.</p>
+</section>
+</section>
+</section>
+<section id="injection-sql">
+<h2>Injection SQL<a class="headerlink" href="#injection-sql" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Réussir à faire exécuter du SQL par le site ciblé (victime).</p>
+<ul class="simple">
+<li><p>je peux mettre ma requete SQL pirate dans l”url</p></li>
+<li><p>ou dans un formulaire</p></li>
+<li><p>…</p></li>
+</ul>
+<p>ex: formulaire de connexion</p>
+<ul class="simple">
+<li><p>login : “ »toto » OR 1=1 ;”</p></li>
+<li><p>password : « mdp »</p></li>
+</ul>
+<p>=&gt; que se passe-t-il dans mon back ?</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span>SELECT *
+FROM user
+WHERE login = $login
+AND password = $password
+</pre></div>
+</div>
+<p>Le problème il vient du fait que je prends la chaîne de l”utilisateur telle quelle dans ma requete SQL !</p>
+<p>Autres exemples :</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;DELETE</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">user;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;DROP</span> <span class="pre">DATABASE;</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;UPDATE</span> <span class="pre">user</span> <span class="pre">SET</span> <span class="pre">admin=1</span> <span class="pre">WHERE</span> <span class="pre">login=mon_login;</span></code></p></li>
+</ul>
+<section id="comment-on-se-protege">
+<h3>Comment on se protège ?<a class="headerlink" href="#comment-on-se-protege" title="Lien permanent vers ce titre">¶</a></h3>
+<p>=&gt; <strong>requêtes préparées</strong></p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"></span>
+<span class="k">FROM</span><span class="w"> </span><span class="k">user</span><span class="w"></span>
+<span class="k">WHERE</span><span class="w"> </span><span class="n">login</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">:</span><span class="n">login</span><span class="w"></span>
+<span class="k">AND</span><span class="w"> </span><span class="n">password</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">:</span><span class="n">password</span><span class="w"></span>
+</pre></div>
+</div>
+<p>Dans un premier temps, le SGBD écrit la requête correcte ! Puis il met dedans les variables <strong>qui ne peuvent plus influencer la requête</strong>. Donc il va chercher un login qui vaut “ » »;DROP DATABASE” au lieu de réécrire la requête.</p>
+<section id="sans-prepare">
+<h4>Sans prepare :<a class="headerlink" href="#sans-prepare" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>j”écris mes chaînes de caractères SQL</p></li>
+<li><p>je crée les requêtes associées</p></li>
+</ol>
+</section>
+<section id="avec-prepare">
+<h4>Avec prepare :<a class="headerlink" href="#avec-prepare" title="Lien permanent vers ce titre">¶</a></h4>
+<ol class="simple">
+<li><p>je crée la requête valide</p></li>
+<li><p>j”insère ma chaîne de caractère</p></li>
+</ol>
+</section>
+</section>
+</section>
+<section id="csrf-cross-site-request-forgery-ou-xsrf">
+<h2>CSRF : Cross Site Request Forgery (ou XSRF)<a class="headerlink" href="#csrf-cross-site-request-forgery-ou-xsrf" title="Lien permanent vers ce titre">¶</a></h2>
+<p>Un attaquant profite du fait que vous êtes loggé sur un site lambda, pour vous faire valider sur un site tiers un formulaire qui pointe vers le site lambda.</p>
+<section id="id17">
+<h3>Exemple<a class="headerlink" href="#id17" title="Lien permanent vers ce titre">¶</a></h3>
+<ol class="simple">
+<li><p>je suis loggé sur tradfast de raouf</p></li>
+<li><p>je vais sur petithackermalin.com dans un autre onglet</p></li>
+<li><p>sur « phm » il y a un formulaire bidon que je vais valider (il te promet un iphone 40 gratos)</p></li>
+<li><p>le form en question : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;tradfast.com/user/petithacker&quot;&gt;&lt;input</span> <span class="pre">name=&quot;admin&quot;</span> <span class="pre">value=&quot;1&quot;/&gt;&lt;/form&gt;</span></code> (et non pas un envoi d”iphone XXX)</p></li>
+<li><p>petithacker est maintenant admin sur le site de raouf, si l”utilisateur connecté en 1 avait les droits d”effectuer le POST du form.</p></li>
+</ol>
+</section>
+<section id="id18">
+<h3>Comment on se protège ?<a class="headerlink" href="#id18" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je dois m”assurer que le formulaire vient bien de chez moi !</p>
+<p>=&gt; j”ajoute un champ caché <strong>aléatoire</strong> !! genre un token (hash ou autre) et il faut le stocker en session pour comparer le token reçu et le token généré dans le formulaire (stocké donc).</p>
+<p>=&gt; <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">csrf</span></code></p>
+</section>
+</section>
+<section id="xss-cross-site-scripting">
+<h2>XSS : Cross Site Scripting<a class="headerlink" href="#xss-cross-site-scripting" title="Lien permanent vers ce titre">¶</a></h2>
+<p>! nom un peu trop vague.</p>
+<section id="principe">
+<h3>Principe<a class="headerlink" href="#principe" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je crée un script (php, js, etc.) et je parviens à le faire exécuter par l”utilisateur que j”attaque.</p>
+</section>
+<section id="exemple-bien-standard">
+<h3>Exemple bien standard<a class="headerlink" href="#exemple-bien-standard" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je poste un commentaire dans un formulaire d”un forum :</p>
+<div class="highlight-js notranslate"><div class="highlight"><pre><span></span><span class="nx">alert</span><span class="p">(</span><span class="s2">&quot;you have been pwnd&quot;</span><span class="p">);</span><span class="w"></span>
+</pre></div>
+</div>
+<p>L”utilisateur qui verra mon commentaire va déclencher l”alert !</p>
+<p>ou</p>
+<div class="highlight-php notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;?php</span>
+  <span class="nv">$bdd</span> <span class="o">=</span> <span class="nx">BDD</span><span class="o">::</span><span class="na">connexion</span><span class="p">();</span>
+  <span class="k">new</span> <span class="nx">PHPMailer</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">send</span><span class="p">(</span><span class="s2">&quot;petithackermalin&quot;</span><span class="p">,</span><span class="nv">$bdd</span><span class="o">-&gt;</span><span class="na">dumpDatabase</span><span class="p">());</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+</pre></div>
+</div>
+<p>ou j”ai uploadé un fichier php <code class="docutils literal notranslate"><span class="pre">image.png</span></code> et le php s”exécute quand j”affiche ma photo de profil…</p>
+</section>
+<section id="comment-je-me-protege">
+<h3>Comment je me protège ?<a class="headerlink" href="#comment-je-me-protege" title="Lien permanent vers ce titre">¶</a></h3>
+<blockquote>
+<div><p>En codant correctement !</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>empêcher les caractères spéciaux dans les champs texte (escape special chars…)</p></li>
+<li><p>en vérifiant le mime/type et extension des fichiers uploadés et en les renommant pour éviter leur exécution éventuelle</p></li>
+</ul>
+</section>
+</section>
+<section id="cors-cross-origin-resource-sharing">
+<h2>CORS : Cross Origin Resource Sharing<a class="headerlink" href="#cors-cross-origin-resource-sharing" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>! c”est une protection intégrée au navigateur, pas au serveur !</p>
+</div></blockquote>
+<p>Empêcher (ou autoriser) l”accès à certaines ressources par le navigateur.</p>
+<section id="id19">
+<h3>Exemple<a class="headerlink" href="#id19" title="Lien permanent vers ce titre">¶</a></h3>
+<p>Je veux que les requêtes vers « api.tourismeform.com » ne proviennent que du site « tourismeform.com ».</p>
+<p>Cela évite que quelqu”un essaie de récupérer des informations depuis un autre site. (genre si je suis sur <code class="docutils literal notranslate"><span class="pre">hackervaillant.com</span></code>)</p>
+<blockquote>
+<div><p>! cela ne marchera que si l”utilisateur utilise un navigateur récent. (si vous passez par curl, postman ou ie6 ce sera toujours possible)</p>
+</div></blockquote>
+</section>
+<section id="nota-bene">
+<h3>Nota Bene<a class="headerlink" href="#nota-bene" title="Lien permanent vers ce titre">¶</a></h3>
+<p>C”est <code class="docutils literal notranslate"><span class="pre">api.tourismeform.com</span></code> qui indique au navigateur qui a le droit d”accéder à ses pages, et c”est le <em>navigateur</em> qui fait la vérification.</p>
+<p>C”est à vous, <em>développeur</em>, de bien paramétrer votre back pour autoriser les bons domaines à vous requêter.</p>
+</section>
+</section>
+<section id="rgpd-reglement-general-sur-la-protection-des-donnees-gdpr">
+<h2>RGPD : Règlement Général sur la Protection des Données (GDPR)<a class="headerlink" href="#rgpd-reglement-general-sur-la-protection-des-donnees-gdpr" title="Lien permanent vers ce titre">¶</a></h2>
+<blockquote>
+<div><p>C”est le truc qui va vous envoyer en prison (https://www.legalplace.fr/guides/rgpd-sanction/) si vous faites pas votre taf correctement.</p>
+</div></blockquote>
+<p>Règles à suivre pour la gestion des données de vos utilisateurs.</p>
+<ul class="simple">
+<li><p>hacher les mdp</p></li>
+<li><p>ne stocker <strong>que</strong> les données nécessaires au bon fonctionnement du site <strong>et</strong> pouvoir le prouver</p></li>
+<li><p>ne stocker aucune donnée « illégale » : orientation sexuelle, religion, information médicale etc. =&gt; nécessite une dérogation de la <strong>CNIL</strong> (Commission Nationale Informatique et Liberté)</p></li>
+<li><p>recueillir le consentement explicite et éclairé de l”utilisateur pour le traitement de ses données (pas de <code class="docutils literal notranslate"><span class="pre">opt-out</span></code> mais du <code class="docutils literal notranslate"><span class="pre">opt-in</span></code>) (cf: les cookies sur les sites)</p></li>
+<li><p>expliciter et publier les traitements de données</p></li>
+<li><p>il faut un responsable identifié pour la gestion des données, indépendant !</p></li>
+<li><p>portabilité des données : l”utilisateur peut demander la suppression de toutes ses données (exception: https://www.cnil.fr/fr/le-droit-leffacement-supprimer-vos-donnees-en-ligne, si obligations légales ou autres bonnes raisons), et l”export de toutes ses données pour les migrer vers un autre système (éventuellement)</p></li>
+<li><p>répondre &lt; 1 mois, ou 8j si donnée de santé</p></li>
+<li><p>valable aussi si vous êtes sous-traitant</p></li>
+<li><p>attention aux accès aux données par vos salariés : ne doit avoir accès que si besoin</p></li>
+<li><p>attention aux données <em>de vos salariés</em></p></li>
+<li><p>obligation de prévenir la cnil et les utilisateurs en cas de fuite de données</p></li>
+</ul>
+<p>https://www.cnil.fr/sites/default/files/atoms/files/bpi-cnil-rgpd_guide-tpe-pme.pdf</p>
+<p>cf campagne de pub de signal https://signal.org/blog/the-instagram-ads-you-will-never-see/ : on sait qui vous êtes même si vous bloquez la pub.</p>
+<section id="en-cas-d-infraction">
+<h3>En cas d”infraction<a class="headerlink" href="#en-cas-d-infraction" title="Lien permanent vers ce titre">¶</a></h3>
+<ul class="simple">
+<li><p>jusqu”à 4% (ou 20 millions €) du Chiffre d”Affaire mondial de l”entreprise (sachant que la marge des entreprises est en moyenne 30%, ça fait 1/6 minimum des bénéfices)</p></li>
+<li><p><a class="reference external" href="https://www.legalplace.fr/guides/rgpd-sanction/">prison and co</a></p></li>
+</ul>
+</section>
+</section>
+<section id="social-engineering">
+<h2>Social Engineering<a class="headerlink" href="#social-engineering" title="Lien permanent vers ce titre">¶</a></h2>
+<p>LE truc le plus utilisé pour le piratage !!</p>
+<blockquote>
+<div><p>=&gt; Faire très attention à qui on fait confiance.</p>
+</div></blockquote>
+<p>Il s”agit de faire grandir la confiance que les gens vous font, petit à petit.</p>
+<p>ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé.</p>
+<section id="phishing">
+<h3>Phishing<a class="headerlink" href="#phishing" title="Lien permanent vers ce titre">¶</a></h3>
+<p>!!</p>
+</section>
+</section>
+</section>
 
 
           </div>
@@ -2035,6 +2354,19 @@ composer require webapp
 <li class="toctree-l2"><a class="reference internal" href="#jeudi-2022-03-03">Jeudi 2022/03/03</a></li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="#securite">Sécurité</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#vos-idees">Vos idées ?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#en-bref">En bref</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id16"></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chiffrement-hashage">Chiffrement / hashage</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#injection-sql">Injection SQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#csrf-cross-site-request-forgery-ou-xsrf">CSRF : Cross Site Request Forgery (ou XSRF)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xss-cross-site-scripting">XSS : Cross Site Scripting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#cors-cross-origin-resource-sharing">CORS : Cross Origin Resource Sharing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rgpd-reglement-general-sur-la-protection-des-donnees-gdpr">RGPD : Règlement Général sur la Protection des Données (GDPR)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#social-engineering">Social Engineering</a></li>
+</ul>
+</li>
 </ul>
 
 <div class="relations">
@@ -2071,7 +2403,7 @@ composer require webapp
       &copy;2021, Esat + Marc.
       
       |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.4.0</a>
+      Powered by <a href="http://sphinx-doc.org/">Sphinx 4.5.0</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster 0.7.12</a>
       
       |
