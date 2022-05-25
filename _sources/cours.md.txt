@@ -1859,12 +1859,12 @@ contrat avec la classe qui l'implémente.
 
 Mega important
 
-### Vos idées ?
+## Vos idées ?
 
 1. mdp hashés
 1. https
 1. controle input form (front ET BACK)
-1. iSQL => prepare requete
+1. injection SQL => prepare requete
 1. CSRF
 1. DDOS
 1. POST vs GET
@@ -1876,7 +1876,7 @@ Mega important
 1. serveur web acces limités sources
 1. sécurité par l'obscurité / obsfucation
 1. supply chain
-1. "white room" ?? deconnexion // TODO // backchannel
+1. [air gap](https://fr.wikipedia.org/wiki/Air_gap) (mais attaquable avec des backchannels, comme les ondes électromagnétiques de l'écran etc.)
 1. cheval de troie
 1. virus / ransomware / zombie
 1. chiffrement
@@ -1895,24 +1895,6 @@ La sécurité absolue n'existe pas.
 
 C'est toujours une question de difficulté vs prix / temps.
 
-##
-
-1. prepare sql - injection sql
-1. validation formulaire front (expression rationnelles, type input...)
-1. validation formulaire back (expressions rationnelles, escapespecialchars, contrôle des types, type des fichiers acceptés ...)
-1. .env / constantes config pour ne pas commiter d'infos secrètes
-1. paramétrer serveur web pour limiter les accès à certains fichiers
-1. upload fichier : utiliser les mime/type pour vérifier le fichier => changer l'extension , changer le nom (uniqid) du fichier pour éviter un accès illégitime (ex : facebook `photos/ghuierg/iurhiure/frehrehreiheirghirehg.jpg`)
-1. hashage de mot de passe (=> non hashé => **prison**)
-1. code de qualité pour éviter les bugs (tests unitaires, tests de bout en bout ...)
-1. Veille technologique, validation/tests de la qualité des urls/partenaires tierces (cf RGPD : responsabilité des fournisseurs _et_ des clients parfois)
-1. RGPD : un DPO, un référentiel des traitements de données, la possibilité de fournir à un utilisateur toutes ses données (et comment on les utilise), supprimer ses données s'il le demande ou les exporter s'il le demande
-1. https !
-1. chiffrement des données
-1. csrf : cross site request forgery
-1. xss : cross site scripting
-1. CORS : cross origin resource sharing
-
 ## Chiffrement / hashage
 
 ### Cryptage / décryptage / codage / décodage
@@ -1927,7 +1909,7 @@ Partager un secret pour que les seules personnes qui connaissent le secret puiss
 
 exemples : A-vaut-K, RSA, ECDSA, ED25519 ...
 
-RSA, ECDSA, ED25519 etc. sont des chiffrements asymétriques : avec une clé publique et une clé privée. (cf connexion à github : `ssh-keygen` pour éviter de taper son login mdp à chaque fois)
+RSA, ECDSA, ED25519 etc. sont des chiffrements **asymétriques** : avec une clé publique et une clé privée. (cf connexion à github : `ssh-keygen` pour éviter de taper son login mdp à chaque fois)
 
 ### Hachage (hash in english)
 
@@ -1971,6 +1953,26 @@ Pour éviter qu'un attaquant calcule le tableau (qui n'existe pas encore) unique
 
 => astuce : un salt différent par utilisateur !
 
+cf [fonctionnement de bcrypt](https://stringfixer.com/fr/Bcrypt):
+
+Une chaîne de hachage bcrypt est de la forme :
+
+`$2<a/b/x/y>$[cost]$[22 caractères de sel][31 caractères de hachage]`
+
+Par exemple:
+
+```
+$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+\__/\/ \___________________/\_____________________________/ Alg Cost Salt Hash
+```
+
+Où:
+
+- $2a$: L'identifiant de l'algorithme de hachage (bcrypt)
+- 10: Facteur de coût (2^10 ==> 1 024 tours)
+- N9qo8uLOickgx2ZMRZoMye: sel 16 octets (128 bits), Radix-64 encodé en 22 caractères
+- IjZAgcfl7p92ldGxad68LJZdL17lhWy : hachage de 24 octets (192 bits), Radix-64 encodé en 31 caractères
+
 ### https (ssl)
 
 HTTP : protocole de communication entre machines sur internet.
@@ -1985,7 +1987,7 @@ idem pour http : si je fais `POST mabanqueprivee.com {identifiant: "pierre99", m
 
 #### Clé publique / clé privée
 
-C'est une paire de secrets, ça s'appelle du chiffrement asymétrique !
+C'est une paire de secrets, ça s'appelle du **chiffrement asymétrique** !
 
 Grâce à des calculs mathématiques, je peux :
 
@@ -2026,7 +2028,7 @@ WHERE login = $login
 AND password = $password
 ```
 
-Le problème il vient du fait que je prends la chaîne de l'utilisateur telle quelle dans ma requete SQL !
+Le problème vient du fait que je prends la chaîne de l'utilisateur telle quelle dans ma requête SQL !
 
 Autres exemples :
 
@@ -2047,15 +2049,15 @@ AND password = :password
 
 Dans un premier temps, le SGBD écrit la requête correcte ! Puis il met dedans les variables **qui ne peuvent plus influencer la requête**. Donc il va chercher un login qui vaut '"";DROP DATABASE' au lieu de réécrire la requête.
 
-#### Sans prepare :
+#### Sans prepare
 
-1. j'écris mes chaînes de caractères SQL
-2. je crée les requêtes associées
+1. j'écris mes chaînes de caractères SQL avec PHP
+2. je crée les requêtes associées en SQL
 
-#### Avec prepare :
+#### Avec prepare
 
-1. je crée la requête valide
-2. j'insère ma chaîne de caractère
+1. je crée la requête valide en SQL
+2. le SGBDR attend la donnée à comparer (la requête ne peut plus être modifiée à ce stade)
 
 ## CSRF : Cross Site Request Forgery (ou XSRF)
 
@@ -2063,13 +2065,13 @@ Un attaquant profite du fait que vous êtes loggé sur un site lambda, pour vous
 
 ### Exemple
 
-1. je suis loggé sur tradfast de raouf
+1. je suis loggé sur candidatures de diallo
 2. je vais sur petithackermalin.com dans un autre onglet
-3. sur "phm" il y a un formulaire bidon que je vais valider (il te promet un iphone 40 gratos)
-4. le form en question : `<form action="tradfast.com/user/petithacker"><input name="admin" value="1"/></form>` (et non pas un envoi d'iphone XXX)
-5. petithacker est maintenant admin sur le site de raouf, si l'utilisateur connecté en 1 avait les droits d'effectuer le POST du form.
+3. sur "phm.com" il y a un formulaire bidon que je vais valider (il te promet un iphone 40 gratos)
+4. le form en question : `<form action="candidatures.com/user/petithacker"><input name="admin" value="1"/></form>` (et non pas un envoi d'iphone XXX)
+5. petithacker est maintenant admin sur le site de diallo, si l'utilisateur connecté en 1 avait les droits d'effectuer le POST du form.
 
-### Comment on se protège ?
+### Comment se protéger ?
 
 Je dois m'assurer que le formulaire vient bien de chez moi !
 
@@ -2119,7 +2121,7 @@ ou j'ai uploadé un fichier php `image.png` et le php s'exécute quand j'affiche
 
 Empêcher (ou autoriser) l'accès à certaines ressources par le navigateur.
 
-### Exemple
+### Par exemple
 
 Je veux que les requêtes vers "api.tourismeform.com" ne proviennent que du site "tourismeform.com".
 
@@ -2136,6 +2138,17 @@ C'est à vous, _développeur_, de bien paramétrer votre back pour autoriser les
 ## RGPD : Règlement Général sur la Protection des Données (GDPR)
 
 > C'est le truc qui va vous envoyer en prison (https://www.legalplace.fr/guides/rgpd-sanction/) si vous faites pas votre taf correctement.
+
+Fiche de la CNIL [ici](https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on).
+
+### Qui est concerné ?
+
+> Le RGPD s’applique à toute organisation, publique et privée, qui traite des données personnelles pour son compte ou non, dès lors :
+>
+> - qu'elle est établie sur le territoire de l’Union européenne,
+> - ou que son activité cible directement des résidents européens.
+
+### Règles à suivre
 
 Règles à suivre pour la gestion des données de vos utilisateurs.
 
@@ -2169,7 +2182,9 @@ LE truc le plus utilisé pour le piratage !!
 
 Il s'agit de faire grandir la confiance que les gens vous font, petit à petit.
 
-ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé.
+ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé. ([FOVI](https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/escroquerie-faux-ordres-virement-fovi))
+
+ex: [Oceans 8](https://www.youtube.com/watch?v=OkBaZLq7gnU)
 
 ### Phishing
 

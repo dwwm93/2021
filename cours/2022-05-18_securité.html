@@ -41,7 +41,7 @@
 <li><p>mdp hashés</p></li>
 <li><p>https</p></li>
 <li><p>controle input form (front ET BACK)</p></li>
-<li><p>iSQL =&gt; prepare requete</p></li>
+<li><p>injection SQL =&gt; prepare requete</p></li>
 <li><p>CSRF</p></li>
 <li><p>DDOS</p></li>
 <li><p>POST vs GET</p></li>
@@ -53,7 +53,7 @@
 <li><p>serveur web acces limités sources</p></li>
 <li><p>sécurité par l”obscurité / obsfucation</p></li>
 <li><p>supply chain</p></li>
-<li><p>« white room » ?? deconnexion // TODO // backchannel</p></li>
+<li><p><a class="reference external" href="https://fr.wikipedia.org/wiki/Air_gap">air gap</a> (mais attaquable avec des backchannels, comme les ondes électromagnétiques de l”écran etc.)</p></li>
 <li><p>cheval de troie</p></li>
 <li><p>virus / ransomware / zombie</p></li>
 <li><p>chiffrement</p></li>
@@ -72,26 +72,6 @@
 <p>La sécurité absolue n”existe pas.</p>
 <p>C”est toujours une question de difficulté vs prix / temps.</p>
 </section>
-<section id="id1">
-<h2><a class="headerlink" href="#id1" title="Lien permanent vers ce titre">¶</a></h2>
-<ol class="simple">
-<li><p>prepare sql - injection sql</p></li>
-<li><p>validation formulaire front (expression rationnelles, type input…)</p></li>
-<li><p>validation formulaire back (expressions rationnelles, escapespecialchars, contrôle des types, type des fichiers acceptés …)</p></li>
-<li><p>.env / constantes config pour ne pas commiter d”infos secrètes</p></li>
-<li><p>paramétrer serveur web pour limiter les accès à certains fichiers</p></li>
-<li><p>upload fichier : utiliser les mime/type pour vérifier le fichier =&gt; changer l”extension , changer le nom (uniqid) du fichier pour éviter un accès illégitime (ex : facebook <code class="docutils literal notranslate"><span class="pre">photos/ghuierg/iurhiure/frehrehreiheirghirehg.jpg</span></code>)</p></li>
-<li><p>hashage de mot de passe (=&gt; non hashé =&gt; <strong>prison</strong>)</p></li>
-<li><p>code de qualité pour éviter les bugs (tests unitaires, tests de bout en bout …)</p></li>
-<li><p>Veille technologique, validation/tests de la qualité des urls/partenaires tierces (cf RGPD : responsabilité des fournisseurs <em>et</em> des clients parfois)</p></li>
-<li><p>RGPD : un DPO, un référentiel des traitements de données, la possibilité de fournir à un utilisateur toutes ses données (et comment on les utilise), supprimer ses données s”il le demande ou les exporter s”il le demande</p></li>
-<li><p>https !</p></li>
-<li><p>chiffrement des données</p></li>
-<li><p>csrf : cross site request forgery</p></li>
-<li><p>xss : cross site scripting</p></li>
-<li><p>CORS : cross origin resource sharing</p></li>
-</ol>
-</section>
 <section id="chiffrement-hashage">
 <h2>Chiffrement / hashage<a class="headerlink" href="#chiffrement-hashage" title="Lien permanent vers ce titre">¶</a></h2>
 <section id="cryptage-decryptage-codage-decodage">
@@ -105,7 +85,7 @@
 <div><p>important : « Reversibilité » : je peux chiffrer et déchiffrer</p>
 </div></blockquote>
 <p>exemples : A-vaut-K, RSA, ECDSA, ED25519 …</p>
-<p>RSA, ECDSA, ED25519 etc. sont des chiffrements asymétriques : avec une clé publique et une clé privée. (cf connexion à github : <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> pour éviter de taper son login mdp à chaque fois)</p>
+<p>RSA, ECDSA, ED25519 etc. sont des chiffrements <strong>asymétriques</strong> : avec une clé publique et une clé privée. (cf connexion à github : <code class="docutils literal notranslate"><span class="pre">ssh-keygen</span></code> pour éviter de taper son login mdp à chaque fois)</p>
 </section>
 <section id="hachage-hash-in-english">
 <h3>Hachage (hash in english)<a class="headerlink" href="#hachage-hash-in-english" title="Lien permanent vers ce titre">¶</a></h3>
@@ -144,6 +124,21 @@
 <p>Je suis protégé tant que les attaquants n”ont pas le tableau des mdp &gt;= 260 caractères.</p>
 <p>Pour éviter qu”un attaquant calcule le tableau (qui n”existe pas encore) uniquement pour mon salt =&gt; ce qui revient à calculer le tableau pour les 8 caractères classiques ! donc c”est pas très long.</p>
 <p>=&gt; astuce : un salt différent par utilisateur !</p>
+<p>cf <a class="reference external" href="https://stringfixer.com/fr/Bcrypt">fonctionnement de bcrypt</a>:</p>
+<p>Une chaîne de hachage bcrypt est de la forme :</p>
+<p><code class="docutils literal notranslate"><span class="pre">$2&lt;a/b/x/y&gt;$[cost]$[22</span> <span class="pre">caractères</span> <span class="pre">de</span> <span class="pre">sel][31</span> <span class="pre">caractères</span> <span class="pre">de</span> <span class="pre">hachage]</span></code></p>
+<p>Par exemple:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$2a$10$N9qo8uLOickgx2ZMRZoMyeIjZAgcfl7p92ldGxad68LJZdL17lhWy
+\__/\/ \___________________/\_____________________________/ Alg Cost Salt Hash
+</pre></div>
+</div>
+<p>Où:</p>
+<ul class="simple">
+<li><p>$2a$: L”identifiant de l”algorithme de hachage (bcrypt)</p></li>
+<li><p>10: Facteur de coût (2^10 ==&gt; 1 024 tours)</p></li>
+<li><p>N9qo8uLOickgx2ZMRZoMye: sel 16 octets (128 bits), Radix-64 encodé en 22 caractères</p></li>
+<li><p>IjZAgcfl7p92ldGxad68LJZdL17lhWy : hachage de 24 octets (192 bits), Radix-64 encodé en 31 caractères</p></li>
+</ul>
 </section>
 </section>
 <section id="https-ssl">
@@ -159,7 +154,7 @@
 </div></blockquote>
 <section id="cle-publique-cle-privee">
 <h4>Clé publique / clé privée<a class="headerlink" href="#cle-publique-cle-privee" title="Lien permanent vers ce titre">¶</a></h4>
-<p>C”est une paire de secrets, ça s”appelle du chiffrement asymétrique !</p>
+<p>C”est une paire de secrets, ça s”appelle du <strong>chiffrement asymétrique</strong> !</p>
 <p>Grâce à des calculs mathématiques, je peux :</p>
 <ul class="simple">
 <li><p>chiffrer un message avec ma clé privée : seuls ceux qui ont la clé publique peuvent le déchiffrer (donc tout le monde) =&gt; ça prouve mon identité</p></li>
@@ -200,7 +195,7 @@ WHERE login = $login
 AND password = $password
 </pre></div>
 </div>
-<p>Le problème il vient du fait que je prends la chaîne de l”utilisateur telle quelle dans ma requete SQL !</p>
+<p>Le problème vient du fait que je prends la chaîne de l”utilisateur telle quelle dans ma requête SQL !</p>
 <p>Autres exemples :</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">login:</span> <span class="pre">&quot;&quot;;DELETE</span> <span class="pre">*</span> <span class="pre">FROM</span> <span class="pre">user;</span></code></p></li>
@@ -218,17 +213,17 @@ AND password = $password
 </div>
 <p>Dans un premier temps, le SGBD écrit la requête correcte ! Puis il met dedans les variables <strong>qui ne peuvent plus influencer la requête</strong>. Donc il va chercher un login qui vaut “ » »;DROP DATABASE” au lieu de réécrire la requête.</p>
 <section id="sans-prepare">
-<h4>Sans prepare :<a class="headerlink" href="#sans-prepare" title="Lien permanent vers ce titre">¶</a></h4>
+<h4>Sans prepare<a class="headerlink" href="#sans-prepare" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
-<li><p>j”écris mes chaînes de caractères SQL</p></li>
-<li><p>je crée les requêtes associées</p></li>
+<li><p>j”écris mes chaînes de caractères SQL avec PHP</p></li>
+<li><p>je crée les requêtes associées en SQL</p></li>
 </ol>
 </section>
 <section id="avec-prepare">
-<h4>Avec prepare :<a class="headerlink" href="#avec-prepare" title="Lien permanent vers ce titre">¶</a></h4>
+<h4>Avec prepare<a class="headerlink" href="#avec-prepare" title="Lien permanent vers ce titre">¶</a></h4>
 <ol class="simple">
-<li><p>je crée la requête valide</p></li>
-<li><p>j”insère ma chaîne de caractère</p></li>
+<li><p>je crée la requête valide en SQL</p></li>
+<li><p>le SGBDR attend la donnée à comparer (la requête ne peut plus être modifiée à ce stade)</p></li>
 </ol>
 </section>
 </section>
@@ -239,15 +234,15 @@ AND password = $password
 <section id="exemple">
 <h3>Exemple<a class="headerlink" href="#exemple" title="Lien permanent vers ce titre">¶</a></h3>
 <ol class="simple">
-<li><p>je suis loggé sur tradfast de raouf</p></li>
+<li><p>je suis loggé sur candidatures de diallo</p></li>
 <li><p>je vais sur petithackermalin.com dans un autre onglet</p></li>
-<li><p>sur « phm » il y a un formulaire bidon que je vais valider (il te promet un iphone 40 gratos)</p></li>
-<li><p>le form en question : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;tradfast.com/user/petithacker&quot;&gt;&lt;input</span> <span class="pre">name=&quot;admin&quot;</span> <span class="pre">value=&quot;1&quot;/&gt;&lt;/form&gt;</span></code> (et non pas un envoi d”iphone XXX)</p></li>
-<li><p>petithacker est maintenant admin sur le site de raouf, si l”utilisateur connecté en 1 avait les droits d”effectuer le POST du form.</p></li>
+<li><p>sur « phm.com » il y a un formulaire bidon que je vais valider (il te promet un iphone 40 gratos)</p></li>
+<li><p>le form en question : <code class="docutils literal notranslate"><span class="pre">&lt;form</span> <span class="pre">action=&quot;candidatures.com/user/petithacker&quot;&gt;&lt;input</span> <span class="pre">name=&quot;admin&quot;</span> <span class="pre">value=&quot;1&quot;/&gt;&lt;/form&gt;</span></code> (et non pas un envoi d”iphone XXX)</p></li>
+<li><p>petithacker est maintenant admin sur le site de diallo, si l”utilisateur connecté en 1 avait les droits d”effectuer le POST du form.</p></li>
 </ol>
 </section>
-<section id="id2">
-<h3>Comment on se protège ?<a class="headerlink" href="#id2" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="comment-se-proteger">
+<h3>Comment se protéger ?<a class="headerlink" href="#comment-se-proteger" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Je dois m”assurer que le formulaire vient bien de chez moi !</p>
 <p>=&gt; j”ajoute un champ caché <strong>aléatoire</strong> !! genre un token (hash ou autre) et il faut le stocker en session pour comparer le token reçu et le token généré dans le formulaire (stocké donc).</p>
 <p>=&gt; <code class="docutils literal notranslate"><span class="pre">token</span> <span class="pre">csrf</span></code></p>
@@ -293,8 +288,8 @@ AND password = $password
 <div><p>! c”est une protection intégrée au navigateur, pas au serveur !</p>
 </div></blockquote>
 <p>Empêcher (ou autoriser) l”accès à certaines ressources par le navigateur.</p>
-<section id="id3">
-<h3>Exemple<a class="headerlink" href="#id3" title="Lien permanent vers ce titre">¶</a></h3>
+<section id="par-exemple">
+<h3>Par exemple<a class="headerlink" href="#par-exemple" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Je veux que les requêtes vers « api.tourismeform.com » ne proviennent que du site « tourismeform.com ».</p>
 <p>Cela évite que quelqu”un essaie de récupérer des informations depuis un autre site. (genre si je suis sur <code class="docutils literal notranslate"><span class="pre">hackervaillant.com</span></code>)</p>
 <blockquote>
@@ -312,6 +307,19 @@ AND password = $password
 <blockquote>
 <div><p>C”est le truc qui va vous envoyer en prison (https://www.legalplace.fr/guides/rgpd-sanction/) si vous faites pas votre taf correctement.</p>
 </div></blockquote>
+<p>Fiche de la CNIL <a class="reference external" href="https://www.cnil.fr/fr/rgpd-de-quoi-parle-t-on">ici</a>.</p>
+<section id="qui-est-concerne">
+<h3>Qui est concerné ?<a class="headerlink" href="#qui-est-concerne" title="Lien permanent vers ce titre">¶</a></h3>
+<blockquote>
+<div><p>Le RGPD s’applique à toute organisation, publique et privée, qui traite des données personnelles pour son compte ou non, dès lors :</p>
+<ul class="simple">
+<li><p>qu”elle est établie sur le territoire de l’Union européenne,</p></li>
+<li><p>ou que son activité cible directement des résidents européens.</p></li>
+</ul>
+</div></blockquote>
+</section>
+<section id="regles-a-suivre">
+<h3>Règles à suivre<a class="headerlink" href="#regles-a-suivre" title="Lien permanent vers ce titre">¶</a></h3>
 <p>Règles à suivre pour la gestion des données de vos utilisateurs.</p>
 <ul class="simple">
 <li><p>hacher les mdp</p></li>
@@ -329,6 +337,7 @@ AND password = $password
 </ul>
 <p>https://www.cnil.fr/sites/default/files/atoms/files/bpi-cnil-rgpd_guide-tpe-pme.pdf</p>
 <p>cf campagne de pub de signal https://signal.org/blog/the-instagram-ads-you-will-never-see/ : on sait qui vous êtes même si vous bloquez la pub.</p>
+</section>
 <section id="en-cas-d-infraction">
 <h3>En cas d”infraction<a class="headerlink" href="#en-cas-d-infraction" title="Lien permanent vers ce titre">¶</a></h3>
 <ul class="simple">
@@ -344,7 +353,8 @@ AND password = $password
 <div><p>=&gt; Faire très attention à qui on fait confiance.</p>
 </div></blockquote>
 <p>Il s”agit de faire grandir la confiance que les gens vous font, petit à petit.</p>
-<p>ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé.</p>
+<p>ex: assistante du pdg qui fait des virements en pensant que le pdg a demandé. (<a class="reference external" href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/escroquerie-faux-ordres-virement-fovi">FOVI</a>)</p>
+<p>ex: <a class="reference external" href="https://www.youtube.com/watch?v=OkBaZLq7gnU">Oceans 8</a></p>
 <section id="phishing">
 <h3>Phishing<a class="headerlink" href="#phishing" title="Lien permanent vers ce titre">¶</a></h3>
 <p>!!</p>
